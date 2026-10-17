@@ -1,0 +1,119 @@
+Tales of Immortal — Indonesian Hybrid v8.3 SAFE TEXT ONLY
+=========================================================
+
+Base: v7 PatchNotes/InternalPolish (known-good startup baseline)
+Purpose: isolate v8 startup hang by restoring every short/front-end/plugin identifier-like change to v7 and re-applying only clear display sentences/tips.
+
+Total strings: 464,270
+v8 display-text corrections retained: 27
+v8 changes intentionally NOT retained: 120
+String data size: 24,380,553 bytes
+Placeholder mismatches introduced: 0
+Rich-text tag mismatches introduced: 0
+
+Explicitly restored to v7 / NOT translated in this diagnostic build:
+- Loading and Loading...
+- World / Character / Other / Resource / Price
+- Hard / Nightmare / Hell / High / Medium / Low / Standard / Sparse / Plentiful
+- Name / Description / Enable / Search / Settings / CREDITS / Change Theme
+- ALL plugin names, plugin manager labels, plugin option labels and plugin help strings changed by v8
+
+Safe text corrections retained at indices:
+[21335] 100 (x1) secara default. Misalnya, jika disetel ke 1.000, statistik monster akan menjadi sepuluh kali lipat. Saat memasuki ruang bawah tanah Qi Refining Realm, statistik monster akan kurang lebih sama dengan Qi Condensation Realm.
+
+Tips: Jika monster menjatuhkan item langka, kamu disarankan untuk sedikit menaikkan persentase statistiknya.
+  -> 100 (x1) secara default. Misalnya, jika diatur ke 1.000, stat monster menjadi 10× lipat. Saat memasuki Dungeon Qi Refining Realm, stat monster akan kurang lebih setara dengan Qi Condensation Realm.
+
+Tip: Jika monster menjatuhkan item langka, sebaiknya naikkan persentase stat-nya sedikit.
+[75493] <r>Tekan lama</r> simpan file untuk pengoperasian yang lebih lama
+  -> <r>Tekan lama</r> slot save untuk melihat opsi lainnya
+[84099] Body Reconstruction tidak tersedia pada tingkat kesulitan saat ini
+  -> Rekonstruksi Tubuh tidak tersedia pada tingkat kesulitan ini.
+[84100] Body Reconstruction membutuhkan <r>{0} min</r> setelah karakter kamu mati.
+  -> Rekonstruksi Tubuh membutuhkan <r>{0} menit</r> setelah karaktermu mati.
+[86046] Penciptaan karakter hanya menunjukkan sifat takdir tingkat tertentu dengan eksklusivitas yang santai
+  -> Saat membuat karakter, hanya Destiny pada tier tertentu yang muncul; aturan eksklusivitasnya dilonggarkan.
+[89465] Kematian akan <r>menghapus simpanan kamu secara permanen</r>!
+Mode ini sangat menantang dan tidak disarankan untuk pemain baru.
+  -> Kematian akan <r>menghapus save-mu secara permanen</r>!
+Mode ini sangat menantang dan tidak direkomendasikan untuk pemain baru.
+[100480] Petunjuk: Dapatkan Heavenly Arts
+  -> Petunjuk: Dapatkan Heavenly Art
+[107833] Item yang dijatuhkan oleh monster ketika terbunuh.
+
+Kiat: kamu dapat menetapkan peluang untuk menjatuhkan beberapa Spirit Stones.
+  -> Item yang dijatuhkan monster saat dikalahkan.
+
+Tip: Kamu juga bisa mengatur peluang drop Spirit Stones.
+[110368] Simpanan lokal penuh. Panduan pembersihan diperlukan.
+  -> Save lokal penuh. Hapus beberapa save secara manual.
+[110441] Long Press to View Item Info
+  -> Tekan lama untuk melihat info item
+[129338] Semakin tinggi bobotnya, semakin besar kemungkinan monster ini dihasilkan.
+
+Misalnya: Ada 10 monster di Daftar Monster Dungeon, dan Jumlah Per Gelombang ditetapkan sebagai 2, lalu 2 monster dipilih secara acak dari daftar untuk dihasilkan setiap gelombang. Semakin tinggi bobot monster, semakin besar kemungkinan dihasilkan.
+
+Tips: kamu disarankan untuk mengatur bobot monster yang menjatuhkan item langka sedikit lebih rendah.
+  -> Semakin tinggi bobotnya, semakin besar peluang monster ini muncul.
+
+Contoh: Jika ada 10 monster di Dungeon Monster List dan Qty Per Wave diatur ke 2, setiap gelombang akan memilih 2 monster secara acak dari daftar. Semakin tinggi bobot suatu monster, semakin besar peluangnya terpilih.
+
+Tip: Untuk monster yang menjatuhkan item langka, sebaiknya gunakan bobot yang sedikit lebih rendah.
+[131511] Mode ini <r>sangat menantang</r> dan tidak direkomendasikan untuk pemain baru.
+Mode ini tidak mengizinkan perubahan hasil Destiny Alteration, Auction House, Scripture Pavilion, dll., melalui S/L.
+<color=#00ffff>●Hasil sumber daya lebih besar dan kualitas lebih tinggi!
+●Mythical Beast menjatuhkan jumlah rahasia dua kali lipat manual!
+●Hingga 9 Perubahan Destiny dapat muncul saat menerobos alam.</color>
+  -> Mode ini <r>sangat menantang</r> dan tidak direkomendasikan untuk pemain baru.
+Mode ini tidak memungkinkanmu mengubah hasil Destiny Alteration, Auction House, Scripture Pavilion, dan lainnya melalui S/L.
+<color=#00ffff>●Hasil resource lebih banyak dan kualitasnya lebih tinggi!
+●Mythical Beast menjatuhkan Secret Manual dua kali lebih banyak!
+●Saat Breakthrough, hingga 9 pilihan Destiny Alteration dapat muncul.</color>
+[132430] Tip: Klik pilihan untuk melihat log terperinci.
+  -> Tip: Klik pilihan untuk melihat log lengkap.
+[132431] Tip: Resep dan Furnace Elixir dapat ditukarkan di Treasure Pavilion berbagai Sect.
+  -> Tip: Resep Elixir dan Furnace dapat ditukar di Treasure Pavilion berbagai Sect.
+[132432] Tip: Buku Feng Shui Skill dapat dibeli di Pasar di berbagai kota.
+  -> Tip: Buku Feng Shui Skill dapat dibeli di Market berbagai kota.
+[132433] Tip: Manual Identifikasi dapat dibeli di Pasar di berbagai kota.
+  -> Tip: Identification Manual dapat dibeli di Market berbagai kota.
+[132434] Tip: Resep dapat dibeli di Pasar di berbagai kota.
+  -> Tip: Prescription dapat dibeli di Market berbagai kota.
+[132435] Tips: Kamu bisa memperoleh Charts of Talismans dari rangkaian misi "Story of Charms" di Tavern.
+  -> Tip: Chart of Talismans bisa diperoleh dari rangkaian misi "Story of Charms" di Tavern.
+[132436] Tip: klik {0} kali di dalam game untuk berbagi informasi fairy chicken.
+  -> Tip: Klik {0} kali di dalam game untuk membagikan informasi Fairy Chicken.
+[132439] Kiat:
+1. Seret Herb ke dalam Furnace untuk menambahkannya sebagai material.
+2. Bahan lain hanya dapat ditambahkan setelah semua bahan yang diperlukan telah ditambahkan.
+3. Herb yang sudah dimasukkan ke dalam Furnace tidak bisa dikeluarkan dan bisa dimasukkan <r> paling banyak 100 unit herba ke dalam Furnace sekaligus</r>.
+4. Kecepatan gerakan kursor ditentukan oleh status Alchemy kamu. Semakin tinggi status Alchemy kamu, semakin lambat pergerakan kursor.
+  -> Tips:
+1. Seret Herb ke Furnace untuk memasukkannya sebagai material.
+2. Material tambahan baru bisa dimasukkan setelah semua material wajib terpenuhi.
+3. Herb yang sudah dimasukkan tidak bisa dikeluarkan kembali. Maksimal <r>100 unit Herb dapat dimasukkan ke Furnace sekaligus</r>.
+4. Kecepatan kursor ditentukan oleh stat Alchemy. Semakin tinggi Alchemy, semakin lambat kursor bergerak.
+[136691] Peringatan: <r>Mencopot pemasangan game</r> akan menghapus semua penyimpanan lokal (tidak termasuk penyimpanan cloud), lanjutkan dengan hati-hati!
+  -> Peringatan: <r>Menghapus instalasi game</r> akan menghapus semua save lokal (kecuali save Cloud). Lanjutkan dengan hati-hati!
+[138178] Ketika beberapa produksi diatur pada waktu yang sama, salah satunya diproduksi berdasarkan kepentingan acak dari setiap produksi. 
+
+Kiat: Beberapa perintah dapat diatur untuk menghasilkan item beberapa kali.
+  -> Jika beberapa produksi diatur pada saat yang sama, salah satunya akan dipilih berdasarkan bobot acak tiap produksi.
+
+Tip: Perintah yang sama dapat ditambahkan beberapa kali untuk meningkatkan frekuensi produksi item tersebut.
+[141113] Kamu selalu dapat menghidupkan kembali dirimu sendiri selama kamu memiliki Bagua Jade Points. Giok tersebut dapat dipisahkan menjadi dua, dan kamu dapat memberikan separuhnya lagi kepada orang lain. Dengan demikian, kalian berdua bisa menjaga kehidupan satu sama lain selama perjalanan.
+  -> Selama masih memiliki Poin Bagua Jade, kamu dapat bangkit kembali. Bagua Jade bisa dibagi menjadi dua dan separuhnya diberikan kepada orang lain, sehingga kalian dapat saling menjaga selama perjalanan.
+[141186] Kamu dapat bangkit kembali selama kamu memiliki Poin Bagua Jade.
+Kamu dapat mendengar bisikan yang datang dari batu giok: Tetap hidup dan cari jalanmu!
+  -> Selama masih memiliki Poin Bagua Jade, kamu dapat bangkit kembali.
+Dari giok itu terdengar sebuah bisikan: Bertahanlah, dan temukan jalanmu!
+[144213] Karakter kamu akan mati selamanya ketika kamu kehabisan Bagua Jade Points.
+  -> Karaktermu akan mati permanen jika Poin Bagua Jade habis.
+[144346] Simpanan kamu akan <r>dihapus secara permanen</r> jika kamu mati sebelum mencapai {0}!
+Jika kamu mati setelah mencapai {1}, Body Reconstruction akan mengambil <r>{2} min</r>.
+
+  -> Save-mu akan <r>dihapus secara permanen</r> jika kamu mati sebelum mencapai {0}!
+Jika kamu mati setelah mencapai {1}, Rekonstruksi Tubuh membutuhkan <r>{2} menit</r>.
+
+[144347] Simpananmu akan <r>dihapus secara permanen</r> jika kamu mati!
+  -> Save-mu akan <r>dihapus secara permanen</r> jika kamu mati!
