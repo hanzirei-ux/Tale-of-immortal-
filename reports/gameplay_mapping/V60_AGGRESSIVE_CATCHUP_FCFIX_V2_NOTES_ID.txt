@@ -1,0 +1,62 @@
+TALE OF IMMORTAL ANDROID ARM64 — V60 SMART PHASE + AGGRESSIVE CATCH-UP FC FIX V2
+=================================================================================
+Date: 2026-08-31
+Status: TEST BUILD — static verification PASS, Android runtime test required
+
+WHY V1 FC'D / WHAT V2 CHANGES
+-----------------------------
+Aggressive V1 FC'd immediately on Next Month. Smart Phase AI itself had already run successfully,
+so the new RunUnit scheduler was isolated as the regression area.
+
+V1 called get_progression_state() from WorldUnitAIBase.RunUnit for essentially every eligible
+Player-Sect requester. That helper was validated inside progression-specific actions
+(Action1031/1004/1029), where progression data is already in the expected context. V2 removes that
+call entirely from RunUnit so the global scheduler no longer dereferences progression dynamic data.
+
+0x05225F48 is NOT removed: re-audit confirms native Action1031 itself calls it using the exact chain
+Global root 0x026A9074 -> [root+0x20] -> BL 0x05225F48. The month getter chain is native-proven.
+
+FC FIX V2 COHORT
+----------------
+RunUnit hook: VA 0x0560A5E8 -> helper 0x08C78BA0.
+The displaced SDIV W8,W20,W22 is replayed.
+
+Scope remains current Player-Sect NPC via existing is_player_school_npc @ 0x08C78080.
+Outside current Player Sect remains vanilla.
+
+Selection using the already-live native realm gap:
+  gap >= 2 : 100% selected
+  gap == 1 : ~50% selected/month
+  gap == 0 : ~25% selected/month
+
+Same-realm ~25% means roughly 5 selected from 20 eligible NPCs. The selected subset rotates with
+native current month using a lightweight requester-pointer hash.
+
+Selected NPCs receive downstream pre-RNG budget 19; native inclusive Random(19,20) remains intact,
+so their final Goal/opportunity budget is 19 or 20.
+
+UNCHANGED SMART PHASE AI
+------------------------
+Action1031 smart cultivation stop: unchanged.
+Action1029 exact owned phase-item priority: unchanged.
+Action1004 exact market phase-item priority: unchanged.
+No direct Realm/Grade writes, free phase items, or forced breakthrough are added.
+
+ELF / BINARY
+------------
+Smart Phase custom RX: 0xBA0
+V2 helper append      : 0x90
+New custom RX         : 0xC30
+Flags                 : R-X
+Alignment             : 0x4000
+
+Within the previous Smart Phase lib prefix, only the custom PT_LOAD p_filesz/p_memsz fields and the
+single RunUnit hook are changed. The 0x90-byte helper is appended exactly at the previous EOF.
+
+FIRST RUNTIME TEST
+------------------
+Use the same save that FC'd with Aggressive V1 and advance exactly ONE month first.
+If that works, advance another 2-3 months and count how many different current-Sect NPCs progress.
+
+If V2 still FCs exactly on Next Month, remove only the RunUnit aggressive scheduler and keep the
+already-stable Smart Phase AI.

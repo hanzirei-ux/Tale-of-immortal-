@@ -1,0 +1,631 @@
+TALE OF IMMORTAL ANDROID ARM64 V60 — PLAYER-SECT NPC MAPPING V19
+BOUTEXHAUSTED RATE / ACTION1052-1055 CLASSIFICATION / SEEK COUNTER CORRECTION / SPECIAL UPGRADE AUDIT
+====================================================================================================
+
+Date: 2026-09-02
+Status: STATIC MAPPING ONLY — NO BINARY PATCH APPLIED
+
+SOURCE
+------
+Current build:
+  Tale_of_Immortal_ARM64_v60_SMART_PHASE_AGGRESSIVE_CATCHUP_FCFIX_V2-1
+
+Current libil2cpp.so:
+  SHA256: b115635f6ba4a4668823c6d7816c13752bf141964b4052c789ded4452be75c1f
+  Size:   144,968,752 bytes
+  Arch:   AArch64 Android IL2CPP
+
+Matching V60 global-metadata.dat:
+  SHA256: 9be3762476a87e8be23e3fa589b44f084027a5c7f1ff78b9be5f013fb5d131b3
+  Metadata version: 31
+
+Continuation:
+  V17 proved that the late RunUnit Random(0,10000)<+0x80 loop is specifically
+  WorldUnitEffectSpecialBoutExhausted processing.
+  V18 proved the direct Goal141 -> Action1051 -> UnitActionRoleSeekUpGrade chain and identified
+  a first target/cooperation gate before the already-patched dungeon-success gate.
+
+No bytes in the current binary were changed during V19.
+
+====================================================================================================
+1. V19 EXECUTIVE RESULT
+====================================================================================================
+
+V19 closes four important questions and corrects one important V18 interpretation.
+
+A) V60 contains exactly four BoutExhausted payload literals in its metadata literal pool:
+     boutExhausted_5000_exhaustedLog90010022
+     boutExhausted_5000_exhaustedLog90020011
+     boutExhausted_5000_exhaustedLog90020021
+     boutExhausted_5000_exhaustedLog90020031
+
+   WorldUnitEffectSpecialBoutExhausted.Create already proved the parser semantics:
+     values[0] -> rate
+     values[1] -> key
+
+   Therefore every one of these four payload variants encodes:
+     rate = 5000
+   and RunUnit interprets that as:
+     Random(0,10000) < 5000
+     => 50% trigger chance PER ACTIVE BoutExhausted effect, per checked goal attempt.
+
+B) Action1052/1053/1054/1055 are NOT hidden alternate branches of Goal141.
+
+   Metadata + method-RVA mapping gives:
+     Goal141 -> Action1051 -> UnitActionRoleSeekUpGrade
+     Goal142 -> Action1052 -> UnitActionRoleHelpSeekProp
+     Action1053 -> UnitActionRoleJealous
+     Action1054 -> UnitActionRoleTeachSkill
+     Action1055 -> Goal145-style reward/item logic
+
+   Thus the major-breakthrough material path mapped through Action1051 is the correct direct family.
+
+C) MAJOR V18 CORRECTION:
+   seekGradeNeedNum is NOT a "failed seek count" threshold.
+
+   UnitActionRoleSeekUpGrade.OnEnd only constructs/invokes its progression callback after:
+     isTargetComplete == true
+     AND
+     isDungeonComplete == true.
+
+   The callback then increments WorldUnitAIDataBase +0x158 for ordinary NPC->NPC isUpGrade seeks.
+
+   So +0x158 is best described as a SUCCESSFUL-SEEK progression count for this mapped path.
+   First-gate failures do NOT increment it.
+
+   Current exact Player-Sect seekGradeNeedNum=1 therefore means:
+     after the FIRST qualifying successful seek, native AddUpGradeProps is already eligible.
+
+D) This moves the strongest remaining delay one step earlier:
+   UnitActionRoleSeekUpGrade.NPCToNPCAction FIRST target/cooperation gate.
+
+   If that first gate fails:
+     - isTargetComplete=false;
+     - dungeon-success=100 is never reached;
+     - +0x158 does not advance;
+     - seekGradeNeedNum=1 cannot help on that attempt.
+
+   Once the first gate succeeds:
+     - Player-Sect dungeon threshold is forced to 100;
+     - the success callback can increment +0x158 to 1;
+     - native AddUpGradeProps can become eligible immediately.
+
+E) UnitActionRoleUpGradeRule and UnitActionRoleUpGradeElder use separate special-upgrade logic.
+   Neither audited class routes through ordinary UnitActionRoleUpGrade.GetCompleteRate.
+   Therefore the current Player-Sect ordinary 100% completion helper must NOT be claimed to cover
+   Rule/Elder special breakthrough classes.
+
+====================================================================================================
+2. BOUTEXHAUSTED — EXACT V60 PAYLOAD SET AND RATE
+====================================================================================================
+
+V18 mapped:
+  WorldFactory.CreateEffectSpecialBase      @ 0x0565E9D4
+  literal branch "boutExhausted"            ~ 0x05660D98
+  WorldUnitEffectSpecialBoutExhausted.Create @ 0x05553958
+
+Runtime fields:
+  BoutExhausted.rate +0x80
+  BoutExhausted.key  +0x88
+
+Create semantics:
+  configured special values[0] -> integer rate
+  configured special values[1] -> log key
+
+V19 directly parsed the V60 metadata string-literal table and found exactly four literals beginning
+with "boutExhausted_":
+
+  #155215  boutExhausted_5000_exhaustedLog90010022
+  #155216  boutExhausted_5000_exhaustedLog90020011
+  #155217  boutExhausted_5000_exhaustedLog90020021
+  #155218  boutExhausted_5000_exhaustedLog90020031
+
+The matching standalone log-key literals also exist:
+  exhaustedLog90010022
+  exhaustedLog90020011
+  exhaustedLog90020021
+  exhaustedLog90020031
+
+Since RunUnit uses:
+  Random(0,10000)
+and integer max is exclusive:
+  random = 0..9999
+
+For one active one of these effects:
+  P(BoutExhausted intercept) = 5000 / 10000 = 0.5 = 50%.
+
+For N simultaneously active matching effects:
+  P(any intercept) = 1 - product_i(1 - rate_i/10000)
+
+If all N use the observed 5000 rate:
+  N=1 -> 50%
+  N=2 -> 75%
+  N=3 -> 87.5%
+  N=4 -> 93.75%
+
+IMPORTANT:
+This does NOT mean every NPC has a permanent 50% skip chance.
+The effect must first be attached/active on that WorldUnit.
+V19 proves the configured payload values, not the runtime prevalence of the effect.
+
+====================================================================================================
+3. BOUTEXHAUSTED SOURCE FAMILY — ROLE FEATURE CORRELATION
+====================================================================================================
+
+The same V60 literal pool contains explicit postnatal role-feature localization keys:
+
+  role_feature_postnatal_name9001002
+  role_feature_postnatal_tips9001002
+
+  role_feature_postnatal_name9002001
+  role_feature_postnatal_name9002002
+  role_feature_postnatal_name9002003
+  role_feature_postnatal_tips9002001
+  role_feature_postnatal_tips9002002
+  role_feature_postnatal_tips9002003
+
+It also contains:
+  90010021|90010022
+  90020011|90020012
+  9002001_1000|9002002_1000|9002003_1000
+
+and feature-condition / clear-feature expressions referencing:
+  feature_0_9002001
+  feature_0_9002002
+  feature_0_9002003
+  clearFeature_9002001
+  clearFeature_9002002
+  clearFeature_9002003
+
+The BoutExhausted log keys share the same numeric families:
+  exhaustedLog90010022  <-> 9001002 family
+  exhaustedLog90020011  <-> 9002001 family
+  exhaustedLog90020021  <-> 9002002 family
+  exhaustedLog90020031  <-> 9002003 family
+
+This is strong naming/config-family correlation that BoutExhausted is associated with these
+postnatal feature families.
+
+However, the exact live ConfRoleCreateFeatureItem row mapping:
+  feature ID -> effect ID -> ConfRoleEffectItem.value
+has not been recovered from the current lib/metadata pair alone.
+
+Therefore:
+  GREEN: four exact BoutExhausted payload strings and rate=5000.
+  GREEN: postnatal feature keys 9001002 and 9002001/2/3 exist.
+  YELLOW/HIGH: exact one-to-one attachment source row for each payload.
+
+Do NOT globally delete these features or special effects on the basis of naming alone.
+
+====================================================================================================
+4. ACTION1052-1055 — THEY ARE SEPARATE GOAL/ACTION FAMILIES
+====================================================================================================
+
+V18 left a cautious question whether Goal141 could select other nearby numbered action classes.
+V19 closes that question.
+
+A) WorldUnitAIAction1052
+------------------------
+Methods:
+  UpdateWeightAdd  @ 0x055BC19C
+  CreateActionInit @ 0x055BC630
+  ActionStart      @ 0x055BC6E4
+  UnitActionToUnit @ 0x055BC988
+
+Its UpdateWeightAdd reads ConfNpcGoal142 configuration.
+Its fixed-target path constructs:
+  UnitActionRoleHelpSeekProp::.ctor @ 0x054D54A4
+
+Conclusion:
+  Action1052 belongs to the Goal142/help-seek-prop family.
+  It is not an alternate Goal141 major-breakthrough material action.
+
+B) WorldUnitAIAction1053
+------------------------
+Methods:
+  UpdateWeightAdd  @ 0x055BCDC0
+  CreateActionInit @ 0x055BD22C
+  ActionStart      @ 0x055BD2A0
+  UnitActionToUnit @ 0x055BD2D8
+
+UnitActionToUnit constructs:
+  UnitActionRoleJealous::.ctor @ 0x054E233C
+
+Conclusion:
+  social/jealousy behavior, unrelated to Goal141 material progression.
+
+C) WorldUnitAIAction1054
+------------------------
+Methods:
+  UpdateWeightAdd  @ 0x055BD810
+  CreateActionInit @ 0x055BDC7C
+  ActionStart      @ 0x055BDCF0
+  UnitActionToUnit @ 0x055BDD14
+
+The path uses:
+  WorldUnitAIGoal144.GetAllSkill
+and constructs:
+  UnitActionRoleTeachSkill::.ctor @ 0x05518A54
+
+Conclusion:
+  Goal144/teach-skill family, unrelated to Goal141 material progression.
+
+D) WorldUnitAIAction1055
+------------------------
+Methods:
+  CreateActionInit @ 0x055BDFC8
+  ActionStart      @ 0x055BDFD0
+  .ctor            @ 0x055BE830
+
+ActionStart reads ConfNpcGoal145 grade-weight/success configuration and performs item/reward/log logic.
+
+Conclusion:
+  Goal145-style reward/item behavior, not Goal141 seek-upgrade.
+
+E) Correct Goal141 family
+-------------------------
+The direct V18 chain remains valid:
+
+  WorldUnitAIGoal141
+      -> WorldUnitAIAction1051
+      -> UnitActionRoleSeekUpGrade
+
+No Action1052-1055 detour is needed to explain the mapped major-breakthrough material route.
+
+====================================================================================================
+5. seekGradeNeedNum — V18 FAILURE-COUNTER INTERPRETATION IS WRONG
+====================================================================================================
+
+Action:
+  UnitActionRoleSeekUpGrade
+
+Important fields:
+  target WorldUnit          inherited +0x38
+  isTargetComplete          +0x9A
+  isDungeonComplete         +0x9B
+  isRob                     +0x9C
+  isRobIdea                 +0x9D
+  isRobComplete             +0x9E
+  itemGrade                 +0xA0
+  targetGradeId             +0xA4
+  targetPropId              +0xA8
+  isUpGrade                 +0xAC
+
+OnEnd:
+  UnitActionRoleSeekUpGrade.OnEnd @ 0x0550C334
+
+Critical checks:
+  0x0550C3BC  reads isTargetComplete
+  0x0550C3D0  reads isDungeonComplete
+
+Only when both are true does this path build the progression callback that reaches:
+  UnitActionRoleSeekUpGrade.<OnEnd>b__17_0 @ 0x055105C0
+
+Thus:
+  first target gate fail  -> no progression callback
+  dungeon gate fail       -> no normal successful-seek callback
+  both complete           -> callback becomes reachable
+
+Inside b__17_0, the ordinary pure-NPC path excludes player-involved cases and then obtains:
+  WorldUnitAIDataBase
+
+Counter operations:
+  0x05510824  LDRB W8,[AIData,#0x158]
+  0x0551082C  ADD  W22,W8,#1
+  0x05510830  STRB W22,[AIData,#0x158]
+
+Then:
+  ConfNpcGoal141Base.seekGradeNeedNum is read
+  current patch site 0x05510854 -> custom helper 0x08C7879C
+  exact current Player-Sect threshold = 1
+
+When the incremented counter reaches the threshold, native:
+  UnitActionRoleSeekUpGrade.<OnEnd>g__AddUpGradeProps|17_1 @ 0x055109C4
+can be called.
+
+A later branch can reset the same counter:
+  0x055109A8  STRB WZR,[AIData,#0x158]
+
+CORRECT SEMANTIC DESCRIPTION:
+  +0x158 is a successful qualifying seek count for this mapped NPC->NPC upgrade route.
+
+It is NOT supported to call it:
+  "number of failed seeks."
+
+This corrects V18 sections that described:
+  failed seek -> counter++ -> fallback.
+
+The corrected model is:
+  successful target cooperation
+      -> successful dungeon
+      -> successful-seek callback
+      -> counter++
+      -> if counter >= seekGradeNeedNum
+           native AddUpGradeProps can supply required configured material.
+
+With current Player-Sect threshold=1:
+  ONE qualifying successful seek is sufficient.
+
+====================================================================================================
+6. WHY THE FIRST TARGET/COOPERATION GATE IS NOW THE MAIN MAPPED DELAY
+====================================================================================================
+
+UnitActionRoleSeekUpGrade.NPCToNPCAction @ 0x0550D7D4
+
+FIRST gate:
+  base:
+    ConfNpcGoal141Base.okBaseRate
+
+Native modifiers include:
+  npcGradeRate1/2/3
+  itemGradeRate1/2/3
+  beautyRate1..7
+  intimAddRate
+  familyAddRate
+  Action1051 trait/config context
+
+First draw:
+  Random(0,100) @ 0x0550E290
+
+Result:
+  isTargetComplete store @ 0x0550E29C
+
+If random >= computed first threshold:
+  the code leaves before the second/dungeon success path.
+
+SECOND gate:
+  Random(0,100) @ 0x0550E2C4
+
+Current exact Player-Sect helper:
+  hook site 0x0550E378 -> 0x08C78770
+  selected dungeon threshold -> 100
+
+Result:
+  isDungeonComplete @ 0x0550E380
+
+Therefore:
+
+CASE A — first gate FAILS
+  isTargetComplete = false
+  -> dungeon 100% helper is irrelevant
+  -> successful-seek callback not created/invoked
+  -> +0x158 does not increment
+  -> seekGradeNeedNum=1 does not activate AddUpGradeProps this attempt
+
+CASE B — first gate PASSES
+  -> second gate reached
+  -> Player-Sect dungeon threshold = 100
+  -> isDungeonComplete becomes true
+  -> successful-seek callback can run
+  -> +0x158 becomes 1
+  -> threshold 1 allows AddUpGradeProps immediately
+
+This makes the first target/cooperation RNG the strongest remaining RANDOM delay in the mapped
+ordinary NPC->NPC Goal141 -> Action1051 material route.
+
+This does NOT yet justify globally forcing it to 100, because its threshold intentionally contains
+social/grade/beauty/relationship logic and the same action family may be used in contexts that
+should remain native.
+
+====================================================================================================
+7. SPECIAL UPGRADE CLASSES — ORDINARY 100% COMPLETE HELPER DOES NOT COVER THEM
+====================================================================================================
+
+The existing Player-Sect 100% ordinary breakthrough helper hooks:
+  UnitActionRoleUpGrade.GetCompleteRate @ 0x055271B4
+
+That guarantee is valid for ordinary UnitActionRoleUpGrade.
+
+V19 audited two separate subclasses/families.
+
+A) UnitActionRoleUpGradeElder
+-----------------------------
+Relevant methods:
+  IsPassElderDungeon @ 0x0552C30C
+  OnCreate           @ 0x0552C3D0
+  IsUpgradeElder     @ 0x0552D4E8
+
+The audited path handles its own Elder eligibility/dungeon/config/material logic and ultimately calls:
+  UnitActionRoleUpGrade.ActionUpGradeComplete @ call site 0x0552D32C
+
+No call to ordinary:
+  UnitActionRoleUpGrade.GetCompleteRate @ 0x055271B4
+was found in the audited Elder path.
+
+Conclusion:
+  ordinary Player-Sect GetCompleteRate=100 must NOT be claimed to cover Elder upgrade semantics.
+
+B) UnitActionRoleUpGradeRule
+----------------------------
+Relevant methods:
+  IsRule   @ 0x0552F310 / 0x05530D2C
+  OnCreate @ 0x0552F830
+
+The Rule path contains its own Random calls, including:
+  CommonTool.Random @ 0x055304A4
+
+and ultimately:
+  UnitActionRoleUpGrade.ActionUpGradeComplete @ call site 0x05530ACC
+
+No direct call to ordinary UnitActionRoleUpGrade.GetCompleteRate was found in the audited Rule path.
+
+The Random at 0x055304A4 is associated with Rule-specific config/effect handling and must NOT be
+blindly labeled "breakthrough complete rate" without another semantic pass.
+
+Conclusion:
+  Rule is also a separate probability/eligibility family.
+
+Practical scope correction:
+  current "eligible breakthrough success 100%" is GREEN for ordinary UnitActionRoleUpGrade,
+  but special Elder/Rule classes remain separate and should be mapped/treated independently.
+
+====================================================================================================
+8. REVISED PLAYER-SECT MAJOR-PROGRESSION PIPELINE AFTER V19
+====================================================================================================
+
+Selected Player-Sect NPC
+  |
+  v
+RunUnit attempt quota floor ~= 19
+  |
+  v
+outer goal candidate score/weighted selection
+  |
+  +--> Goal141 priority / grid route x20 already active
+  |
+  v
+BoutExhausted active?
+  |
+  +--> no / 50% effect roll misses
+  |      -> CreateGoal continues
+  |
+  +--> active effect roll hits
+         -> special log/callback
+         -> selected normal goal skipped for that attempt
+
+Goal141.CreateGoalInit
+  |
+  +--> family / friend / enemy / grid target pool
+  |
+  v
+Action1051
+  |
+  +--> Player-Sect weight boost x20
+  |
+  v
+UnitActionRoleSeekUpGrade.NPCToNPCAction
+  |
+  +--> FIRST target/cooperation Random(0,100)
+  |        FAIL -> stop; no seek counter increment
+  |        PASS
+  |          |
+  |          v
+  |      SECOND dungeon Random(0,100)
+  |        Player-Sect threshold=100
+  |          |
+  |          v
+  |      isTargetComplete && isDungeonComplete
+  |          |
+  |          v
+  |      successful-seek callback
+  |          |
+  |          v
+  |      AIData +0x158++
+  |          |
+  |          v
+  |      seekGradeNeedNum=1
+  |          |
+  |          v
+  |      native AddUpGradeProps may grant required configured material
+  |
+  v
+ordinary UnitActionRoleUpGrade
+  |
+  +--> exact Player-Sect GetCompleteRate=100
+  |
+  v
+ordinary breakthrough completes
+
+Special Rule/Elder upgrade classes diverge from this ordinary completion-rate step and remain native
+separate paths.
+
+====================================================================================================
+9. PATCH IMPLICATION AFTER V19
+====================================================================================================
+
+DO NOT PATCH YET:
+  - do not increase quota above 19;
+  - do not force BoutExhausted.rate globally;
+  - do not delete role features 9001002 / 9002001/2/3 globally;
+  - do not change seekGradeNeedNum lower than 1 (1 is already immediate after first qualifying seek);
+  - do not patch passSufferingProb;
+  - do not globally force first target/cooperation threshold to 100;
+  - do not claim Rule/Elder are already guaranteed by ordinary GetCompleteRate=100.
+
+Why:
+  - V19 shows seekGradeNeedNum is already as aggressive as useful: threshold 1.
+  - failure before that counter is the first target gate, not "too many failed seeks required."
+  - a broad first-gate patch would erase relationship/grade/beauty mechanics for unrelated NPCs.
+  - BoutExhausted 50% is meaningful when active, but runtime attachment prevalence/source rows are not
+    yet completely mapped.
+
+If a future patch is justified, the safest candidate architecture is likely:
+  exact current Player-Sect
+  AND Action1051 / UnitActionRoleSeekUpGrade
+  AND isUpGrade=true
+  AND pure NPC->NPC route
+  -> selectively increase/min-floor only the FIRST target/cooperation threshold.
+
+That is far narrower than changing CommonTool.Random, ConfNpcGoal141 globally, or all social actions.
+
+====================================================================================================
+10. BEST NEXT MAPPING TARGET — V20
+====================================================================================================
+
+Priority 1 — exact BoutExhausted attachment row/source
+  Recover the live ConfRoleCreateFeatureItem -> effect -> ConfRoleEffectItem mapping for:
+    9001002
+    9002001
+    9002002
+    9002003
+  and prove which exact role features create each 5000-rate BoutExhausted entry.
+
+Priority 2 — first target-gate formula and safe scope
+  Fully name each term contributing to W22 before 0x0550E290 and map min/max/range behavior.
+  Determine whether a Player-Sect-only first-gate floor can be applied only when:
+    UnitActionRoleSeekUpGrade.isUpGrade == true
+    actor != player
+    target != player
+  without changing ask/help/social gameplay.
+
+Priority 3 — runtime feature prevalence
+  Identify how often normal generated Player-Sect NPCs can carry 9001002 / 9002001/2/3 and whether
+  these features are temporary, permanent, mutually exclusive, or removable.
+
+Priority 4 — Rule/Elder completion semantics
+  Classify Rule Random branches and Elder dungeon eligibility precisely.
+  Only then decide whether special upgrade classes need a separate Player-Sect success helper.
+
+Priority 5 — successful-seek counter lifecycle
+  Map all reset/decrement/clear sites for WorldUnitAIDataBase +0x158 and prove whether it survives
+  months, failed attempts, target changes, and realm transitions.
+
+====================================================================================================
+11. V19 CONFIDENCE TABLE
+====================================================================================================
+
+GREEN / VERY HIGH
+-----------------
+- Matching V60 lib and metadata identity.
+- Exactly four metadata literals beginning boutExhausted_.
+- All four encode rate=5000.
+- RunUnit interprets rate=5000 as 50% per active effect.
+- Goal141 -> Action1051 -> UnitActionRoleSeekUpGrade is the direct mapped family.
+- Action1052 -> UnitActionRoleHelpSeekProp / Goal142 family.
+- Action1053 -> UnitActionRoleJealous.
+- Action1054 -> UnitActionRoleTeachSkill / Goal144 family.
+- Action1055 uses Goal145-style reward logic.
+- OnEnd checks isTargetComplete and isDungeonComplete before progression callback.
+- Pure NPC->NPC successful callback increments AIData +0x158.
+- seekGradeNeedNum=1 is compared AFTER that increment.
+- First target-gate failure does not advance the successful-seek counter.
+- Ordinary Player-Sect dungeon threshold remains 100 once second gate is reached.
+- Elder/Rule audited paths do not call ordinary UnitActionRoleUpGrade.GetCompleteRate.
+
+GREEN / HIGH
+------------
+- +0x158 is a successful qualifying seek count in the mapped ordinary NPC->NPC isUpGrade path.
+- The first target/cooperation RNG is currently the strongest random delay in that mapped route.
+- Rule/Elder need separate success analysis from ordinary UnitActionRoleUpGrade.
+
+YELLOW / NEXT
+-------------
+- Exact live config row linking each postnatal feature ID to each BoutExhausted payload.
+- Runtime prevalence and duration of BoutExhausted-carrying postnatal features.
+- Exact gameplay meaning of every Rule-specific Random branch.
+- Exact Elder special completion/dungeon probability semantics.
+- Full lifecycle/reset semantics of AIData +0x158 beyond the mapped OnEnd path.
+
+====================================================================================================
+END V19 — STATIC MAPPING ONLY; CURRENT SMART_PHASE_AGGRESSIVE_CATCHUP_FCFIX_V2-1 BINARY UNCHANGED
+====================================================================================================

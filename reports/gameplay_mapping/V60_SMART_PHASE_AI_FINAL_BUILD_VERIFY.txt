@@ -1,0 +1,22 @@
+TALE OF IMMORTAL V60 SMART PHASE AI — FINAL BUILD VERIFY
+=========================================================
+ZIP: Tale_of_Immortal_ARM64_v60_SMART_PHASE_AI_TEST.zip
+ZIP SHA256: 6d8d678fec4c45d9c9d66c10c63c80891531a43b9a1f71f284b14fabc19f202e
+
+BASE LIB SHA256:
+  c8c8e7ba9f4480d520c933e81c703f4286bb6a81e8528c1a1b2886168dcece06
+PATCHED LIB SHA256:
+  be6a1f7e61e7cf6b85da3158b8b73712e83b93ac8d9111463502ad9bd9ec7fc9
+
+PASS: ZIP lib size 0x8A40BA0
+PASS: appended 0x340 bytes exactly equal audited prototype
+PASS: custom RX p_filesz 0xBA0
+PASS: custom RX p_memsz  0xBA0
+PASS: custom RX align    0x4000
+PASS: Action1031 hook A6 23 DB 14 -> 0x08C78924
+PASS: Action1029 hook 7C 26 DB 94 -> 0x08C78988
+PASS: Action1004 hook 73 63 DB 94 -> 0x08C78A90
+PASS: common-length diff exactly constrained to 12 changed bytes across ELF size fields + 3 hook instructions
+PASS: no other pre-existing bytes changed
+
+STATUS: READY FOR DEVICE RUNTIME TEST
