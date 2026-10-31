@@ -1,31 +1,33 @@
-# LiteAPK Mod Menu v0.3.0 — development checkpoint
+# LiteAPK Mod Menu v0.3.0 — live progress
 
 Updated: 31 October 2026 (Asia/Jakarta).
 
-This continues the existing v0.2 menu and v0.3 SourceFix work. It is separate from the archived V60 patches. NPC editors remain excluded.
+## Current status
 
-## Current delivery status
+IN PROGRESS. The user reattached the original v0.3 SourceFix, v0.2 reference and tales.zip after a session filesystem reset. The pinned SourceFix archive was accepted and the continuation overlay applied successfully to that project. Android toolchain restoration and final matching DEX/native builds are underway. No final binary patch is published yet.
 
-**BLOCKED: the Work session resumed an older v0.1 filesystem snapshot.** The previously uploaded v0.2/v0.3 archives, reattached tales.zip, downloaded Android toolchain, and intermediate compiled outputs are no longer accessible in the resumed filesystem. Searches of saved files did not recover the three packages. No final v0.3 binary patch has been delivered. Do not install an earlier helper DEX with a new incompatible native library.
+This continues v0.2 and the existing v0.3 SourceFix. It does not restore V60 patches or add NPC editors. Do not install this development overlay directly in an APK.
 
-The next commits will preserve the original new editor code, targeted integration scripts, static findings, and host tests. They are a continuation overlay for the existing v0.3 SourceFix package, not a replacement game or standalone menu. Android recompilation and device tests remain required.
+## Preserved implementation
 
-## Work already performed before the session reset
+- Player currency transactions: Spirit Stones, personal contribution, City Token, distinct Immortal Store Token.
+- Player sect resources: treasury Int64, reputation Int32, faith Int64; personal contribution remains separate.
+- READ/SET/ADD/SUBTRACT, overflow/underflow guards, native before/after readback, sect scope confirmation.
+- Per-player serialized capacity bonus through the already installed DynInt getter. Effective capacity readback and occupied-item protection, accounting for the existing bag plugin.
+- Typed request IDs/receipts so catalog responses cannot replace edit results.
+- Localized item cache, bounded indexing, pagination and item confirmation.
+- Android contrast, detailed operation/managed exception context and diagnostic copy action.
 
-- Matching LiteAPK libil2cpp.so and metadata hashes verified; baseline was not patched.
-- Current native image and metadata dumped successfully with Il2CppDumper 6.7.46.
-- Inventory root cause traced: propGridNum base setter is a no-op. beibao adds a runtime delegate; editing its base value cannot persist extra slots.
-- New capacity implementation uses a player-specific serialized objData bonus through the already installed DynInt getter hook, actual effective-capacity readback, occupied-item protection, and existing bag UI refresh methods.
-- Currency paths separated: player Spirit Stones, personal contribution, City Token, Immortal Store Token, and the player's sect treasury/reputation/faith. Personal contribution is not totalSchoolMoney or sect treasury.
-- Per-request receipts prevent item catalog responses replacing edit results.
-- Localized item cache, pagination, explicit item confirmation, contrast improvements, and detailed exception context were implemented.
-- The updated native editor/runtime component compiled for ARM64; helper Java compiled to DEX. Subsequent JNI receipt API changes still require rebuilding the final matching pair. Intermediate outputs were lost in the session reset.
-- No new feature was tested on a phone. Previous v0.2 functionality is user-reported device verified only.
+## Validation in this checkpoint
 
-## Needed to resume the final binary build
+- Recovered editor code compiles with host g++17, -Wall -Wextra -Wpedantic -Werror.
+- 215 host checks passed (amount boundaries, capacity +50/+100/+200 plans, bag-plugin scaling, occupied-slot protection, concurrent receipts, method signature/token rejection, exception context, catalog queries).
+- These are host logic tests, not gameplay/device verification.
+- SourceFix continuation script applied successfully to the exact original archive SHA-256.
+- Final Android binaries still pending rebuild/validation. Previous intermediate native and Java compilations occurred before the reset; those outputs were not delivered.
 
-1. TaleOfImmortal_ModMenu_v0.3.0_SourceFix_BuildReady.zip
-2. TaleOfImmortal_LiteAPK_ModMenu_v0.2.0_TestBuild_Patch_Source.zip (compatibility/reference)
-3. tales.zip (or matching libil2cpp.so plus global-metadata.dat)
+## Required acceptance
 
-Do not upload these game packages or user saves to this public repository. Only original development code, reports, and tests belong here. Keep the user's working v0.2 APK and save untouched until the matching v0.3 binary patch is available.
+Rebuild classes2.dex and libtoimodmenu.so together, validate API/DEX/ELF, preserve the v0.2 main classes.dex and original libil2cpp.so, package the small binary ZIP, then run the phone checklist. Save/load and gameplay tests are not yet device verified.
+
+Game binaries, original APK contents and private saves must never be committed to this public repository.
