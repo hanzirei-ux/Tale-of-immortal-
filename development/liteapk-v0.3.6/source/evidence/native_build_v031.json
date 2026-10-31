@@ -1,0 +1,8 @@
+{
+  "version": "0.3.1",
+  "kind": "native",
+  "source_revision": "1fe1aed4e1cd614e6f13086c8e68755a5bd3ae8e6bab1a9be5aef367ab6ecefd",
+  "artifact_sha256": "ab57ba9bbe67c9b59f288b23eb92cacc7273c086ea7519e57cde741b8cc2f729",
+  "bytes": 711848,
+  "device_tested": false
+}

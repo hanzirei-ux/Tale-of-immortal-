@@ -1,0 +1,24 @@
+v0.3.6 — Full Catalog schema / DEX-only update over v0.3.2
+SOURCE IMPLEMENTED / HOST TESTED / COMPILED — NOT DEVICE VERIFIED
+Native full-table collector: NOT IMPLEMENTED / BLOCKED_NATIVE.
+
+- Reused v0.3.2 Java UI, pager, generation/request guards, file worker and Save JSONL.
+- Added Export Full Catalog, percentage/current-table/item/record progress and warnings.
+- Versioned JSONL with per-field evidence status and separate metadata/observed-type
+  namespaces. Realm, Type, Subtype, Level, Grade, Rarity and cultivation quality remain
+  independent; unsupported fields remain null.
+- Embedded only 3284 reference IDs and verified metadata schemas/enum facts. No names,
+  game assets, saves or speculative configuration values embedded.
+- Added baseline ID coverage guard, supported-scope completion manifest and partial
+  cleanup. Existing legacy exporter serialization remains byte-identical to v0.3.2.
+- Added parser/merge, separate JSONL partitions, CSV filter columns and JSON Schema.
+  UNKNOWN cannot erase confirmed values; verified conflicts stop normalization.
+- Audited 14 global metadata schemas, six PropsType constants and 30 getter/list
+  contracts. Nested MartialInfoData excluded. No tokens treated as runtime addresses.
+- Existing native source/SO, JNI4/19 native methods, combat/player editors/currency/
+  capacity and prior stable repository directories remain unchanged.
+
+Current JNI catalog exposes four columns and skips hidden items. Full native data
+(Realm names/phase/quality, language dictionaries/descriptions, subtype/rarity/grade
+joins, skill/manual configuration and existing Manual instances) is not collected.
+Read COLLECTOR_LIMITS.txt. No optional native SO is supplied in this release.

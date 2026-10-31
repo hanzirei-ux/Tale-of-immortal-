@@ -1,0 +1,42 @@
+{
+  "status": "COMPILED \u2014 NOT DEVICE TESTED",
+  "device_tested": false,
+  "helper_dex": {
+    "size": 86436,
+    "sha256": "7e1f65e069785ab12ed89479c7e74cff6ad8fbcdc21351622354dea6b67a9ac9",
+    "version": "035",
+    "class_count": 70,
+    "method_reference_count": 697
+  },
+  "native": {
+    "sha256": "ab57ba9bbe67c9b59f288b23eb92cacc7273c086ea7519e57cde741b8cc2f729",
+    "size": 711848,
+    "abi": "arm64-v8a",
+    "needed": [
+      "libdl.so",
+      "liblog.so",
+      "libm.so",
+      "libc.so"
+    ],
+    "jni_methods_exported": 19,
+    "load_alignment": 16384,
+    "relro": true,
+    "executable_stack": false
+  },
+  "game_profile_sites_verified": null,
+  "note": "This component-only check does not repeat the private baseline/primary DEX audit.",
+  "version": "0.3.2",
+  "source_revision": "1077d91ad1ebc96ef31cc9eb264dc0a0a29b456b72a3b818bda598210b62a35d",
+  "native_recompiled": false,
+  "native_origin_commit": "069f30c01227dd2ecdc5fab63bfafb17243bf1c2",
+  "native_source_files_unchanged": 27,
+  "native_in_patch": false,
+  "compiled_exporter_classes": [
+    "CatalogDocumentFragment",
+    "CatalogExportGuard",
+    "CatalogFileCopy",
+    "ReadOnlyCatalogExport"
+  ],
+  "compiled_exporter_entrypoints_present": true,
+  "v031_dex_native_methods_identical": true
+}

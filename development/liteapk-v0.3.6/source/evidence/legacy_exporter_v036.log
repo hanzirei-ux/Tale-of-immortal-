@@ -1,0 +1,3 @@
+PASS: 83-row export, JSON quoting, size/offset guards, incomplete-page recovery, duplicate guard, partial cleanup
+PASS v0.3.2: 90 exporter/guard/file-copy checks; NOT DEVICE TESTED
+PASS: actual Java JSONL parsed by Python; 1,643 unique rows, Unicode, explicit unknowns, exact fallback keys.

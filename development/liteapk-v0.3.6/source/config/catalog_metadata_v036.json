@@ -1,0 +1,1562 @@
+{
+  "version": "0.3.6",
+  "library_sha256": "c477a5637b89f78ca449ff65ad4c9137296ba680923b602db50831ecb5901099",
+  "metadata_sha256": "9be3762476a87e8be23e3fa589b44f084027a5c7f1ff78b9be5f013fb5d131b3",
+  "registration_mapping_reused": true,
+  "item_types": [
+    {
+      "kind": "item_type",
+      "id": 0,
+      "name": "Money",
+      "source_table": "PropsType",
+      "status": "VERIFIED_METADATA",
+      "field_status": {
+        "id": "VERIFIED_METADATA",
+        "name": "VERIFIED_METADATA",
+        "source_table": "VERIFIED_METADATA"
+      },
+      "official_scope": "Metadata enum only; relationship to ConfItemProps.type is not verified. Not localized ConfItemType data."
+    },
+    {
+      "kind": "item_type",
+      "id": 1,
+      "name": "Pill",
+      "source_table": "PropsType",
+      "status": "VERIFIED_METADATA",
+      "field_status": {
+        "id": "VERIFIED_METADATA",
+        "name": "VERIFIED_METADATA",
+        "source_table": "VERIFIED_METADATA"
+      },
+      "official_scope": "Metadata enum only; relationship to ConfItemProps.type is not verified. Not localized ConfItemType data."
+    },
+    {
+      "kind": "item_type",
+      "id": 2,
+      "name": "Martial",
+      "source_table": "PropsType",
+      "status": "VERIFIED_METADATA",
+      "field_status": {
+        "id": "VERIFIED_METADATA",
+        "name": "VERIFIED_METADATA",
+        "source_table": "VERIFIED_METADATA"
+      },
+      "official_scope": "Metadata enum only; relationship to ConfItemProps.type is not verified. Not localized ConfItemType data."
+    },
+    {
+      "kind": "item_type",
+      "id": 3,
+      "name": "Equip",
+      "source_table": "PropsType",
+      "status": "VERIFIED_METADATA",
+      "field_status": {
+        "id": "VERIFIED_METADATA",
+        "name": "VERIFIED_METADATA",
+        "source_table": "VERIFIED_METADATA"
+      },
+      "official_scope": "Metadata enum only; relationship to ConfItemProps.type is not verified. Not localized ConfItemType data."
+    },
+    {
+      "kind": "item_type",
+      "id": 5,
+      "name": "Material",
+      "source_table": "PropsType",
+      "status": "VERIFIED_METADATA",
+      "field_status": {
+        "id": "VERIFIED_METADATA",
+        "name": "VERIFIED_METADATA",
+        "source_table": "VERIFIED_METADATA"
+      },
+      "official_scope": "Metadata enum only; relationship to ConfItemProps.type is not verified. Not localized ConfItemType data."
+    },
+    {
+      "kind": "item_type",
+      "id": 6,
+      "name": "Other",
+      "source_table": "PropsType",
+      "status": "VERIFIED_METADATA",
+      "field_status": {
+        "id": "VERIFIED_METADATA",
+        "name": "VERIFIED_METADATA",
+        "source_table": "VERIFIED_METADATA"
+      },
+      "official_scope": "Metadata enum only; relationship to ConfItemProps.type is not verified. Not localized ConfItemType data."
+    }
+  ],
+  "contracts": [
+    {
+      "kind": "metadata_contract",
+      "section": "localization",
+      "owner": "ConfLocalTextItem",
+      "image": "Assembly-CSharp.dll",
+      "type_index": 3461,
+      "fields": [
+        {
+          "name": "key",
+          "type": "System.String",
+          "metadata_field_index": 11642,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "ch",
+          "type": "System.String",
+          "metadata_field_index": 11643,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "tc",
+          "type": "System.String",
+          "metadata_field_index": 11644,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "en",
+          "type": "System.String",
+          "metadata_field_index": 11645,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "kr",
+          "type": "System.String",
+          "metadata_field_index": 11646,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        }
+      ],
+      "status": "VERIFIED_METADATA",
+      "data_values_available": false,
+      "note": "Global type schema only; field definitions are not configuration rows or runtime offsets"
+    },
+    {
+      "kind": "metadata_contract",
+      "section": "skill_templates",
+      "owner": "ConfBattleSkillBaseItem",
+      "image": "Assembly-CSharp.dll",
+      "type_index": 3852,
+      "fields": [
+        {
+          "name": "mainSkill",
+          "type": "System.Int32",
+          "metadata_field_index": 12451,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "className",
+          "type": "System.String",
+          "metadata_field_index": 12452,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "phycicalDmg",
+          "type": "System.String",
+          "metadata_field_index": 12453,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "weaponType",
+          "type": "System.Int32",
+          "metadata_field_index": 12454,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "magicDmg",
+          "type": "System.String",
+          "metadata_field_index": 12455,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "magicType",
+          "type": "System.Int32",
+          "metadata_field_index": 12456,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "crit",
+          "type": "System.String",
+          "metadata_field_index": 12457,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "chargeValue",
+          "type": "System.Int32",
+          "metadata_field_index": 12458,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "missileID",
+          "type": "System.Int32",
+          "metadata_field_index": 12459,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "shotCD",
+          "type": "System.String",
+          "metadata_field_index": 12460,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "skillEffect",
+          "type": "System.String",
+          "metadata_field_index": 12461,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "skillDire",
+          "type": "System.String",
+          "metadata_field_index": 12462,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "offsetPosi",
+          "type": "System.String",
+          "metadata_field_index": 12463,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "shotPos",
+          "type": "System.Int32",
+          "metadata_field_index": 12464,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "loadTime",
+          "type": "System.Int32",
+          "metadata_field_index": 12465,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "skillSub",
+          "type": "System.String",
+          "metadata_field_index": 12466,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        }
+      ],
+      "status": "VERIFIED_METADATA",
+      "data_values_available": false,
+      "note": "Global type schema only; field definitions are not configuration rows or runtime offsets"
+    },
+    {
+      "kind": "metadata_contract",
+      "section": "skill_templates",
+      "owner": "ConfBattleSkillLevelItem",
+      "image": "Assembly-CSharp.dll",
+      "type_index": 3872,
+      "fields": [
+        {
+          "name": "grade",
+          "type": "System.Int32",
+          "metadata_field_index": 12585,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "gradeA",
+          "type": "System.Int32",
+          "metadata_field_index": 12586,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "gradeB",
+          "type": "System.Int32",
+          "metadata_field_index": 12587,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "gradeC",
+          "type": "System.Int32",
+          "metadata_field_index": 12588,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "gradeD",
+          "type": "System.Int32",
+          "metadata_field_index": 12589,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        }
+      ],
+      "status": "VERIFIED_METADATA",
+      "data_values_available": false,
+      "note": "Global type schema only; field definitions are not configuration rows or runtime offsets"
+    },
+    {
+      "kind": "metadata_contract",
+      "section": "skill_templates",
+      "owner": "ConfBattleSkillPrefixNameItem",
+      "image": "Assembly-CSharp.dll",
+      "type_index": 3878,
+      "fields": [
+        {
+          "name": "index",
+          "type": "System.Int32",
+          "metadata_field_index": 12605,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "text",
+          "type": "System.String",
+          "metadata_field_index": 12606,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "tc",
+          "type": "System.String",
+          "metadata_field_index": 12607,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "en",
+          "type": "System.String",
+          "metadata_field_index": 12608,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "kr",
+          "type": "System.String",
+          "metadata_field_index": 12609,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        }
+      ],
+      "status": "VERIFIED_METADATA",
+      "data_values_available": false,
+      "note": "Global type schema only; field definitions are not configuration rows or runtime offsets"
+    },
+    {
+      "kind": "metadata_contract",
+      "section": "skill_templates",
+      "owner": "ConfBattleSkillPrefixValueItem",
+      "image": "Assembly-CSharp.dll",
+      "type_index": 3880,
+      "fields": [
+        {
+          "name": "skillType",
+          "type": "System.Int32",
+          "metadata_field_index": 12611,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "skillID",
+          "type": "ARRAY",
+          "metadata_field_index": 12612,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "number",
+          "type": "System.Int32",
+          "metadata_field_index": 12613,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "require",
+          "type": "System.String",
+          "metadata_field_index": 12614,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "multi",
+          "type": "System.Int32",
+          "metadata_field_index": 12615,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "basRequire",
+          "type": "System.String",
+          "metadata_field_index": 12616,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "talent",
+          "type": "System.String",
+          "metadata_field_index": 12617,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "abilityPoint",
+          "type": "System.String",
+          "metadata_field_index": 12618,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "weight1",
+          "type": "System.Int32",
+          "metadata_field_index": 12619,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "weight2",
+          "type": "System.Int32",
+          "metadata_field_index": 12620,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "weight3",
+          "type": "System.Int32",
+          "metadata_field_index": 12621,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "weight4",
+          "type": "System.Int32",
+          "metadata_field_index": 12622,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "weight5",
+          "type": "System.Int32",
+          "metadata_field_index": 12623,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "weight6",
+          "type": "System.Int32",
+          "metadata_field_index": 12624,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "weight7",
+          "type": "System.Int32",
+          "metadata_field_index": 12625,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "weight8",
+          "type": "System.Int32",
+          "metadata_field_index": 12626,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "weight9",
+          "type": "System.Int32",
+          "metadata_field_index": 12627,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "weight10",
+          "type": "System.Int32",
+          "metadata_field_index": 12628,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "weight11",
+          "type": "System.Int32",
+          "metadata_field_index": 12629,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "desc",
+          "type": "System.String",
+          "metadata_field_index": 12630,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "equipEffect",
+          "type": "System.String",
+          "metadata_field_index": 12631,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "skillEffect",
+          "type": "System.String",
+          "metadata_field_index": 12632,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "prefixKey",
+          "type": "System.String",
+          "metadata_field_index": 12633,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "selectType",
+          "type": "System.Int32",
+          "metadata_field_index": 12634,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        }
+      ],
+      "status": "VERIFIED_METADATA",
+      "data_values_available": false,
+      "note": "Global type schema only; field definitions are not configuration rows or runtime offsets"
+    },
+    {
+      "kind": "metadata_contract",
+      "section": "items",
+      "owner": "ConfClothItemItem",
+      "image": "Assembly-CSharp.dll",
+      "type_index": 4034,
+      "fields": [
+        {
+          "name": "clothID",
+          "type": "System.Int32",
+          "metadata_field_index": 13198,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "sex",
+          "type": "System.Int32",
+          "metadata_field_index": 13199,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "style",
+          "type": "System.Int32",
+          "metadata_field_index": 13200,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "color",
+          "type": "System.Int32",
+          "metadata_field_index": 13201,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "modelID",
+          "type": "System.Int32",
+          "metadata_field_index": 13202,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "itemCost",
+          "type": "ARRAY",
+          "metadata_field_index": 13203,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "weight",
+          "type": "System.Int32",
+          "metadata_field_index": 13204,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        }
+      ],
+      "status": "VERIFIED_METADATA",
+      "data_values_available": false,
+      "note": "Global type schema only; field definitions are not configuration rows or runtime offsets"
+    },
+    {
+      "kind": "metadata_contract",
+      "section": "books",
+      "owner": "ConfItemBookItem",
+      "image": "Assembly-CSharp.dll",
+      "type_index": 4374,
+      "fields": [
+        {
+          "name": "type",
+          "type": "System.Int32",
+          "metadata_field_index": 15229,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "desc",
+          "type": "System.String",
+          "metadata_field_index": 15230,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "title",
+          "type": "System.String",
+          "metadata_field_index": 15231,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        }
+      ],
+      "status": "VERIFIED_METADATA",
+      "data_values_available": false,
+      "note": "Global type schema only; field definitions are not configuration rows or runtime offsets"
+    },
+    {
+      "kind": "metadata_contract",
+      "section": "items",
+      "owner": "ConfItemHorseItem",
+      "image": "Assembly-CSharp.dll",
+      "type_index": 4394,
+      "fields": [
+        {
+          "name": "effectValue",
+          "type": "System.String",
+          "metadata_field_index": 15268,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "feature",
+          "type": "System.String",
+          "metadata_field_index": 15269,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "model",
+          "type": "System.String",
+          "metadata_field_index": 15270,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "mapMoveSounds",
+          "type": "System.String",
+          "metadata_field_index": 15271,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "desc",
+          "type": "System.String",
+          "metadata_field_index": 15272,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "grade",
+          "type": "System.Int32",
+          "metadata_field_index": 15273,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        }
+      ],
+      "status": "VERIFIED_METADATA",
+      "data_values_available": false,
+      "note": "Global type schema only; field definitions are not configuration rows or runtime offsets"
+    },
+    {
+      "kind": "metadata_contract",
+      "section": "items",
+      "owner": "ConfItemPropsItem",
+      "image": "Assembly-CSharp.dll",
+      "type_index": 4408,
+      "fields": [
+        {
+          "name": "name",
+          "type": "System.String",
+          "metadata_field_index": 15316,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "type",
+          "type": "System.Int32",
+          "metadata_field_index": 15317,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "className",
+          "type": "System.Int32",
+          "metadata_field_index": 15318,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "hide",
+          "type": "System.Int32",
+          "metadata_field_index": 15319,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "playerShow",
+          "type": "System.Int32",
+          "metadata_field_index": 15320,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "npcShow",
+          "type": "System.Int32",
+          "metadata_field_index": 15321,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "icon",
+          "type": "System.String",
+          "metadata_field_index": 15322,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "level",
+          "type": "System.Int32",
+          "metadata_field_index": 15323,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "desc",
+          "type": "System.String",
+          "metadata_field_index": 15324,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "isOverlay",
+          "type": "System.Int32",
+          "metadata_field_index": 15325,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "drop",
+          "type": "System.Int32",
+          "metadata_field_index": 15326,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "dieDrop",
+          "type": "System.Int32",
+          "metadata_field_index": 15327,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "auction",
+          "type": "System.Int32",
+          "metadata_field_index": 15328,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "sale",
+          "type": "System.Int32",
+          "metadata_field_index": 15329,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "worth",
+          "type": "System.Int32",
+          "metadata_field_index": 15330,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "isMultiDrop",
+          "type": "System.Int32",
+          "metadata_field_index": 15331,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        }
+      ],
+      "status": "VERIFIED_METADATA",
+      "data_values_available": false,
+      "note": "Global type schema only; field definitions are not configuration rows or runtime offsets"
+    },
+    {
+      "kind": "metadata_contract",
+      "section": "manual_templates",
+      "owner": "ConfItemSkillItem",
+      "image": "Assembly-CSharp.dll",
+      "type_index": 4414,
+      "fields": [
+        {
+          "name": "skillType",
+          "type": "System.Int32",
+          "metadata_field_index": 15347,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "grade",
+          "type": "System.Int32",
+          "metadata_field_index": 15348,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "level",
+          "type": "System.Int32",
+          "metadata_field_index": 15349,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "price",
+          "type": "System.Int32",
+          "metadata_field_index": 15350,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "cost",
+          "type": "System.Int32",
+          "metadata_field_index": 15351,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "auction",
+          "type": "System.Int32",
+          "metadata_field_index": 15352,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "contribution",
+          "type": "System.Int32",
+          "metadata_field_index": 15353,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "worth",
+          "type": "System.Int32",
+          "metadata_field_index": 15354,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "sale",
+          "type": "System.Int32",
+          "metadata_field_index": 15355,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        }
+      ],
+      "status": "VERIFIED_METADATA",
+      "data_values_available": false,
+      "note": "Global type schema only; field definitions are not configuration rows or runtime offsets"
+    },
+    {
+      "kind": "metadata_contract",
+      "section": "item_types",
+      "owner": "ConfItemTypeItem",
+      "image": "Assembly-CSharp.dll",
+      "type_index": 4424,
+      "fields": [
+        {
+          "name": "type",
+          "type": "System.Int32",
+          "metadata_field_index": 15380,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "uiLabel",
+          "type": "System.String",
+          "metadata_field_index": 15381,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "name",
+          "type": "System.String",
+          "metadata_field_index": 15382,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "sort",
+          "type": "System.Int32",
+          "metadata_field_index": 15383,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        }
+      ],
+      "status": "VERIFIED_METADATA",
+      "data_values_available": false,
+      "note": "Global type schema only; field definitions are not configuration rows or runtime offsets"
+    },
+    {
+      "kind": "metadata_contract",
+      "section": "item_types",
+      "owner": "ConfItemTypeFixedItem",
+      "image": "Assembly-CSharp.dll",
+      "type_index": 4426,
+      "fields": [
+        {
+          "name": "type",
+          "type": "System.Int32",
+          "metadata_field_index": 15385,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "uiLabel",
+          "type": "System.String",
+          "metadata_field_index": 15386,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        }
+      ],
+      "status": "VERIFIED_METADATA",
+      "data_values_available": false,
+      "note": "Global type schema only; field definitions are not configuration rows or runtime offsets"
+    },
+    {
+      "kind": "metadata_contract",
+      "section": "realms",
+      "owner": "ConfRoleGradeItem",
+      "image": "Assembly-CSharp.dll",
+      "type_index": 5020,
+      "fields": [
+        {
+          "name": "grade",
+          "type": "System.Int32",
+          "metadata_field_index": 18767,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "gradeName",
+          "type": "System.String",
+          "metadata_field_index": 18768,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "phase",
+          "type": "System.Int32",
+          "metadata_field_index": 18769,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "phaseName",
+          "type": "System.String",
+          "metadata_field_index": 18770,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "quality",
+          "type": "System.Int32",
+          "metadata_field_index": 18771,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "qualityName",
+          "type": "System.String",
+          "metadata_field_index": 18772,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "exp",
+          "type": "System.Int32",
+          "metadata_field_index": 18773,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "condition",
+          "type": "System.String",
+          "metadata_field_index": 18774,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "drama",
+          "type": "System.String",
+          "metadata_field_index": 18775,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "lockFeature",
+          "type": "System.Int32",
+          "metadata_field_index": 18776,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "growItemRequire",
+          "type": "ARRAY",
+          "metadata_field_index": 18777,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "growItemNum",
+          "type": "System.Int32",
+          "metadata_field_index": 18778,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "materialsNum",
+          "type": "System.Int32",
+          "metadata_field_index": 18779,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "fateNum",
+          "type": "System.Int32",
+          "metadata_field_index": 18780,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "growAddLife",
+          "type": "System.Int32",
+          "metadata_field_index": 18781,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "abilityPoint",
+          "type": "System.Int32",
+          "metadata_field_index": 18782,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "atkUp",
+          "type": "System.Int32",
+          "metadata_field_index": 18783,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "defUp",
+          "type": "System.Int32",
+          "metadata_field_index": 18784,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "hpUp",
+          "type": "System.Int32",
+          "metadata_field_index": 18785,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "mpUp",
+          "type": "System.Int32",
+          "metadata_field_index": 18786,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "spUp",
+          "type": "System.Int32",
+          "metadata_field_index": 18787,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "crit",
+          "type": "System.Int32",
+          "metadata_field_index": 18788,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "guard",
+          "type": "System.Int32",
+          "metadata_field_index": 18789,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "critV",
+          "type": "System.Int32",
+          "metadata_field_index": 18790,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "guardV",
+          "type": "System.Int32",
+          "metadata_field_index": 18791,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "pfrUp",
+          "type": "System.Int32",
+          "metadata_field_index": 18792,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "mfrUp",
+          "type": "System.Int32",
+          "metadata_field_index": 18793,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "immortalPoint",
+          "type": "System.Int32",
+          "metadata_field_index": 18794,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "maxLimitCount",
+          "type": "System.Int32",
+          "metadata_field_index": 18795,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "failFeatureProb",
+          "type": "System.Int32",
+          "metadata_field_index": 18796,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "failFeatureID",
+          "type": "System.Int32",
+          "metadata_field_index": 18797,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "dungeonID",
+          "type": "System.Int32",
+          "metadata_field_index": 18798,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "dungeonLevel",
+          "type": "System.Int32",
+          "metadata_field_index": 18799,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "effectShow",
+          "type": "System.String",
+          "metadata_field_index": 18800,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "attrDesc",
+          "type": "System.String",
+          "metadata_field_index": 18801,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "funcDesc",
+          "type": "System.String",
+          "metadata_field_index": 18802,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "verse",
+          "type": "System.String",
+          "metadata_field_index": 18803,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "growWayDesc",
+          "type": "System.String",
+          "metadata_field_index": 18804,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "itemShowA",
+          "type": "System.String",
+          "metadata_field_index": 18805,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "itemShowB",
+          "type": "System.String",
+          "metadata_field_index": 18806,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "allItemShowA",
+          "type": "ARRAY",
+          "metadata_field_index": 18807,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        }
+      ],
+      "status": "VERIFIED_METADATA",
+      "data_values_available": false,
+      "note": "Global type schema only; field definitions are not configuration rows or runtime offsets"
+    },
+    {
+      "kind": "metadata_contract",
+      "section": "manual_instances",
+      "owner": "MartialInfoData",
+      "image": "Assembly-CSharp.dll",
+      "type_index": 7962,
+      "fields": [
+        {
+          "name": "initName",
+          "type": "System.Boolean",
+          "metadata_field_index": 29299,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "_name",
+          "type": "System.String",
+          "metadata_field_index": 29300,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "initLevel",
+          "type": "System.Boolean",
+          "metadata_field_index": 29301,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "_level",
+          "type": "System.Int32",
+          "metadata_field_index": 29302,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "initWeaponType",
+          "type": "System.Boolean",
+          "metadata_field_index": 29303,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "_weaponType",
+          "type": "System.Int32",
+          "metadata_field_index": 29304,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "_magicType",
+          "type": "System.Int32",
+          "metadata_field_index": 29305,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "initTalent",
+          "type": "System.Boolean",
+          "metadata_field_index": 29306,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "_talent",
+          "type": "System.Int32",
+          "metadata_field_index": 29307,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "initBasRequire",
+          "type": "System.Boolean",
+          "metadata_field_index": 29308,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "_basRequire",
+          "type": "System.Int32",
+          "metadata_field_index": 29309,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "initAbilityPoint",
+          "type": "System.Boolean",
+          "metadata_field_index": 29310,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "_abilityPoint",
+          "type": "System.Int32",
+          "metadata_field_index": 29311,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "initItemSkillItem",
+          "type": "System.Boolean",
+          "metadata_field_index": 29312,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "_itemSkillItem",
+          "type": "ConfItemSkillItem",
+          "metadata_field_index": 29313,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "initPrefixs",
+          "type": "System.Boolean",
+          "metadata_field_index": 29314,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "_prefixs",
+          "type": "GENERIC_INSTANCE",
+          "metadata_field_index": 29315,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "isSpecificNpcMartial",
+          "type": "System.Boolean",
+          "metadata_field_index": 29316,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "infoDataBase",
+          "type": "Martial.InfoData.InfoDataBase",
+          "metadata_field_index": 29317,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        },
+        {
+          "name": "martialData",
+          "type": "MartialData",
+          "metadata_field_index": 29318,
+          "status": "VERIFIED_METADATA",
+          "value": null,
+          "value_status": "UNKNOWN"
+        }
+      ],
+      "status": "VERIFIED_METADATA",
+      "data_values_available": false,
+      "note": "Global type schema only; field definitions are not configuration rows or runtime offsets"
+    }
+  ],
+  "runtime_rows_collected": false,
+  "native_interface": "protocol 4 catalog: id/display_name/props_type/level only"
+}

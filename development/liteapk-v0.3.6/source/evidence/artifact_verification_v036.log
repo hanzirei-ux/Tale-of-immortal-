@@ -1,0 +1,1 @@
+PASS: new DEX full-schema implementation, actual v0.3.2 JNI parity, unchanged ARM64 SO, source revision. No device test; extended native tables remain BLOCKED_NATIVE.

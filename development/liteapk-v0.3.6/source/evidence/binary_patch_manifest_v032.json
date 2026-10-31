@@ -1,0 +1,17 @@
+{
+  "version": "0.3.2",
+  "file": "TaleOfImmortal_ModMenu_v0.3.2_ReadOnlyCatalogExporter_BinaryPatch.zip",
+  "bytes": 55467,
+  "sha256": "069fa832cf0db3164bf32135f21cd4faafe2e9ad0dd6d73d471ebb9ccb4717ca",
+  "source_revision": "1077d91ad1ebc96ef31cc9eb264dc0a0a29b456b72a3b818bda598210b62a35d",
+  "status": "COMPILED \u2014 NOT DEVICE TESTED",
+  "dex_sha256": "7e1f65e069785ab12ed89479c7e74cff6ad8fbcdc21351622354dea6b67a9ac9",
+  "dex_bytes": 86436,
+  "java_native_protocol": 4,
+  "jni_methods": 19,
+  "native_in_patch": false,
+  "native_required_sha256": "ab57ba9bbe67c9b59f288b23eb92cacc7273c086ea7519e57cde741b8cc2f729",
+  "native_origin_commit": "069f30c01227dd2ecdc5fab63bfafb17243bf1c2",
+  "signed_apk_produced": false,
+  "device_tested": false
+}

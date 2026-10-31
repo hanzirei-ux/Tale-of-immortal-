@@ -1,0 +1,88 @@
+{
+  "status": "STATIC VERIFIED",
+  "device_tested": false,
+  "combat_and_exp_bodies": {
+    "hookInt": {
+      "v02_unchanged": true,
+      "v030_unchanged": true
+    },
+    "hookFloat": {
+      "v02_unchanged": true,
+      "v030_unchanged": true
+    },
+    "hookInit": {
+      "v02_unchanged": true,
+      "v030_unchanged": true
+    },
+    "hookDestroy": {
+      "v02_unchanged": true,
+      "v030_unchanged": true
+    },
+    "hookDie": {
+      "v02_unchanged": true,
+      "v030_unchanged": true
+    },
+    "hookHP": {
+      "v02_unchanged": true,
+      "v030_unchanged": true
+    },
+    "hookMP": {
+      "v02_unchanged": true,
+      "v030_unchanged": true
+    },
+    "hookExp": {
+      "v02_unchanged": true,
+      "v030_unchanged": true
+    },
+    "hookFixExp": {
+      "v02_unchanged": true,
+      "v030_unchanged": true
+    },
+    "hookSpot": {
+      "v02_unchanged": true,
+      "v030_unchanged": true
+    },
+    "hookManual": {
+      "v02_unchanged": true,
+      "v030_unchanged": true
+    },
+    "hookMartialExp": {
+      "v02_unchanged": true,
+      "v030_unchanged": true
+    },
+    "hookCooldown": {
+      "v02_unchanged": true,
+      "v030_unchanged": true
+    },
+    "hookShot": {
+      "v02_unchanged": true,
+      "v030_unchanged": true
+    },
+    "combinedExp": {
+      "v02_unchanged": true,
+      "v030_unchanged": true
+    },
+    "expFactor": {
+      "v02_unchanged": true,
+      "v030_unchanged": true
+    }
+  },
+  "profile_and_policy": {
+    "baseline_profile.hpp": true,
+    "baseline_profile.json": true,
+    "modifiers.cpp": true,
+    "modifiers.hpp": true
+  },
+  "currency_capacity_bodies": {
+    "currency": true,
+    "capacity": true,
+    "modifyCapacity": true,
+    "bind": true,
+    "storeBonus": true,
+    "loadBonus": true,
+    "balance": true,
+    "refreshInventory": true
+  },
+  "combat_binding_change": "Data refresh keeps an owner-validated player controller; identity changes still clear it; generation still cancels persistent edits.",
+  "finding": "The generic v0.3 UI failure was not cleared on success and checkbox rollback could recursively apply. A screenshot alone cannot establish that Defense x16 failed natively."
+}

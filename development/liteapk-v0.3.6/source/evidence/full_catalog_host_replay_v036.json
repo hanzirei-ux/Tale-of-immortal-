@@ -1,0 +1,96 @@
+{
+  "device_tested": false,
+  "json_schema_draft_2020_12": "PASS",
+  "actual_java_jsonl_schema_checks": "PASS",
+  "legacy_v032_export_byte_identical": true,
+  "phone_input_sha256": "c0dfdc8a810cf7e58c0bc3da9f87e6b2fb5aad64ff877411eb56ed8855fb4f7a",
+  "host_replay_summary": {
+    "schema_version": "0.3.6",
+    "input_sha256": [
+      "c0dfdc8a810cf7e58c0bc3da9f87e6b2fb5aad64ff877411eb56ed8855fb4f7a",
+      "dc76294325d4844f111105d93246a390cc8b52218e71f7618e5a650c3f7e6b1f"
+    ],
+    "item_count": 3284,
+    "expected_reference_ids": 3284,
+    "reference_ids_preserved": 3284,
+    "counts_by_section": {
+      "items": 3284,
+      "item_types": 13,
+      "realms": 0,
+      "grades": 0,
+      "rarity": 0,
+      "localization": 0,
+      "books": 0,
+      "skill_templates": 0,
+      "manual_templates": 0,
+      "manual_instances": 0,
+      "metadata_contracts": 14
+    },
+    "sections": {
+      "items": "CURRENT_NONHIDDEN_JNI4_SCOPE",
+      "item_types": "RAW_OBSERVATIONS_AND_SEPARATE_METADATA_ENUM",
+      "realms": "BLOCKED_NATIVE",
+      "grades": "BLOCKED_NATIVE",
+      "rarity": "BLOCKED_NATIVE",
+      "localization": "BLOCKED_NATIVE",
+      "books": "BLOCKED_NATIVE",
+      "skill_templates": "BLOCKED_NATIVE",
+      "manual_templates": "BLOCKED_NATIVE",
+      "manual_instances": "BLOCKED_NATIVE"
+    },
+    "observed_type_counts": {
+      "1": 1357,
+      "2": 11,
+      "3": 395,
+      "5": 521,
+      "6": 856,
+      "7": 140,
+      "8": 4
+    },
+    "unresolved_names": 60,
+    "unknown_item_fields": {
+      "id": 0,
+      "display_name": 0,
+      "internal_name": 3284,
+      "name_key": 3224,
+      "name_en": 3284,
+      "name_ch": 3284,
+      "description": 3284,
+      "props_type": 0,
+      "type_name": 3284,
+      "subtype": 3284,
+      "level": 0,
+      "grade": 3284,
+      "rarity": 3284,
+      "rarity_color": 3284,
+      "realm_id": 3284,
+      "realm_requirement": 3284,
+      "cultivation_quality": 3284,
+      "hidden": 0,
+      "book_template_id": 3284,
+      "skill_template_id": 3284,
+      "manual_instance_id": 3284,
+      "spawnable": 3284
+    },
+    "filters": [
+      "realm_id",
+      "props_type",
+      "subtype",
+      "grade",
+      "rarity",
+      "level"
+    ],
+    "status_values": [
+      "INFERRED",
+      "UNKNOWN",
+      "VERIFIED_JOIN",
+      "VERIFIED_METADATA",
+      "VERIFIED_RUNTIME"
+    ],
+    "device_verification": "Source evidence preserved; parser/host tests do not certify new Android functionality",
+    "warning": "Metadata schema rows are not runtime data. Realm, item Level, Grade, Rarity and cultivation quality remain independent."
+  },
+  "host_replay_records": 3313,
+  "host_replay_jsonl_bytes": 6256819,
+  "phone_dump_was_only_legacy_four_columns": true
+}

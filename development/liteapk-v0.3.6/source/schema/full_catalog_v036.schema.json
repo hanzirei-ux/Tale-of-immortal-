@@ -1,0 +1,678 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/Beta-Tester-mod/Tale-of-immortal-/main/development/liteapk-v0.3.6/source/schema/full_catalog_v036.schema.json",
+  "title": "TOI full catalog schema 0.3.6 \u2014 values may be UNKNOWN; native coverage is declared separately",
+  "oneOf": [
+    {
+      "type": "object",
+      "required": [
+        "kind",
+        "id",
+        "display_name",
+        "props_type",
+        "level",
+        "source_table",
+        "field_status"
+      ],
+      "properties": {
+        "kind": {
+          "const": "item"
+        },
+        "id": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 2147483647
+        },
+        "display_name": {
+          "type": "string"
+        },
+        "props_type": {
+          "type": "integer",
+          "minimum": -2147483648,
+          "maximum": 2147483647
+        },
+        "level": {
+          "type": "integer",
+          "minimum": -2147483648,
+          "maximum": 2147483647
+        },
+        "source_table": {
+          "const": "ConfItemProps"
+        },
+        "field_status": {
+          "type": "object",
+          "required": [
+            "id",
+            "display_name",
+            "internal_name",
+            "name_key",
+            "name_en",
+            "name_ch",
+            "description",
+            "props_type",
+            "type_name",
+            "subtype",
+            "level",
+            "grade",
+            "rarity",
+            "rarity_color",
+            "realm_id",
+            "realm_requirement",
+            "cultivation_quality",
+            "hidden",
+            "book_template_id",
+            "skill_template_id",
+            "manual_instance_id",
+            "spawnable"
+          ],
+          "additionalProperties": {
+            "enum": [
+              "VERIFIED_RUNTIME",
+              "VERIFIED_METADATA",
+              "VERIFIED_JOIN",
+              "INFERRED",
+              "UNKNOWN"
+            ]
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "field_status": {
+                "properties": {
+                  "id": {
+                    "const": "UNKNOWN"
+                  }
+                },
+                "required": [
+                  "id"
+                ]
+              }
+            },
+            "required": [
+              "field_status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "id": {
+                "type": "null"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "field_status": {
+                "properties": {
+                  "display_name": {
+                    "const": "UNKNOWN"
+                  }
+                },
+                "required": [
+                  "display_name"
+                ]
+              }
+            },
+            "required": [
+              "field_status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "display_name": {
+                "type": "null"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "field_status": {
+                "properties": {
+                  "internal_name": {
+                    "const": "UNKNOWN"
+                  }
+                },
+                "required": [
+                  "internal_name"
+                ]
+              }
+            },
+            "required": [
+              "field_status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "internal_name": {
+                "type": "null"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "field_status": {
+                "properties": {
+                  "name_key": {
+                    "const": "UNKNOWN"
+                  }
+                },
+                "required": [
+                  "name_key"
+                ]
+              }
+            },
+            "required": [
+              "field_status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "name_key": {
+                "type": "null"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "field_status": {
+                "properties": {
+                  "name_en": {
+                    "const": "UNKNOWN"
+                  }
+                },
+                "required": [
+                  "name_en"
+                ]
+              }
+            },
+            "required": [
+              "field_status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "name_en": {
+                "type": "null"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "field_status": {
+                "properties": {
+                  "name_ch": {
+                    "const": "UNKNOWN"
+                  }
+                },
+                "required": [
+                  "name_ch"
+                ]
+              }
+            },
+            "required": [
+              "field_status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "name_ch": {
+                "type": "null"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "field_status": {
+                "properties": {
+                  "description": {
+                    "const": "UNKNOWN"
+                  }
+                },
+                "required": [
+                  "description"
+                ]
+              }
+            },
+            "required": [
+              "field_status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "description": {
+                "type": "null"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "field_status": {
+                "properties": {
+                  "props_type": {
+                    "const": "UNKNOWN"
+                  }
+                },
+                "required": [
+                  "props_type"
+                ]
+              }
+            },
+            "required": [
+              "field_status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "props_type": {
+                "type": "null"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "field_status": {
+                "properties": {
+                  "type_name": {
+                    "const": "UNKNOWN"
+                  }
+                },
+                "required": [
+                  "type_name"
+                ]
+              }
+            },
+            "required": [
+              "field_status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "type_name": {
+                "type": "null"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "field_status": {
+                "properties": {
+                  "subtype": {
+                    "const": "UNKNOWN"
+                  }
+                },
+                "required": [
+                  "subtype"
+                ]
+              }
+            },
+            "required": [
+              "field_status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "subtype": {
+                "type": "null"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "field_status": {
+                "properties": {
+                  "level": {
+                    "const": "UNKNOWN"
+                  }
+                },
+                "required": [
+                  "level"
+                ]
+              }
+            },
+            "required": [
+              "field_status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "level": {
+                "type": "null"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "field_status": {
+                "properties": {
+                  "grade": {
+                    "const": "UNKNOWN"
+                  }
+                },
+                "required": [
+                  "grade"
+                ]
+              }
+            },
+            "required": [
+              "field_status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "grade": {
+                "type": "null"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "field_status": {
+                "properties": {
+                  "rarity": {
+                    "const": "UNKNOWN"
+                  }
+                },
+                "required": [
+                  "rarity"
+                ]
+              }
+            },
+            "required": [
+              "field_status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "rarity": {
+                "type": "null"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "field_status": {
+                "properties": {
+                  "rarity_color": {
+                    "const": "UNKNOWN"
+                  }
+                },
+                "required": [
+                  "rarity_color"
+                ]
+              }
+            },
+            "required": [
+              "field_status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "rarity_color": {
+                "type": "null"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "field_status": {
+                "properties": {
+                  "realm_id": {
+                    "const": "UNKNOWN"
+                  }
+                },
+                "required": [
+                  "realm_id"
+                ]
+              }
+            },
+            "required": [
+              "field_status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "realm_id": {
+                "type": "null"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "field_status": {
+                "properties": {
+                  "realm_requirement": {
+                    "const": "UNKNOWN"
+                  }
+                },
+                "required": [
+                  "realm_requirement"
+                ]
+              }
+            },
+            "required": [
+              "field_status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "realm_requirement": {
+                "type": "null"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "field_status": {
+                "properties": {
+                  "cultivation_quality": {
+                    "const": "UNKNOWN"
+                  }
+                },
+                "required": [
+                  "cultivation_quality"
+                ]
+              }
+            },
+            "required": [
+              "field_status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "cultivation_quality": {
+                "type": "null"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "field_status": {
+                "properties": {
+                  "hidden": {
+                    "const": "UNKNOWN"
+                  }
+                },
+                "required": [
+                  "hidden"
+                ]
+              }
+            },
+            "required": [
+              "field_status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "hidden": {
+                "type": "null"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "field_status": {
+                "properties": {
+                  "book_template_id": {
+                    "const": "UNKNOWN"
+                  }
+                },
+                "required": [
+                  "book_template_id"
+                ]
+              }
+            },
+            "required": [
+              "field_status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "book_template_id": {
+                "type": "null"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "field_status": {
+                "properties": {
+                  "skill_template_id": {
+                    "const": "UNKNOWN"
+                  }
+                },
+                "required": [
+                  "skill_template_id"
+                ]
+              }
+            },
+            "required": [
+              "field_status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "skill_template_id": {
+                "type": "null"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "field_status": {
+                "properties": {
+                  "manual_instance_id": {
+                    "const": "UNKNOWN"
+                  }
+                },
+                "required": [
+                  "manual_instance_id"
+                ]
+              }
+            },
+            "required": [
+              "field_status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "manual_instance_id": {
+                "type": "null"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "field_status": {
+                "properties": {
+                  "spawnable": {
+                    "const": "UNKNOWN"
+                  }
+                },
+                "required": [
+                  "spawnable"
+                ]
+              }
+            },
+            "required": [
+              "field_status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "spawnable": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "object",
+      "required": [
+        "kind"
+      ],
+      "properties": {
+        "kind": {
+          "enum": [
+            "catalog_manifest",
+            "metadata_contract",
+            "item_type",
+            "realm",
+            "grade",
+            "rarity",
+            "localization",
+            "book",
+            "skill_template",
+            "manual_template",
+            "manual_instance"
+          ]
+        }
+      }
+    }
+  ]
+}

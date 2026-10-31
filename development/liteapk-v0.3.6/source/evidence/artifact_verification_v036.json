@@ -1,0 +1,36 @@
+{
+  "status": "COMPILED \u2014 NOT DEVICE TESTED",
+  "device_tested": false,
+  "helper_dex": {
+    "size": 137072,
+    "sha256": "d79db2a4171dcf268a85e0289ddb224577325366ccdfd5355e5134b323c7dbe3",
+    "version": "035",
+    "class_count": 73,
+    "method_reference_count": 733
+  },
+  "native": {
+    "sha256": "ab57ba9bbe67c9b59f288b23eb92cacc7273c086ea7519e57cde741b8cc2f729",
+    "size": 711848,
+    "abi": "arm64-v8a",
+    "needed": [
+      "libdl.so",
+      "liblog.so",
+      "libm.so",
+      "libc.so"
+    ],
+    "jni_methods_exported": 19,
+    "load_alignment": 16384,
+    "relro": true,
+    "executable_stack": false
+  },
+  "game_profile_sites_verified": null,
+  "note": "This component-only check does not repeat the private baseline/primary DEX audit.",
+  "version": "0.3.6",
+  "source_revision": "7a4b0b54640955f72fea4364657033f9b78f75eea763f870b567117c78814573",
+  "new_native_hooks": 0,
+  "native_recompiled": false,
+  "native_in_patch": false,
+  "v032_native_declarations_identical": true,
+  "full_native_tables_available": false,
+  "baseline_reference_ids": 3284
+}

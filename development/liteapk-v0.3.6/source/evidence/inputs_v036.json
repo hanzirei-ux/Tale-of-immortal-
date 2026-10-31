@@ -1,0 +1,77 @@
+{
+  "source_parent": "7d64bcfde08051b97b1f150ba88cefb244b5d59e",
+  "files": [
+    {
+      "name": "01-ui_propinfo.ab",
+      "bytes": 17622,
+      "sha256": "24e632192ff1e75362081b51011b87222a07c097ac282028cecaaf4e0d71c601",
+      "published_raw": false,
+      "format_header": "UnityFS"
+    },
+    {
+      "name": "02-ui_propartskill.ab",
+      "bytes": 10580,
+      "sha256": "595ff62f18178526c0e190b39f514274ebb0f98cbcd5528f1eae4bf07df0ce9f",
+      "published_raw": false,
+      "format_header": "UnityFS"
+    },
+    {
+      "name": "03-file-2.zip",
+      "bytes": 114495,
+      "sha256": "7fe5d23fe8913ffeed0644c16f2888a8423201de191da7a9f454aa5f0296c248",
+      "published_raw": false,
+      "entries": 7,
+      "crc": "PASS"
+    },
+    {
+      "name": "04-tales.zip",
+      "bytes": 147069779,
+      "sha256": "9db324ea58a89426fa3533bea4dd9e636e316d5eed54188ea6de1581415290d8",
+      "published_raw": false,
+      "entries": 9006,
+      "crc": "PASS"
+    },
+    {
+      "name": "05-ui_martialinfo.ab",
+      "bytes": 23882,
+      "sha256": "67325b05829f11c1dad4fc8a23d02e7444f27b04fcc887cec431368b5e6017db",
+      "published_raw": false,
+      "format_header": "UnityFS"
+    },
+    {
+      "name": "06-ui_modcreatemartial.ab",
+      "bytes": 14289,
+      "sha256": "487ab1a969e572b2734c1c7b19801d233999393cddba2d8073ba0491052d908c",
+      "published_raw": false,
+      "format_header": "UnityFS"
+    },
+    {
+      "name": "07-ui_moditempreview.ab",
+      "bytes": 33287,
+      "sha256": "310521dd34db7cb67b713c025a09b0cc14a0026bb1d17622a0fdcc5e5e33246d",
+      "published_raw": false,
+      "format_header": "UnityFS"
+    },
+    {
+      "name": "08-toi_item_catalog_1793447183110_c158bc9b-185b-4eab-a360-59d8406967d6.jsonl",
+      "bytes": 1835160,
+      "sha256": "c0dfdc8a810cf7e58c0bc3da9f87e6b2fb5aad64ff877411eb56ed8855fb4f7a",
+      "published_raw": false
+    },
+    {
+      "name": "09-TaleOfImmortal_ModMenu_v0.3.2_ReadOnlyCatalogExporter_BinaryPatch.zip",
+      "bytes": 55467,
+      "sha256": "069fa832cf0db3164bf32135f21cd4faafe2e9ad0dd6d73d471ebb9ccb4717ca",
+      "published_raw": false,
+      "entries": 6,
+      "crc": "PASS"
+    }
+  ],
+  "unavailable_research_archives": [
+    "TOI_Catalog_v0.3.4_Realm_Type_CollectorPrep.zip",
+    "TOI_v035_Binary_UI_Validation.zip"
+  ],
+  "archive_search": "Not present in attachments/current repo; exact and shorter file searches returned no matches. No inspection claimed.",
+  "private_cache_or_save_files_used": false,
+  "game_library_modified": false
+}

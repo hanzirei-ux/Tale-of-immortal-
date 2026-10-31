@@ -1,0 +1,28 @@
+-- 
+-- ********* build environment check ***********
+-- 	Compiler: 	 Clang
+-- 	Processor:	 aarch64
+-- 	System:   	 Android
+-- ***************************************
+-- 
+-- CMAKE_C_COMPILER: /workspace/scratch/589e910d3208/toolchain_v031/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang
+-- CMAKE_CXX_COMPILER: /workspace/scratch/589e910d3208/toolchain_v031/android-ndk-r27c/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++
+-- CMAKE_C_FLAGS: -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -fomit-frame-pointer -ffunction-sections -fdata-sections -O3 -fno-rtti -fvisibility=hidden -fvisibility-inlines-hidden
+-- CMAKE_CXX_FLAGS: -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  
+-- CMAKE_SHARED_LINKER_FLAGS: -static-libstdc++ -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments 
+-- [Dobby] Enable near branch trampoline
+-- [Dobby] Dobby-20261031
+-- [Dobby] Generate static library
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /workspace/scratch/589e910d3208/build_v031_android
+Consolidate compiler generated dependencies of target toi_core
+[  7%] Built target toi_core
+Consolidate compiler generated dependencies of target dobby
+[ 88%] Built target dobby
+Consolidate compiler generated dependencies of target toimodmenu
+[ 90%] Building CXX object CMakeFiles/toimodmenu.dir/native/control_gateway.cpp.o
+[ 91%] Linking CXX shared library libtoimodmenu.so
+[100%] Built target toimodmenu
+{"version": "0.3.1", "kind": "native", "source_revision": "1fe1aed4e1cd614e6f13086c8e68755a5bd3ae8e6bab1a9be5aef367ab6ecefd", "artifact_sha256": "ab57ba9bbe67c9b59f288b23eb92cacc7273c086ea7519e57cde741b8cc2f729", "bytes": 711848, "device_tested": false}
+Built v0.3.1 ARM64 component; build and verify the matching helper DEX.

@@ -1,0 +1,8 @@
+{
+  "version": "0.3.6",
+  "kind": "dex",
+  "source_revision": "7a4b0b54640955f72fea4364657033f9b78f75eea763f870b567117c78814573",
+  "artifact_sha256": "d79db2a4171dcf268a85e0289ddb224577325366ccdfd5355e5134b323c7dbe3",
+  "bytes": 137072,
+  "device_tested": false
+}

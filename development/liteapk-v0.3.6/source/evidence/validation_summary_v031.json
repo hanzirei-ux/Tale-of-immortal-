@@ -1,0 +1,23 @@
+{
+  "version": "0.3.1",
+  "status": "COMPILED \u2014 NOT DEVICE TESTED",
+  "baseline_source_commit": "9603fb1560a8e22c9d7b54b98b6698cd741252e6",
+  "source_revision": "1fe1aed4e1cd614e6f13086c8e68755a5bd3ae8e6bab1a9be5aef367ab6ecefd",
+  "native_protocol": 4,
+  "full_baseline_profile_sites_verified": 28,
+  "checked_managed_method_signatures": 28,
+  "checked_currency_ids": 4,
+  "matched_jni_descriptors": 19,
+  "legacy_core_cases": 26,
+  "legacy_core_assertions": 94,
+  "policy_assertions": 212,
+  "editor_checks": 215,
+  "hotfix_checks": 32834,
+  "hotfix_exhaustive_hook_combinations": 32768,
+  "java_ui_state_checks": 9,
+  "python_tests_current": 35,
+  "inherited_research_tests": 10,
+  "device_tested": false,
+  "signed_apk_produced": false,
+  "original_game_files_published": false
+}

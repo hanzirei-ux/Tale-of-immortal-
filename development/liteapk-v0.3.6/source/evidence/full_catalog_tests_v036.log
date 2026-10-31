@@ -1,0 +1,3 @@
+PASS v0.3.6: 30 full-schema writer checks; no device test
+PASS host replay: 3284 original device item IDs, 3313 full-schema records; new Android collector NOT device tested
+PASS: full-schema JSONL, namespace separation, reference IDs and requested host comparisons. No v0.3.6 device test.

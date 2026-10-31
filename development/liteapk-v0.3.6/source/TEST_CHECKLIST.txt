@@ -1,0 +1,41 @@
+TOI v0.3.6 — CHECKLIST PONSEL (BELUM DEVICE VERIFIED)
+
+[ ] Backup APK/save. Ganti hanya DEX helper; native SO v0.3.1/2 tetap.
+[ ] Game/save membuka, header v0.3.6, tidak ada protocol mismatch atau Force Close.
+[ ] Launcher, menu ringkas/teks, hide/show dan navigasi tetap normal.
+[ ] God Mode ON/OFF, damage/defense x2, crit, EXP/spot EXP tetap bekerja pada pemain.
+[ ] Browser scroll/filter/autocomplete, item selection/Add Item tetap berfungsi.
+[ ] Currency dan capacity READ sama; uji edit kecil/save-load secara terpisah.
+[ ] Export ALL item IDs lama tetap menghasilkan format lama dan count yang benar.
+
+FULL CATALOG (CAKUPAN JNI4)
+[ ] Tanpa save pemain: ekspor ditolak. Setelah load save: Export Full Catalog berjalan.
+[ ] Persen/tabel ConfItemProps/item/record count tampil. Hanya satu sesi aktif.
+[ ] Warning native tables BLOCKED_NATIVE terlihat; tidak mengklaim Realm/rarity sudah dibaca.
+[ ] Selesai menunjukkan COMPLETE_SUPPORTED_SCOPE, all_native_tables_collected=false.
+[ ] Dengan katalog yang sama, seluruh 3284 ID ada dan unik. Item baru boleh menambah count.
+[ ] REFERENCE_ID_GAP membatalkan file full bila ID referensi hilang; tidak membuat ID palsu.
+[ ] Row item mempunyai field_status. Level tetap angka asli, Grade/Rarity/Realm belum
+    tersedia null/UNKNOWN. Key fallback INFERRED; nama EN/CN terpisah tetap unknown.
+[ ] Metadata contracts untuk ConfRoleGrade/skill bukan row data Realm/Manual.
+[ ] Type 7/8 tetap dipertahankan tanpa label official yang ditebak dari enum lain.
+[ ] Tidak ada perubahan saldo, inventory, stat atau save akibat tombol ekspor.
+
+GUARD / FILE
+[ ] Cancel, Home/background, reload world/save dan close Activity membatalkan dengan jelas.
+[ ] Tidak ada file parsial yang dilaporkan sukses. Ekspor dapat dimulai lagi setelah gagal.
+[ ] Hide menu tanpa background tidak menghentikan ekspor.
+[ ] Save JSONL membuka UI Android, dapat menyimpan ke Downloads dan dibagikan melalui Files.
+[ ] Cancel pemilih lokasi tidak menghapus file lengkap. Restart tetap dapat Save file terakhir.
+[ ] Jika proses dibunuh saat copy, ulangi Save dan hapus tujuan parsial.
+
+PARSER (OPSIONAL)
+[ ] normalize_full_catalog.py dump.jsonl output-dir --baseline dump-v032.jsonl
+[ ] item_count/reference_ids_preserved=3284 untuk dataset yang sama; ID tidak hilang.
+[ ] Realm/Type/Subtype/Grade/Rarity/Level dan statusnya terpisah pada items.csv.
+[ ] Section yang belum dibaca tetap kosong/BLOCKED_NATIVE. Manual instances bukan skill templates.
+[ ] Tidak ada Force Close/performa buruk pada sesi gameplay dan save/load.
+
+Kirim JSONL asli dari ponsel, jumlah item/records dan error bila ada. Build v0.3.6
+jangan disebut DEVICE VERIFIED sebelum diuji. Jangan unggah APK, lib game,
+metadata, AssetBundles atau save pengguna ke repo publik.

@@ -1,5 +1,23 @@
 # Tale-of-immortal-
 
+## v0.3.6 — DEX-first Full Catalog schema
+
+**SOURCE IMPLEMENTED / HOST TESTED / COMPILED — NOT DEVICE VERIFIED.** Full native table collection remains **PARTIALLY IMPLEMENTED / BLOCKED_NATIVE**. This is an actual DEX-only update over v0.3.2; keep the proven existing SO.
+
+- [Download DEX-only patch (68,221 bytes)](development/liteapk-v0.3.6/TaleOfImmortal_ModMenu_v0.3.6_FullCatalog_DEXOnly_BinaryPatch.zip)
+- [Raw replacement classes2.dex](development/liteapk-v0.3.6/classes2.dex)
+- [Progress](development/liteapk-v0.3.6/PROGRESS.md), [source/build](development/liteapk-v0.3.6/source), [technical report](development/liteapk-v0.3.6/source/PATCH_REPORT.md)
+- [Apktool M install/rollback](development/liteapk-v0.3.6/source/README_ID.txt), [phone checklist](development/liteapk-v0.3.6/source/TEST_CHECKLIST.txt)
+- [Exact native blocker](development/liteapk-v0.3.6/source/docs/NATIVE_COLLECTOR_BLOCKER_V036.md)
+
+New: Export Full Catalog, progress, per-field evidence, metadata definitions, 3,284-ID protection, JSON Schema and parser/merge with independent Realm/Type/Subtype/Grade/Rarity/Level columns. The old exporter remains byte-identical in host tests. 80 Python tests, Java/native suites, actual DEX/ELF/JNI and 3,284-ID host replay passed.
+
+**The existing JNI4 interface still transmits only ID, display name, raw type and level for non-hidden items.** Actual Realm/rarity/language/description/skill/manual values are not newly collected by this DEX. Unsupported fields remain null/UNKNOWN; schema rows are not runtime data. No new native SO or full APK is supplied. See the blocker report before expecting those tables.
+
+ZIP SHA-256: `75d988db79166ba07a0b3aa5499931d25e6f4866689e1566acef4a72e88acfae`.
+
+Prior v0.3.1/v0.3.2 source and patches remain intact below. No proprietary game binary, metadata, raw AssetBundle, save or private phone dump is published.
+
 ## Tale of Immortal Android LiteAPK Mod Menu v0.3.2 — Read-only Catalog Exporter
 
 **SOURCE IMPLEMENTED · HOST TESTED · COMPILED — NOT DEVICE VERIFIED.** Pengguna melaporkan v0.3.1 sudah berfungsi di ponsel. v0.3.2 menambahkan Export ALL item IDs (read-only), Cancel, progress dan Save JSONL lewat pemilih file Android ke menu Items / Recipes yang sama.

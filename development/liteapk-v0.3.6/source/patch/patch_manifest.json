@@ -1,0 +1,14 @@
+{
+  "version": "0.3.6",
+  "payload": [
+    "classes2.dex"
+  ],
+  "native_in_patch": false,
+  "native_sha256": "ab57ba9bbe67c9b59f288b23eb92cacc7273c086ea7519e57cde741b8cc2f729",
+  "protocol": 4,
+  "jni_methods": 19,
+  "full_native_tables_available": false,
+  "reference_item_ids": 3284,
+  "replace_existing_helper_slot": true,
+  "original_primary_dex_changed": false
+}

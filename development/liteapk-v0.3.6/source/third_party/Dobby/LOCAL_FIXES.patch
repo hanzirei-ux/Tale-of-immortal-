@@ -1,0 +1,75 @@
+--- upstream/source/InterceptRouting/InterceptRouting.cpp
++++ patched/source/InterceptRouting/InterceptRouting.cpp
+@@ -7,8 +7,11 @@
+ 
+ void log_hex_format(uint8_t *buffer, uint32_t buffer_size) {
+   char output[1024] = {0};
+-  for (int i = 0; i < buffer_size && i < sizeof(output); i++) {
+-    snprintf(output + strlen(output), 3, "%02x ", *((uint8_t *)buffer + i));
++  size_t used = 0;
++  for (uint32_t i = 0; i < buffer_size && used + 4 <= sizeof(output); ++i) {
++    int n = snprintf(output + used, sizeof(output) - used, "%02x ", unsigned(buffer[i]));
++    if (n < 0) break;
++    used += size_t(n);
+   }
+   DLOG(0, "%s", output);
+ };
+--- upstream/source/Backend/UserMode/PlatformUtil/Linux/ProcessRuntimeUtility.cc
++++ patched/source/Backend/UserMode/PlatformUtil/Linux/ProcessRuntimeUtility.cc
+@@ -11,7 +11,7 @@
+ #include <vector>
+ #include <algorithm>
+ 
+-#define LINE_MAX 2048
++static constexpr size_t kDobbyMapLineMax = 2048;
+ 
+ // ================================================================
+ // GetProcessMemoryLayout
+@@ -28,12 +28,11 @@
+   if (fp == nullptr)
+     return regions;
+ 
+-  while (!feof(fp)) {
+-    char line_buffer[LINE_MAX + 1];
+-    fgets(line_buffer, LINE_MAX, fp);
++  char line_buffer[kDobbyMapLineMax + 1] = {};
++  while (fgets(line_buffer, sizeof(line_buffer), fp) != nullptr) {
+ 
+     // ignore the rest of characters
+-    if (strlen(line_buffer) == LINE_MAX && line_buffer[LINE_MAX] != '\n') {
++    if (strlen(line_buffer) == kDobbyMapLineMax && line_buffer[kDobbyMapLineMax - 1] != '\n') {
+       // Entry not describing executable data. Skip to end of line to set up
+       // reading the next entry.
+       int c;
+@@ -42,6 +41,7 @@
+       } while ((c != EOF) && (c != '\n'));
+       if (c == EOF)
+         break;
++      continue; // Do not parse a truncated mapping line.
+     }
+ 
+     addr_t region_start, region_end;
+@@ -107,12 +107,11 @@
+   if (fp == nullptr)
+     return *modules;
+ 
+-  while (!feof(fp)) {
+-    char line_buffer[LINE_MAX + 1];
+-    fgets(line_buffer, LINE_MAX, fp);
++  char line_buffer[kDobbyMapLineMax + 1] = {};
++  while (fgets(line_buffer, sizeof(line_buffer), fp) != nullptr) {
+ 
+     // ignore the rest of characters
+-    if (strlen(line_buffer) == LINE_MAX && line_buffer[LINE_MAX] != '\n') {
++    if (strlen(line_buffer) == kDobbyMapLineMax && line_buffer[kDobbyMapLineMax - 1] != '\n') {
+       // Entry not describing executable data. Skip to end of line to set up
+       // reading the next entry.
+       int c;
+@@ -121,6 +120,7 @@
+       } while ((c != EOF) && (c != '\n'));
+       if (c == EOF)
+         break;
++      continue; // Do not parse a truncated mapping line.
+     }
+ 
+     addr_t region_start, region_end;

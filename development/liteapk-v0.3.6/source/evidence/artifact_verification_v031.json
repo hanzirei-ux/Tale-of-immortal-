@@ -1,0 +1,28 @@
+{
+  "status": "COMPILED \u2014 NOT DEVICE TESTED",
+  "device_tested": false,
+  "helper_dex": {
+    "size": 61268,
+    "sha256": "3047bb58ffe729365604d8142471fdf013e47c537cee48a5508fd4763001e7a3",
+    "version": "035",
+    "class_count": 51,
+    "method_reference_count": 528
+  },
+  "native": {
+    "sha256": "ab57ba9bbe67c9b59f288b23eb92cacc7273c086ea7519e57cde741b8cc2f729",
+    "size": 711848,
+    "abi": "arm64-v8a",
+    "needed": [
+      "libdl.so",
+      "liblog.so",
+      "libm.so",
+      "libc.so"
+    ],
+    "jni_methods_exported": 19,
+    "load_alignment": 16384,
+    "relro": true,
+    "executable_stack": false
+  },
+  "game_profile_sites_verified": null,
+  "note": "This component-only check does not repeat the private baseline/primary DEX audit."
+}

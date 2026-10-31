@@ -1,0 +1,29 @@
+{
+  "status": "STATIC VERIFIED",
+  "unchanged_hook_bodies_and_policy": {
+    "hookInt": true,
+    "hookFloat": true,
+    "hookInit": true,
+    "hookDestroy": true,
+    "hookDie": true,
+    "hookHP": true,
+    "hookMP": true,
+    "hookExp": true,
+    "hookFixExp": true,
+    "hookSpot": true,
+    "hookManual": true,
+    "hookMartialExp": true,
+    "hookCooldown": true,
+    "hookShot": true,
+    "combinedExp": true,
+    "expFactor": true,
+    "baseline_profile.hpp": true,
+    "baseline_profile.json": true,
+    "modifiers.cpp": true,
+    "modifiers.hpp": true,
+    "mod_api.cpp": true,
+    "mod_api.h": true
+  },
+  "original_libil2cpp_sha256": "c477a5637b89f78ca449ff65ad4c9137296ba680923b602db50831ecb5901099",
+  "note": "Capacity getter path and editor/receipt integration changed; unchanged combat bodies are not a device regression test."
+}

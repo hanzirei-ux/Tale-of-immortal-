@@ -1,0 +1,36 @@
+v0.3.6 — BATAS FULL CATALOG (WAJIB DIBACA)
+
+DEX ini menambahkan Export Full Catalog dengan schema/provenance lengkap,
+BUKAN reader baru untuk semua konfigurasi native. Status collector penuh:
+PARTIALLY IMPLEMENTED — data tambahan BLOCKED_NATIVE pada bridge JNI4.
+
+Data aktual yang tersedia: ID, nama tampilan, type mentah dan level untuk semua
+item non-hidden yang dikembalikan katalog v0.3.1/2. Hidden=0 berasal dari filter
+native yang sudah diverifikasi (VERIFIED_JOIN), bukan pembacaan field baru.
+3284 ID dari dump ponsel sebelumnya harus tetap ada sebelum file full di-commit.
+
+Tambahan build-time: 6 konstanta enum PropsType dan 14 definisi schema metadata.
+Keduanya VERIFIED_METADATA, BUKAN data row konfigurasi yang baru dibaca dari game.
+7 type mentah diamati pada dump asli; type 7/8 memuat 144 item dan tidak boleh
+secara otomatis dipadankan dengan enum PropsType. Label official type/subtype
+butuh ConfItemType/ConfItemTypeFixed dari native. Tidak ada label yang ditebak.
+
+TIDAK tersedia melalui JNI4 saat ini:
+- Original key untuk nama yang sudah localized; internal_name mentah.
+- English/Chinese terpisah, description, subtype/className, hidden items.
+- Nilai Realm/phase/quality dari ConfRoleGrade dan hubungan requirement item.
+- Item Grade/Rarity/color atau aturan yang menghubungkannya.
+- ConfItemBook, ConfItemSkill, skill templates, prefix tables dan Manual instances.
+
+Field di atas tetap null/UNKNOWN. Section yang belum dibaca tetap BLOCKED_NATIVE.
+Tidak ada Realm, grade, rarity atau terjemahan yang diturunkan dari nama/ID/level.
+Nama fallback belum otomatis terselesaikan; jumlah book-related item lama yang
+sedikit bukan seluruh database Manual. Quality kultivasi bukan rarity item.
+
+File sukses berstatus COMPLETE_SUPPORTED_SCOPE dan all_native_tables_collected=false.
+Ini berarti semua halaman dalam cakupan yang didukung selesai, bukan semua tabel
+native selesai. Tidak ada SO extension di patch. Native bridge belum menerima
+request generik untuk membaca tabel/field tersebut; Java saja tidak dapat membaca
+memori IL2CPP atau memanggil token metadata sebagai fungsi. Rincian 30 kontrak
+method metadata dan rencana reader terpisah ada pada source/report. Native collector
+extension: NOT IMPLEMENTED. Tidak diperlukan APK lengkap untuk riset/extension itu.

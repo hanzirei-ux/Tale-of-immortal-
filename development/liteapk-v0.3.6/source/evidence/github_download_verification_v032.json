@@ -1,0 +1,10 @@
+{
+  "implementation_commit": "df2ce4e3dcd494e1c32f1d72c460e0f743bb0c1c",
+  "url": "https://raw.githubusercontent.com/Beta-Tester-mod/Tale-of-immortal-/df2ce4e3dcd494e1c32f1d72c460e0f743bb0c1c/development/liteapk-v0.3.2/TaleOfImmortal_ModMenu_v0.3.2_ReadOnlyCatalogExporter_BinaryPatch.zip",
+  "bytes": 55467,
+  "sha256": "069fa832cf0db3164bf32135f21cd4faafe2e9ad0dd6d73d471ebb9ccb4717ca",
+  "zip_crc": "PASS",
+  "all_component_checksums": "PASS",
+  "native_in_patch": false,
+  "device_verified": false
+}

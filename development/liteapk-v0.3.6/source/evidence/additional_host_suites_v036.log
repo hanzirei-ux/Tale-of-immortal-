@@ -1,0 +1,22 @@
+editor
+PASS: 215 checks; host logic only, no Android/device test
+
+hotfix
+PASS v0.3.1: 32834 host checks; no device/gameplay verification
+
+inherited research
+test_bag (test_command_builder.BuilderTests.test_bag) ... ok
+test_exp (test_command_builder.BuilderTests.test_exp) ... ok
+test_hp (test_command_builder.BuilderTests.test_hp) ... ok
+test_item_parameter_semantics_opaque (test_command_builder.BuilderTests.test_item_parameter_semantics_opaque) ... ok
+test_no_fabricated_recipe (test_command_builder.BuilderTests.test_no_fabricated_recipe) ... ok
+test_no_injection (test_command_builder.BuilderTests.test_no_injection) ... ok
+test_no_negative_guess (test_command_builder.BuilderTests.test_no_negative_guess) ... ok
+test_npc (test_command_builder.BuilderTests.test_npc) ... ok
+test_realm (test_command_builder.BuilderTests.test_realm) ... ok
+test_requires_backup (test_command_builder.BuilderTests.test_requires_backup) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.000s
+
+OK

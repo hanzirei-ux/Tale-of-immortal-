@@ -1,0 +1,21 @@
+{
+  "version": "0.3.6",
+  "file": "TaleOfImmortal_ModMenu_v0.3.6_FullCatalog_DEXOnly_BinaryPatch.zip",
+  "bytes": 68221,
+  "sha256": "75d988db79166ba07a0b3aa5499931d25e6f4866689e1566acef4a72e88acfae",
+  "source_revision": "7a4b0b54640955f72fea4364657033f9b78f75eea763f870b567117c78814573",
+  "status": "COMPILED \u2014 NOT DEVICE TESTED",
+  "dex_sha256": "d79db2a4171dcf268a85e0289ddb224577325366ccdfd5355e5134b323c7dbe3",
+  "dex_bytes": 137072,
+  "java_native_protocol": 4,
+  "jni_methods": 19,
+  "native_in_patch": false,
+  "native_required_sha256": "ab57ba9bbe67c9b59f288b23eb92cacc7273c086ea7519e57cde741b8cc2f729",
+  "native_origin_commit": "069f30c01227dd2ecdc5fab63bfafb17243bf1c2",
+  "signed_apk_produced": false,
+  "device_tested": false,
+  "collector_status": "PARTIALLY IMPLEMENTED \u2014 extended native data BLOCKED_NATIVE",
+  "reference_item_ids": 3284,
+  "raw_native_columns": 4,
+  "native_extension_included": false
+}
