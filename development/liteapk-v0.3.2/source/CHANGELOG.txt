@@ -1,0 +1,20 @@
+v0.3.2 — Read-only Catalog Exporter
+SOURCE IMPLEMENTED / HOST TESTED / COMPILED — NOT DEVICE VERIFIED
+
+- Applied supplied exporter v4 integrator to existing v0.3.1, then hardened the
+  writer/receipt/lifecycle implementation. Original v4 source and tests retained.
+- Items / Recipes: Export ALL item IDs (read-only), Cancel, Save JSONL, progress.
+- Existing catalog request @-1||OFFSET and shared receipt poller, 40 rows/page.
+- Native generation and request ID/key/state validated before committing each page.
+- Single file worker, duplicate/size/count guards, cancellation/timeouts and cleanup.
+- JSONL preserves actual IDs/raw Int32 type/level, source table and generation;
+  unknown translations/rarity/descriptions/subtype stay null. No invented manuals.
+- Android system Create Document picker copies a completed JSONL to a user-selected
+  location without manifest edits, root or broad storage permissions.
+- Reuses exact v0.3.1 native library and all 19 JNI declarations/protocol 4.
+- Native/gameplay/currency/capacity code and 22 existing menu method bodies unchanged.
+- DEX-only ZIP; v0.3.1 remains the rollback reference.
+
+Scope: current native ConfItemProps non-hidden catalog only. Original keys for
+localized rows and independent skill/manual configuration are not in this transport.
+Export is not a full Manual database. No Android-generated JSONL received yet.

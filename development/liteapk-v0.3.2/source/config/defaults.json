@@ -1,0 +1,97 @@
+{
+  "schema": 2,
+  "application": "SharedPreferences toi_modmenu_v02; this JSON is the documented default schema, not auto-imported",
+  "auto_load_settings": false,
+  "combine": "category_override",
+  "settings": {
+    "god_mode": {
+      "enabled": false,
+      "value": 0
+    },
+    "unlimited_hp": {
+      "enabled": false,
+      "value": 0
+    },
+    "unlimited_energy": {
+      "enabled": false,
+      "value": 0
+    },
+    "all_damage": {
+      "enabled": false,
+      "value": 1
+    },
+    "martial_damage": {
+      "enabled": false,
+      "value": 1
+    },
+    "spiritual_damage": {
+      "enabled": false,
+      "value": 1
+    },
+    "skill_damage": {
+      "enabled": false,
+      "value": 1
+    },
+    "ultimate_damage": {
+      "enabled": false,
+      "value": 1
+    },
+    "all_defense": {
+      "enabled": false,
+      "value": 1
+    },
+    "martial_resistance": {
+      "enabled": false,
+      "value": 1
+    },
+    "spiritual_resistance": {
+      "enabled": false,
+      "value": 1
+    },
+    "critical_rating": {
+      "enabled": false,
+      "value": 0
+    },
+    "critical_damage": {
+      "enabled": false,
+      "value": 1
+    },
+    "critical_resistance_rating": {
+      "enabled": false,
+      "value": 0
+    },
+    "attack_speed": {
+      "enabled": false,
+      "value": 1
+    },
+    "movement_speed": {
+      "enabled": false,
+      "value": 1
+    },
+    "skill_cooldown": {
+      "enabled": false,
+      "value": 1
+    },
+    "energy_consumption": {
+      "enabled": false,
+      "value": 1
+    },
+    "global_exp": {
+      "enabled": false,
+      "value": 1
+    },
+    "cultivation_spot_exp": {
+      "enabled": false,
+      "value": 1
+    },
+    "manual_exp": {
+      "enabled": false,
+      "value": 1
+    },
+    "skill_exp": {
+      "enabled": false,
+      "value": 1
+    }
+  },
+  "automatic_persistent_actions": []
+}

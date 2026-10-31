@@ -1,0 +1,349 @@
+{
+  "status": "STATIC VERIFIED",
+  "device_tested": false,
+  "method_specs": [
+    {
+      "label": "getConf",
+      "type": "g",
+      "method": "get_conf",
+      "token": "0x06000070",
+      "return_type": "ConfMgr",
+      "parameters": [],
+      "static": true,
+      "match": true
+    },
+    {
+      "label": "getUI",
+      "type": "g",
+      "method": "get_ui",
+      "token": "0x06000073",
+      "return_type": "UIMgr",
+      "parameters": [],
+      "static": true,
+      "match": true
+    },
+    {
+      "label": "itemConf",
+      "type": "ConfMgr",
+      "method": "get_itemProps",
+      "token": "0x060004d4",
+      "return_type": "ConfItemProps",
+      "parameters": [],
+      "static": false,
+      "match": true
+    },
+    {
+      "label": "itemList",
+      "type": "ConfItemPropsBase",
+      "method": "get_allConfList",
+      "token": "0x060059e4",
+      "return_type": "$ref",
+      "parameters": [],
+      "static": false,
+      "match": true
+    },
+    {
+      "label": "recipeConf",
+      "type": "ConfMgr",
+      "method": "get_makePillFormula",
+      "token": "0x0600044f",
+      "return_type": "ConfMakePillFormula",
+      "parameters": [],
+      "static": false,
+      "match": true
+    },
+    {
+      "label": "recipeList",
+      "type": "ConfMakePillFormulaBase",
+      "method": "get_allConfList",
+      "token": "0x06005ac3",
+      "return_type": "$ref",
+      "parameters": [],
+      "static": false,
+      "match": true
+    },
+    {
+      "label": "localized",
+      "type": "ConfLocalText",
+      "method": "GetText",
+      "token": "0x06004698",
+      "return_type": "System.String",
+      "parameters": [
+        "System.String",
+        "LanguageType"
+      ],
+      "static": true,
+      "match": true
+    },
+    {
+      "label": "getNum",
+      "type": "DataProps",
+      "method": "GetPropsNum",
+      "token": "0x060084fb",
+      "return_type": "System.Int32",
+      "parameters": [
+        "System.Int32"
+      ],
+      "static": false,
+      "match": true
+    },
+    {
+      "label": "moneyReward",
+      "type": "WorldUnitData",
+      "method": "RewardPropMoney",
+      "token": "0x06015a8e",
+      "return_type": "System.Void",
+      "parameters": [
+        "System.Int32"
+      ],
+      "static": false,
+      "match": true
+    },
+    {
+      "label": "itemReward",
+      "type": "WorldUnitData",
+      "method": "RewardPropItem",
+      "token": "0x06015a8f",
+      "return_type": "System.Void",
+      "parameters": [
+        "System.Int32",
+        "System.Int32",
+        "System.Boolean"
+      ],
+      "static": false,
+      "match": true
+    },
+    {
+      "label": "itemCost",
+      "type": "WorldUnitData",
+      "method": "CostPropItem",
+      "token": "0x06015a96",
+      "return_type": "System.Void",
+      "parameters": [
+        "System.Int32",
+        "System.Int32",
+        "System.Boolean"
+      ],
+      "static": false,
+      "match": true
+    },
+    {
+      "label": "gridMax",
+      "type": "UnitDataProps",
+      "method": "GetGridMaxNum",
+      "token": "0x06008772",
+      "return_type": "System.Int32",
+      "parameters": [],
+      "static": false,
+      "match": true
+    },
+    {
+      "label": "gridUsed",
+      "type": "UnitDataProps",
+      "method": "GetGridCurNum",
+      "token": "0x06008774",
+      "return_type": "System.Int32",
+      "parameters": [],
+      "static": false,
+      "match": true
+    },
+    {
+      "label": "setStored",
+      "type": "DataObjectData",
+      "method": "SetString",
+      "token": "0x060086fe",
+      "return_type": "System.Void",
+      "parameters": [
+        "System.String",
+        "System.Int32"
+      ],
+      "static": false,
+      "match": true
+    },
+    {
+      "label": "getStored",
+      "type": "DataObjectData",
+      "method": "GetInt",
+      "token": "0x06008703",
+      "return_type": "System.Int32",
+      "parameters": [
+        "System.String",
+        "System.Int32"
+      ],
+      "static": false,
+      "match": true
+    },
+    {
+      "label": "getSchool",
+      "type": "WorldUnitData",
+      "method": "get_school",
+      "token": "0x06015a77",
+      "return_type": "MapBuildSchool",
+      "parameters": [],
+      "static": false,
+      "match": true
+    },
+    {
+      "label": "schoolData",
+      "type": "MapBuildSchool",
+      "method": "get_buildData",
+      "token": "0x06012c7b",
+      "return_type": "DataBuildSchool.SchoolData",
+      "parameters": [],
+      "static": false,
+      "match": true
+    },
+    {
+      "label": "schoolName",
+      "type": "MapBuildSchool",
+      "method": "get_name",
+      "token": "0x06012c75",
+      "return_type": "System.String",
+      "parameters": [],
+      "static": false,
+      "match": true
+    },
+    {
+      "label": "addFunds",
+      "type": "SchoolData",
+      "method": "AddMoney",
+      "token": "0x0600863f",
+      "return_type": "System.Void",
+      "parameters": [
+        "System.Int64"
+      ],
+      "static": false,
+      "match": true
+    },
+    {
+      "label": "addReputation",
+      "type": "SchoolData",
+      "method": "AddReputation",
+      "token": "0x06008640",
+      "return_type": "System.Void",
+      "parameters": [
+        "System.Int32"
+      ],
+      "static": false,
+      "match": true
+    },
+    {
+      "label": "addFaith",
+      "type": "SchoolData",
+      "method": "AddFaithMoney",
+      "token": "0x06008641",
+      "return_type": "System.Void",
+      "parameters": [
+        "System.Int64"
+      ],
+      "static": false,
+      "match": true
+    },
+    {
+      "label": "findUI",
+      "type": "UIMgr",
+      "method": "GetUI",
+      "token": "0x06000c15",
+      "return_type": "UIBase",
+      "parameters": [
+        "UIType.UITypeBase"
+      ],
+      "static": false,
+      "match": true
+    },
+    {
+      "label": "bagOwner",
+      "type": "UIPlayerBagExtend",
+      "method": "get_unit",
+      "token": "0x06010707",
+      "return_type": "WorldUnitBase",
+      "parameters": [],
+      "static": false,
+      "match": true
+    },
+    {
+      "label": "bagUpdate",
+      "type": "UIPlayerBagExtend",
+      "method": "UpdateUI",
+      "token": "0x06010717",
+      "return_type": "System.Void",
+      "parameters": [],
+      "static": false,
+      "match": true
+    },
+    {
+      "label": "switchPropUpdate",
+      "type": "UISwitchPlayerBagPorp",
+      "method": "UpdateUI",
+      "token": "0x06011bd9",
+      "return_type": "System.Void",
+      "parameters": [
+        "System.Boolean"
+      ],
+      "static": false,
+      "match": true
+    },
+    {
+      "label": "dynEffective",
+      "type": "DynInt",
+      "method": "get_value",
+      "token": "0x06015f05",
+      "return_type": "System.Int32",
+      "parameters": [],
+      "static": false,
+      "match": true
+    },
+    {
+      "label": "propUpdate",
+      "type": "UIPlayerPorp",
+      "method": "UpdateUI",
+      "token": "0x0601094b",
+      "return_type": "System.Void",
+      "parameters": [
+        "System.Boolean"
+      ],
+      "static": false,
+      "match": true
+    }
+  ],
+  "currency_constants": [
+    {
+      "type": "PropsIDType",
+      "name": "Money",
+      "value": 10001
+    },
+    {
+      "type": "PropsIDType",
+      "name": "SchoolMoney",
+      "value": 10011
+    },
+    {
+      "type": "PropsIDType",
+      "name": "CityToken",
+      "value": 10041
+    },
+    {
+      "type": "UIImmortalStore",
+      "name": "TokenPropID",
+      "value": 10051
+    }
+  ],
+  "required_apis": [
+    "class_get_parent",
+    "field_get_type",
+    "field_get_flags",
+    "field_static_get_value",
+    "method_get_token",
+    "method_get_flags",
+    "method_get_return_type",
+    "method_get_class",
+    "type_get_name",
+    "free",
+    "object_unbox",
+    "format_exception",
+    "format_stack_trace"
+  ],
+  "prop_grid_base_setter": "ret (no-op)",
+  "baseline_sha256": "c477a5637b89f78ca449ff65ad4c9137296ba680923b602db50831ecb5901099",
+  "metadata_sha256": "9be3762476a87e8be23e3fa589b44f084027a5c7f1ff78b9be5f013fb5d131b3"
+}

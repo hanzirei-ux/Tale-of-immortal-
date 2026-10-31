@@ -1,0 +1,47 @@
+TALE OF IMMORTAL v0.3.2 — UJI PONSEL (BELUM DEVICE VERIFIED)
+Gunakan APK v0.3.1 yang sudah berfungsi dan backup save.
+
+INSTALASI / FITUR LAMA
+[ ] Header TOI v0.3.2, game/save membuka tanpa Force Close/protocol mismatch.
+[ ] Floating launcher, tampilan ringkas dan teks terang tetap normal.
+[ ] God Mode ON/OFF, damage/defense x2, crit, cooldown dan EXP/spot EXP tetap bekerja.
+[ ] Player-only targeting tetap; serangan/stat/AI NPC tidak mendapat cheat pemain.
+[ ] Browser scroll/filter/autocomplete, pilihan item dan Add Item tetap berfungsi.
+[ ] Currency READ dan kapasitas READ sama dengan sebelum patch. Jika mencoba edit,
+    gunakan angka kecil dan uji save/load secara terpisah dari ekspor.
+
+EKSPOR
+[ ] Tanpa save pemain: ekspor ditolak dengan pesan yang jelas.
+[ ] Load save -> Items / Recipes -> Export ALL item IDs (read-only).
+[ ] Progress berjalan dalam halaman; hanya satu sesi dapat dimulai.
+[ ] Selesai menunjukkan jumlah item aktual dan lokasi file .jsonl yang ada.
+[ ] Jumlah baris JSONL sama dengan jumlah sukses; ID unik dan nama Unicode utuh.
+[ ] Baris dengan item_name1041161 / item_name1041162 tetap diekspor bila ada;
+    key/fallback tercatat, nama yang hilang tidak membuat katalog berhenti.
+[ ] props_type/level dicatat sebagai nilai asli; rarity/grade/description/bahasa
+    yang tidak tersedia null. Jangan menilai level sebagai rarity.
+[ ] Memilih kategori/search lain tidak mengganti filter ekspor All Types atau
+    merusak item yang sedang dipilih. Hide/show menu tidak menghentikan ekspor.
+[ ] Inventory, uang, stat dan save tidak berubah akibat menekan Export.
+
+CANCEL / LIFECYCLE / ERROR
+[ ] Cancel saat proses: berhenti, tanpa file parsial yang dinyatakan selesai.
+[ ] Home/background saat proses: dibatalkan. Kembali ke game dan mulai ulang.
+[ ] Reload world/save saat proses: dibatalkan; file tidak menggabungkan dua generasi.
+[ ] Setelah batal/gagal, menu lama tetap berfungsi dan ekspor baru dapat dimulai.
+[ ] Tutup/proses kill saat ekspor: pada ekspor berikutnya orphan .partial dibersihkan.
+[ ] Ekspor lengkap sebelumnya tetap dapat disimpan walau sesi berikutnya gagal.
+
+AMBIL FILE ANDROID 14
+[ ] Setelah ekspor lengkap, Save JSONL membuka pemilih lokasi Android.
+[ ] Pilih Downloads/lokasi lain -> Save -> pesan sukses dengan jumlah bytes.
+[ ] File dapat dibuka/dibagikan dari Files tanpa root/izin storage luas.
+[ ] Cancel pemilih lokasi: file asli tetap, Save JSONL dapat dicoba lagi.
+[ ] Restart aplikasi: file lengkap terakhir masih dapat dipilih lewat Save JSONL.
+[ ] Jika aplikasi dibunuh saat copy tujuan, ulangi Save JSONL dan hapus tujuan parsial.
+
+KIRIM HASIL
+Kirim file JSONL yang benar-benar dibuat ponsel, jumlah baris, versi Android,
+screenshot hasil/error, dan hasil checklist. Jangan kirim save, APK/aset game,
+atau unggah data pribadi ke repository publik. Data Manual belum lengkap;
+collector berikutnya disiapkan setelah cakupan dump aktual dapat diperiksa.

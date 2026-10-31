@@ -1,0 +1,20 @@
+{
+  "file": "TaleOfImmortal_ModMenu_v0.3.1_StabilityHotfix_BinaryPatch.zip",
+  "bytes": 312574,
+  "sha256": "ebb7b51e5815a3c2ff029e4a1dd567ab44452d80f7a6f171f51ef45d50d2b112",
+  "source_revision": "1fe1aed4e1cd614e6f13086c8e68755a5bd3ae8e6bab1a9be5aef367ab6ecefd",
+  "protocol": 4,
+  "native_methods": 19,
+  "status": "COMPILED \u2014 NOT DEVICE TESTED",
+  "signed_apk_produced": false,
+  "components": {
+    "APK_ROOT/classes2.dex": {
+      "sha256": "3047bb58ffe729365604d8142471fdf013e47c537cee48a5508fd4763001e7a3",
+      "bytes": 61268
+    },
+    "APK_ROOT/lib/arm64-v8a/libtoimodmenu.so": {
+      "sha256": "ab57ba9bbe67c9b59f288b23eb92cacc7273c086ea7519e57cde741b8cc2f729",
+      "bytes": 711848
+    }
+  }
+}

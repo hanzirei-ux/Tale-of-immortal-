@@ -1,0 +1,9 @@
+test_real_ui_shape_preserves_display_without_mislabeling_language (test_builder.TestDumpCompatibility.test_real_ui_shape_preserves_display_without_mislabeling_language) ... ok
+test_double_apply_is_blocked (test_integrator.TestIntegration.test_double_apply_is_blocked) ... ok
+test_missing_anchor_is_blocked (test_integrator.TestIntegration.test_missing_anchor_is_blocked) ... ok
+test_patch (test_integrator.TestIntegration.test_patch) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.001s
+
+OK

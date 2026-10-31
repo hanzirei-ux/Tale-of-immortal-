@@ -1,0 +1,11 @@
+{
+  "version": "0.3.2",
+  "native_in_patch": false,
+  "native_required_sha256": "ab57ba9bbe67c9b59f288b23eb92cacc7273c086ea7519e57cde741b8cc2f729",
+  "dex_sha256": "7e1f65e069785ab12ed89479c7e74cff6ad8fbcdc21351622354dea6b67a9ac9",
+  "java_native_protocol": 4,
+  "helper_slot": "replace existing helper classes2.dex or actual existing multidex slot",
+  "original_primary_dex_changed": false,
+  "game_assets_changed": false,
+  "device_tested": false
+}

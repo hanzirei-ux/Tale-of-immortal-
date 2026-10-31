@@ -1,5 +1,20 @@
 # Tale-of-immortal-
 
+## Tale of Immortal Android LiteAPK Mod Menu v0.3.2 — Read-only Catalog Exporter
+
+**SOURCE IMPLEMENTED · HOST TESTED · COMPILED — NOT DEVICE VERIFIED.** Pengguna melaporkan v0.3.1 sudah berfungsi di ponsel. v0.3.2 menambahkan Export ALL item IDs (read-only), Cancel, progress dan Save JSONL lewat pemilih file Android ke menu Items / Recipes yang sama.
+
+- [Unduh DEX-only patch kecil (55,467 bytes)](development/liteapk-v0.3.2/TaleOfImmortal_ModMenu_v0.3.2_ReadOnlyCatalogExporter_BinaryPatch.zip)
+- [Progres](development/liteapk-v0.3.2/PROGRESS.md), [source/build](development/liteapk-v0.3.2/source), [laporan teknis](development/liteapk-v0.3.2/source/PATCH_REPORT.md)
+- [Pemasangan Apktool M dan rollback](development/liteapk-v0.3.2/source/README_ID.txt), [checklist ponsel](development/liteapk-v0.3.2/source/TEST_CHECKLIST.txt)
+- [Rencana collector lengkap berikutnya](development/liteapk-v0.3.2/source/docs/CATALOG_COLLECTOR_NEXT.md)
+
+Ganti hanya DEX helper di slot yang sama. **Pertahankan libtoimodmenu.so v0.3.1** (SHA-256 ab57ba9bbe67c9b59f288b23eb92cacc7273c086ea7519e57cde741b8cc2f729). Native/hooks/gameplay/JNI tidak diubah; protokol tetap 4 / 19 methods. Source dan binary v0.3.1 tetap menjadi rollback.
+
+SHA-256 ZIP v0.3.2: `069fa832cf0db3164bf32135f21cd4faafe2e9ad0dd6d73d471ebb9ccb4717ca`.
+
+Katalog saat ini belum lengkap: ALL hanya mencakup item non-hidden yang diekspos jalur native ConfItemProps, bukan seluruh skill/Manual. Nama unresolved, kategori kurang dan sekitar 11 Manual yang dilaporkan pengguna tetap menjadi batas collector awal. Field bahasa/rarity/description/key yang tidak tersedia dicatat null. Belum ada JSONL Android atau hasil device test exporter yang diklaim.
+
 ## Tale of Immortal Android LiteAPK Mod Menu v0.3.1 — Stability Hotfix
 
 **COMPILED — NOT DEVICE TESTED.** Perbaikan pada build v0.3: fallback terjemahan item yang hilang, alasan penolakan kontrol yang spesifik, binding combat pemain saat refresh data, dan menu landscape yang lebih ringkas dengan warna terang tetap. Currency dan Capacity Editor dipertahankan.
