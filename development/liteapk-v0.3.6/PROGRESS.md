@@ -14,3 +14,5 @@ Completed: reused pinned v0.3.2, validated actual 3,284-ID phone dump, implement
 Native JNI4 only returns ID/display name/raw type/level for non-hidden items. The new button cannot read unexposed Realm/rarity/descriptions/language/skill/manual values; metadata definitions are kept distinct from real configuration data. A 3,313-record host replay preserved all 3,284 IDs and 60 unresolved names, with no fabricated Realm/Manual rows. New Android execution remains pending. No APK or raw game asset is requested/published.
 
 The referenced v0.3.4/v0.3.5 research ZIPs were not accessible; no inspection is claimed. Previous stable directories remain rollback references.
+
+Publication verified: both immutable public ZIP and raw DEX downloaded again; SHA-256/CRC/internal checksums match. All 491 exported source/report entries match Git blobs, 1,252 older blob files and all 1,105 v0.3.1/v0.3.2 rollback entries are unchanged. Implementation commit: `d10dbd1a489a410a240df7e8b1a445c65951ba84`. No v0.3.6 device test or extended native collection is claimed.

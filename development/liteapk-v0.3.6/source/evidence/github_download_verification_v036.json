@@ -1,0 +1,25 @@
+{
+  "version": "0.3.6",
+  "implementation_commit": "d10dbd1a489a410a240df7e8b1a445c65951ba84",
+  "downloads": [
+    {
+      "file": "TaleOfImmortal_ModMenu_v0.3.6_FullCatalog_DEXOnly_BinaryPatch.zip",
+      "bytes": 68221,
+      "sha256": "75d988db79166ba07a0b3aa5499931d25e6f4866689e1566acef4a72e88acfae",
+      "url": "https://raw.githubusercontent.com/Beta-Tester-mod/Tale-of-immortal-/d10dbd1a489a410a240df7e8b1a445c65951ba84/development/liteapk-v0.3.6/TaleOfImmortal_ModMenu_v0.3.6_FullCatalog_DEXOnly_BinaryPatch.zip"
+    },
+    {
+      "file": "classes2.dex",
+      "bytes": 137072,
+      "sha256": "d79db2a4171dcf268a85e0289ddb224577325366ccdfd5355e5134b323c7dbe3",
+      "url": "https://raw.githubusercontent.com/Beta-Tester-mod/Tale-of-immortal-/d10dbd1a489a410a240df7e8b1a445c65951ba84/development/liteapk-v0.3.6/classes2.dex"
+    }
+  ],
+  "zip_crc_and_internal_checksums": "PASS",
+  "native_in_patch": false,
+  "new_native_tables": "BLOCKED_NATIVE",
+  "device_tested": false,
+  "source_report_entries_matched": 491,
+  "older_blob_files_preserved": 1252,
+  "stable_v031_v032_entries_preserved": 1105
+}
