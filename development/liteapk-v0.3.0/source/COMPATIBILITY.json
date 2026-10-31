@@ -1,0 +1,21 @@
+{
+  "version": "0.3.0-test",
+  "baseline": "user supplied LiteAPK; separate from V60",
+  "abi": "arm64-v8a",
+  "native_min_api": 23,
+  "target_device": "Xiaomi 11T Android 14",
+  "additional_target": "Android 11 ARM64",
+  "device_verification": "COMPILED \u2014 NOT DEVICE TESTED",
+  "original_game_manifest": "NOT PROVIDED",
+  "original_apk_certificate": "NOT PROVIDED / NOT VERIFIED",
+  "signed_apk_exists": false,
+  "native_hook_count_expected": 15,
+  "native_controls_exposed": 22,
+  "critical_percentages_implemented": false,
+  "npc_modifiers_implemented": false,
+  "default_runtime_settings": "all OFF; explicit Load only",
+  "game_libraries_modified_on_disk": false,
+  "new_currency_types": 7,
+  "java_native_protocol": 3,
+  "inventory_storage": "per-player serialized objData bonus; device save/load pending"
+}

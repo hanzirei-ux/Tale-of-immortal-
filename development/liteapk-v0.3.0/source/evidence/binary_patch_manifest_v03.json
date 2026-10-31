@@ -1,0 +1,10 @@
+{
+  "file": "TaleOfImmortal_ModMenu_v0.3.0_Binary_Patch.zip",
+  "bytes": 281242,
+  "sha256": "af2cfe42813187819b39fd3f853a3fb280860cacb76ce221602ad8211fa79985",
+  "status": "COMPILED \u2014 NOT DEVICE TESTED",
+  "files": {
+    "APK_ROOT/classes2.dex": "58d83b11105cb758f2f7d9cfc1cf5a877e704824b1dab549d3b795c02e3d9c39",
+    "APK_ROOT/lib/arm64-v8a/libtoimodmenu.so": "3f5b118cebad5a9517e837e830ef12fc9be5d7659c64bcfb29a9eee63b7ec842"
+  }
+}

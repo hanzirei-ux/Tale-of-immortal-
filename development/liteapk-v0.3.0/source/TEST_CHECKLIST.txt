@@ -1,0 +1,88 @@
+TALE OF IMMORTAL MOD MENU v0.3.0 — PHONE ACCEPTANCE CHECKLIST
+Semua butir di bawah BELUM DEVICE VERIFIED. Gunakan backup save.
+Catat PASS/FAIL beserta before/after aktual; menu muncul saja belum membuktikan fitur.
+
+A. INSTALASI DAN TAMPILAN
+[ ] APK terpasang sebagai update dengan sertifikat v0.2 yang sama, data tidak dihapus.
+[ ] Game membuka dan save lama dapat dimuat tanpa Force Close.
+[ ] Judul menu v0.3 muncul; launcher dapat digeser, tetap di atas UI, hide/show normal.
+[ ] Tidak ada pesan DEX/native API mismatch.
+[ ] Semua kategori, label, EditText, Spinner termasuk popup, tombol, slider,
+    status ON/OFF, dialog konfirmasi dan error terbaca dalam landscape.
+[ ] Sentuhan menu tidak menggerakkan karakter; saat menu disembunyikan kontrol game normal.
+
+B. REGRESI FITUR PLAYER-ONLY
+[ ] God Mode / HP lock / energy lock melindungi pemain; musuh tetap dapat menerima damage.
+[ ] Damage semua/martial/spiritual/skill/ultimate serta crit damage masih berefek.
+[ ] Specific category mengganti global secara default; gabungan hanya saat opsi combine ON.
+[ ] Defense, resistance, crit/guard rating, attack/movement speed, cooldown dan energy cost normal.
+[ ] Cheat OFF/Reset mengembalikan combat biasa. Crit/Guard adalah rating, bukan jaminan persen.
+[ ] Global EXP dan cultivation spot EXP bekerja pada gain yang diukur, tanpa perkalian ganda.
+[ ] Manual/skill EXP serta Player Stat READ/APPLY masih berfungsi.
+[ ] Musuh dan NPC sekutu tidak menerima pengali/player stat yang sama.
+
+C. ITEM BROWSER
+[ ] All Types menampilkan item tanpa harus mengetik; daftar dapat digulir.
+[ ] Next/Previous mengganti halaman (maksimum 40 baris), tanpa membuat ribuan row sekaligus.
+[ ] Pills hanya Pill, Manuals hanya tipe Martial/Manual, Materials hanya Material.
+[ ] Recipe (Alchemy books) hanya item yang ID-nya ada di konfigurasi formula Alchemy.
+[ ] Mengetik sebagian nama (misalnya Cres) menampilkan saran tanpa tombol Search.
+[ ] Prefix lebih dahulu daripada substring; huruf besar/kecil tidak membedakan ASCII.
+[ ] Pencarian ID dan nama China berfungsi; nama nyata muncul bila terjemahan ada.
+[ ] Tap memilih item/preview yang benar. Memilih saran tidak langsung menambah item.
+[ ] Pilih Pill aman dari katalog; qty 1, Confirm. Jumlah aktual menjadi before + 1.
+[ ] Cancel tidak menambah item. Item non-stackable menolak qty > 1.
+[ ] Menambah buku resep tidak dianggap otomatis mempelajari resep.
+[ ] Pencarian sambil melakukan READ currency tidak menimpa hasil currency.
+
+D. KAPASITAS INVENTORY
+[ ] READ menunjukkan kapasitas efektif dan occupied, bukan sekadar base propGridNum.
+[ ] ADD 50: kapasitas sesudah = sebelum + 50 (contoh 52 -> 102).
+[ ] ADD 100: sesudah = sebelum + 100.
+[ ] ADD 200: sesudah = sebelum + 200; pesan tidak melaporkan sukses jika tetap sama.
+[ ] Jika plugin menggandakan bag, penambahan tetap tepat +50/+100/+200, bukan dua kali lipat.
+[ ] Buka/reopen bag; kapasitas UI dan akses item mengikuti nilai yang dibaca.
+[ ] SET dan SUBTRACT yang masih >= occupied tidak menghilangkan item.
+[ ] Permintaan kapasitas < occupied ditolak, seluruh item tetap ada/dapat dipilih.
+[ ] Ring/equipment bonus masih berfungsi. Perubahan ganjil saat faktor x2 ditolak jelas.
+[ ] Save game, keluar, load: kapasitas baru dan seluruh item tetap ada.
+[ ] Save/karakter lain tidak mendapat bonus pemain pertama.
+
+E. CURRENCY & CONTRIBUTION
+Catat semua saldo sebelum uji. Gunakan READ setelah setiap APPLY.
+[ ] Spirit Stones READ cocok UI game; ADD 100 menghasilkan tepat before + 100.
+[ ] SET dan SUBTRACT mengubah Spirit Stones sesuai angka, tidak mengubah saldo NPC.
+[ ] Kontribusi pribadi READ cocok saldo kontribusi pemain; ADD 10 tepat +10.
+[ ] Setelah edit kontribusi pribadi, treasury, reputasi dan faith sekte tetap pada nilai sebelumnya.
+[ ] City Token (10041) cocok toko kota; ADD kecil mengubah token ini saja.
+[ ] Immortal Store Token (10051) cocok toko khusus wilayah akhir; tidak mengubah City Token.
+[ ] Bila belum punya akses wilayah/token, READ tidak menyebabkan crash; pengujian toko ditunda.
+[ ] READ Sect Funds menampilkan nama/ID sekte pemain yang benar.
+[ ] ADD 100 treasury tepat +100, uang pribadi/kontribusi tidak ikut berubah.
+[ ] Reputasi +1 dan faith +10 hanya mengubah resource yang dipilih pada sekte pemain.
+[ ] APPLY treasury tanpa READ, setelah load atau setelah berpindah sekte ditolak.
+[ ] SUBTRACT > saldo, angka negatif/pecahan/overflow ditolak, saldo tidak berubah.
+[ ] SET nilai yang sudah sama memberi UNCHANGED, tidak menambah saldo lagi.
+[ ] Jika APPLIED_WITH_WARNING muncul, saldo aktual dibaca dan tidak ditambah dua kali.
+[ ] Save/load mempertahankan seluruh resource yang diedit.
+
+F. DIAGNOSTIK, SAVE, STABILITAS
+[ ] Tidak muncul NullReferenceException pada operasi yang diuji.
+[ ] Jika ada exception, Diagnostics mencantumkan kind/key, metode, pesan dan stack yang berguna.
+[ ] Copy last operation/error dapat menyalin detail untuk laporan.
+[ ] Berganti world/save saat permintaan tertunda membatalkannya sebelum edit.
+[ ] Reset mematikan cheat runtime, tidak otomatis mengulang/membalik edit saldo/item/save.
+[ ] Combat, perpindahan layar, pergantian bulan dan penggunaan menu 15–20 menit stabil.
+[ ] Load ulang save memastikan stat/item/capacity/currency aktual sesuai; daftar item tetap utuh.
+
+FORMAT LAPORAN
+Device/Android:
+Versi game / v0.3 menu:
+Kategori / operation / resource atau item ID:
+Mode dan nilai:
+Before -> after dari menu:
+Before -> after dari UI game:
+Hasil save/load:
+Pesan/stack dari Diagnostics:
+PASS/FAIL:
+Jangan unggah save atau file game pribadi ke issue/repo publik.

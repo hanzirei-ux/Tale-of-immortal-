@@ -1,0 +1,9 @@
+{
+  "class": "com.guigugame.guigubahuangoverseas.OverrideActivity",
+  "original_sha256": "77c59d076f05e1d5abaaab0f5633bd905f6145c58d5758f885dbc022b968cc81",
+  "patched_sha256": "1c75339929429cf5d624de5a9f50fc0c3ea6b5edb692164b64994e9ef4b6be1e",
+  "native_parent_edited": false,
+  "original_package_manifest": "NOT PROVIDED",
+  "authoritative_source": "baksmali disassembly of actual classes.dex",
+  "mod_lifecycle_exceptions": "Logged under TOIModMenu; original parent lifecycle preserved"
+}

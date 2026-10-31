@@ -1,0 +1,5 @@
+{
+  "commit": "9c85e74f92eda36b99ddb0fddb17a9df2278a4d3",
+  "archive_sha256": "6a15d1cc0d1e3537f5fa354d21d37bd46d551f10a2cb98769e2114930222b29b",
+  "local_changes": "LOCAL_FIXES.patch: bound debug hex formatting; handle maps EOF/truncation; replace conflicting macro"
+}

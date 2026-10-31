@@ -1,0 +1,92 @@
+{
+  "status": "STATIC VERIFIED",
+  "api_version": 3,
+  "native_method_count": 17,
+  "pairs": [
+    {
+      "name": "capabilities",
+      "descriptor": "()J",
+      "match": true
+    },
+    {
+      "name": "bridgeVersion",
+      "descriptor": "()I",
+      "match": true
+    },
+    {
+      "name": "takeGameResults",
+      "descriptor": "()Ljava/lang/String;",
+      "match": true
+    },
+    {
+      "name": "controlEnabled",
+      "descriptor": "(I)Z",
+      "match": true
+    },
+    {
+      "name": "setControl",
+      "descriptor": "(IZD)Z",
+      "match": true
+    },
+    {
+      "name": "resetControls",
+      "descriptor": "()V",
+      "match": true
+    },
+    {
+      "name": "closeMenu",
+      "descriptor": "()V",
+      "match": true
+    },
+    {
+      "name": "setCombine",
+      "descriptor": "(I)Z",
+      "match": true
+    },
+    {
+      "name": "request",
+      "descriptor": "(Ljava/lang/String;Ljava/lang/String;IDZ)Ljava/lang/String;",
+      "match": true
+    },
+    {
+      "name": "result",
+      "descriptor": "()Ljava/lang/String;",
+      "match": true
+    },
+    {
+      "name": "prepare",
+      "descriptor": "(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
+      "match": true
+    },
+    {
+      "name": "armExperiment",
+      "descriptor": "(Ljava/lang/String;ZZ)Ljava/lang/String;",
+      "match": true
+    },
+    {
+      "name": "enqueueExpProbe",
+      "descriptor": "(JLjava/lang/String;)Ljava/lang/String;",
+      "match": true
+    },
+    {
+      "name": "enqueueHpProbe",
+      "descriptor": "(JLjava/lang/String;)Ljava/lang/String;",
+      "match": true
+    },
+    {
+      "name": "disarm",
+      "descriptor": "()V",
+      "match": true
+    },
+    {
+      "name": "status",
+      "descriptor": "()Ljava/lang/String;",
+      "match": true
+    },
+    {
+      "name": "takeReceipts",
+      "descriptor": "()Ljava/lang/String;",
+      "match": true
+    }
+  ]
+}

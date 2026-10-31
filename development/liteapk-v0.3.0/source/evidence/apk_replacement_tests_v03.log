@@ -1,0 +1,9 @@
+test_bad_component_digest_does_not_create_apk (test_v03_components_patch.PatchV03Tests.test_bad_component_digest_does_not_create_apk) ... ok
+test_replace_actual_helper_slot_preserves_original_inputs (test_v03_components_patch.PatchV03Tests.test_replace_actual_helper_slot_preserves_original_inputs) ... ok
+test_unrecognized_old_native_does_not_create_apk (test_v03_components_patch.PatchV03Tests.test_unrecognized_old_native_does_not_create_apk) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.004s
+
+OK
+Updated classes3.dex and libtoimodmenu.so. UNSIGNED APK: /tmp/tmppje__kpw/unsigned.apk
