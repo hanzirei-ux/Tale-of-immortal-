@@ -1,0 +1,11 @@
+{
+  "commit": "43cd9762960db86934470de9f1cbdd301e2cb4e7",
+  "url": "https://raw.githubusercontent.com/Beta-Tester-mod/Tale-of-immortal-/43cd9762960db86934470de9f1cbdd301e2cb4e7/development/liteapk-v0.3.1/TaleOfImmortal_ModMenu_v0.3.1_StabilityHotfix_BinaryPatch.zip",
+  "bytes": 312574,
+  "sha256": "ebb7b51e5815a3c2ff029e4a1dd567ab44452d80f7a6f171f51ef45d50d2b112",
+  "zip_crc": "PASS",
+  "component_checksums": "PASS",
+  "device_tested": false,
+  "published_source_files_matched": 405,
+  "v030_rollback_entries_preserved": 506
+}
