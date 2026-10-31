@@ -1,0 +1,36 @@
+v0.3.1 Stability Hotfix — 31 Oktober 2026
+Status: COMPILED — NOT DEVICE TESTED
+
+1. Catalog recovery
+   ConfLocalText.GetText KeyNotFoundException hanya dipulihkan bila class exception,
+   namespace, owner dan metode cocok dengan lookup localization. Coba bahasa game,
+   Inggris, China, lalu bahasa lain yang tersedia; jika tetap hilang, simpan key/ID.
+   Cache hasil per key/bahasa mencegah exception berulang. Index tidak meloncat saat
+   exception lain terjadi. Contoh key hilang ditampilkan pada diagnostik, maksimal 16.
+
+2. Control path
+   Tambah jalur apply bertipe dengan ID/key/range/capability/readback dan protokol 4.
+   Kode hasil: INVALID_VALUE, OUT_OF_RANGE, HOOK_UNAVAILABLE, CAPABILITY_DISABLED,
+   CONTROL_ID_MISMATCH, NATIVE_REJECTED, NOT_INITIALIZED, PLAYER_NOT_LOADED, APPLIED.
+   UI membuang hasil lama, menghapus pesan gagal setelah sukses, dan melindungi rollback
+   checkbox dari callback rekursif. OFF tetap dapat digunakan saat scene berubah.
+   Tabel kebutuhan hook diuji sama dengan formula v0.2 untuk 32.768 kombinasi hook.
+
+3. Combat binding
+   Refresh data v0.3 dapat menghapus referensi controller pemain yang masih valid.
+   Pertahankan controller dengan owner yang sama seperti v0.2; perubahan identitas/world
+   tetap membersihkan controller dan perubahan data tetap membatalkan request save lama.
+   Badan fungsi hook combat/EXP, profile/offset dan policy multiplier v0.2 tidak diubah.
+
+4. Compact Android UI
+   Header satu baris; dropdown/input/tombol lebih kecil; kontrol combat satu baris
+   enable/name/value/apply, slider cooldown/energy cost ringkas; footer detail dilipat.
+   Item list menyesuaikan tinggi konten. Warna terang v0.3 dan launcher dipertahankan.
+   Pilihan item tetap tersimpan saat berganti kategori; ID diverifikasi lagi sebelum add.
+
+5. Preservation / build
+   Currency/Capacity writer, safeguard dan resource mapping v0.3 dipertahankan.
+   Tidak ada NPC Editor/fitur gameplay baru. Baseline/prologue check tidak dihapus.
+   DEX dan SO baru memiliki build record dengan source revision identik.
+   NDK r27c, API 23, ARM64, CMake 3.22.1; ECJ 3.38.0 + D8 8.7.18, Java 17.
+   DEX/ELF/JNI dan checksum diverifikasi. Phone/gameplay/save-load masih perlu diuji.

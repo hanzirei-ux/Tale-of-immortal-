@@ -1,0 +1,40 @@
+--- original/OverrideActivity.smali
++++ patched/OverrideActivity.smali
+@@ -34,3 +34,37 @@
+ 
+     return-void
+ .end method
++
++# TOI v0.2 — keep mod UI failures from skipping the original native lifecycle.
++.method protected onCreate(Landroid/os/Bundle;)V
++    .locals 3
++    invoke-super {p0, p1}, Lcom/unity3d/player/UnityPlayerActivity;->onCreate(Landroid/os/Bundle;)V
++    :mod_attach_start
++    invoke-static {p0}, Lorg/npc/toibridge/ModMenu;->install(Landroid/app/Activity;)V
++    :mod_attach_end
++    .catch Ljava/lang/Throwable; {:mod_attach_start .. :mod_attach_end} :mod_attach_failed
++    return-void
++    :mod_attach_failed
++    move-exception v0
++    const-string v1, "TOIModMenu"
++    const-string v2, "Mod menu attach failed; original game lifecycle retained"
++    invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
++    return-void
++.end method
++
++.method protected onDestroy()V
++    .locals 3
++    :mod_detach_start
++    invoke-static {p0}, Lorg/npc/toibridge/ModMenu;->detach(Landroid/app/Activity;)V
++    :mod_detach_end
++    .catch Ljava/lang/Throwable; {:mod_detach_start .. :mod_detach_end} :mod_detach_failed
++    :original_destroy
++    invoke-super {p0}, Lcom/unity3d/player/UnityPlayerActivity;->onDestroy()V
++    return-void
++    :mod_detach_failed
++    move-exception v0
++    const-string v1, "TOIModMenu"
++    const-string v2, "Mod menu detach failed; calling original native onDestroy"
++    invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
++    goto :original_destroy
++.end method

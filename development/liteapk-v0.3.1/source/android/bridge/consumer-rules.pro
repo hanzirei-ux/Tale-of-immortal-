@@ -1,0 +1,2 @@
+-keep class org.npc.toibridge.NativeBridge { *; }
+-keep class org.npc.toibridge.ModMenu { *; }

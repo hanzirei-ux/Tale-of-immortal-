@@ -1,0 +1,229 @@
+{
+  "baseline_sha256": "c477a5637b89f78ca449ff65ad4c9137296ba680923b602db50831ecb5901099",
+  "methods": {
+    "UnityFrame": {
+      "Address": 131211700,
+      "Name": "UnityEngine.UnitySynchronizationContext$$ExecuteTasks",
+      "Signature": "void UnityEngine_UnitySynchronizationContext__ExecuteTasks (const MethodInfo* method);",
+      "TypeSignature": "vi",
+      "FileOffset": 131195316,
+      "Prologue16": "fe4fbfa9d36900f068e65a39c8000037"
+    },
+    "GetWorld": {
+      "Address": 40538228,
+      "Name": "g$$get_world",
+      "Signature": "WorldMgr_o* g__get_world (const MethodInfo* method);",
+      "TypeSignature": "ii",
+      "FileOffset": 40521844,
+      "Prologue16": "fe0f1ef8f44f01a9f41c03d093c602f0"
+    },
+    "GetConf": {
+      "Address": 40537488,
+      "Name": "g$$get_conf",
+      "Signature": "ConfMgr_o* g__get_conf (const MethodInfo* method);",
+      "TypeSignature": "ii",
+      "FileOffset": 40521104,
+      "Prologue16": "fe0f1ef8f44f01a9f41c03f0b3c60290"
+    },
+    "PlayerInit": {
+      "Address": 83868832,
+      "Name": "UnitCtrlPlayer$$InitData",
+      "Signature": "void UnitCtrlPlayer__InitData (UnitCtrlPlayer_o* __this, WorldUnitData_o* unitData, int32_t unitType, const MethodInfo* method);",
+      "TypeSignature": "viiii",
+      "FileOffset": 83852448,
+      "Prologue16": "ffc301d1fd7b01a9fc6f02a9fa6703a9"
+    },
+    "PlayerDestroy": {
+      "Address": 83871256,
+      "Name": "UnitCtrlPlayer$$Destroy",
+      "Signature": "void UnitCtrlPlayer__Destroy (UnitCtrlPlayer_o* __this, bool isEffect, const MethodInfo* method);",
+      "TypeSignature": "viii",
+      "FileOffset": 83854872,
+      "Prologue16": "fe67bca9f85f01a9f65702a9f44f03a9"
+    },
+    "PlayerDie": {
+      "Address": 83872508,
+      "Name": "UnitCtrlPlayer$$Die",
+      "Signature": "bool UnitCtrlPlayer__Die (UnitCtrlPlayer_o* __this, bool isEffect, MartialTool_HitData_o* hitData, const MethodInfo* method);",
+      "TypeSignature": "iiiii",
+      "FileOffset": 83856124,
+      "Prologue16": "fe5fbda9f65701a9f44f02a9b6d201d0"
+    },
+    "AddHP": {
+      "Address": 83898372,
+      "Name": "UnitDataBase$$AddHP",
+      "Signature": "void UnitDataBase__AddHP (UnitDataBase_o* __this, MartialTool_HitData_o* hitData, const MethodInfo* method);",
+      "TypeSignature": "viii",
+      "FileOffset": 83881988,
+      "Prologue16": "fe67bca9f85f01a9f65702a9f44f03a9"
+    },
+    "AddMP": {
+      "Address": 83899572,
+      "Name": "UnitDataBase$$AddMP",
+      "Signature": "void UnitDataBase__AddMP (UnitDataBase_o* __this, int32_t value, bool isShowUI, const MethodInfo* method);",
+      "TypeSignature": "viiii",
+      "FileOffset": 83883188,
+      "Prologue16": "fe0f1bf8fa6701a9f85f02a9f65703a9"
+    },
+    "DataUnit": {
+      "Address": 83891400,
+      "Name": "UnitDataBase$$get_unit",
+      "Signature": "UnitCtrlBase_o* UnitDataBase__get_unit (UnitDataBase_o* __this, const MethodInfo* method);",
+      "TypeSignature": "iii",
+      "FileOffset": 83875016,
+      "Prologue16": "fe0f1ef8f44f01a994d201b0f30300aa"
+    },
+    "HitAttacker": {
+      "Address": 81763832,
+      "Name": "MartialTool.HitData$$get_attackUnit",
+      "Signature": "UnitCtrlBase_o* MartialTool_HitData__get_attackUnit (MartialTool_HitData_o* __this, const MethodInfo* method);",
+      "TypeSignature": "iii",
+      "FileOffset": 81747448,
+      "Prologue16": "fe0f1ef8f44f01a9d4e20190f30300aa"
+    },
+    "DynInt": {
+      "Address": 91367872,
+      "Name": "DynInt$$get_value",
+      "Signature": "int32_t DynInt__get_value (DynInt_o* __this, const MethodInfo* method);",
+      "TypeSignature": "iii",
+      "FileOffset": 91351488,
+      "Prologue16": "ff0301d1e923016dfe5702a9f44f03a9"
+    },
+    "DynFloat": {
+      "Address": 91370660,
+      "Name": "DynInt$$get_valueFloat",
+      "Signature": "float DynInt__get_valueFloat (DynInt_o* __this, const MethodInfo* method);",
+      "TypeSignature": "fii",
+      "FileOffset": 91354276,
+      "Prologue16": "e80f1dfcfe5701a9f44f02a9949901b0"
+    },
+    "DynBase": {
+      "Address": 91367576,
+      "Name": "DynInt$$get_baseValue",
+      "Signature": "int32_t DynInt__get_baseValue (DynInt_o* __this, const MethodInfo* method);",
+      "TypeSignature": "iii",
+      "FileOffset": 91351192,
+      "Prologue16": "fe57bea9f44f01a9959901d0d44201d0"
+    },
+    "DynSet": {
+      "Address": 91367188,
+      "Name": "DynInt$$set_baseValue",
+      "Signature": "void DynInt__set_baseValue (DynInt_o* __this, int32_t value, const MethodInfo* method);",
+      "TypeSignature": "viii",
+      "FileOffset": 91350804,
+      "Prologue16": "fe5fbda9f65701a9f44f02a9949901d0"
+    },
+    "AddExp": {
+      "Address": 67887932,
+      "Name": "DataUnit.PropertyData$$AddExp",
+      "Signature": "int32_t DataUnit_PropertyData__AddExp (DataUnit_PropertyData_o* __this, int32_t v, const MethodInfo* method);",
+      "TypeSignature": "iiii",
+      "FileOffset": 67871548,
+      "Prologue16": "ffc301d1e923016dfe6f02a9fa6703a9"
+    },
+    "AddFixExp": {
+      "Address": 67890116,
+      "Name": "DataUnit.PropertyData$$AddFixExp",
+      "Signature": "int32_t DataUnit_PropertyData__AddFixExp (DataUnit_PropertyData_o* __this, int32_t v, const MethodInfo* method);",
+      "TypeSignature": "iiii",
+      "FileOffset": 67873732,
+      "Prologue16": "fe0f1af8fc6f01a9fa6702a9f85f03a9"
+    },
+    "SpotExp": {
+      "Address": 88483912,
+      "Name": "UnitActionGridGetExp$$OnCreate",
+      "Signature": "void UnitActionGridGetExp__OnCreate (UnitActionGridGetExp_o* __this, const MethodInfo* method);",
+      "TypeSignature": "vii",
+      "FileOffset": 88467528,
+      "Prologue16": "e923b96dfe0b00f9fc6f02a9fa6703a9"
+    },
+    "ManualTrain": {
+      "Address": 88518140,
+      "Name": "UnitActionMartialTrain$$OnCreate",
+      "Signature": "void UnitActionMartialTrain__OnCreate (UnitActionMartialTrain_o* __this, const MethodInfo* method);",
+      "TypeSignature": "vii",
+      "FileOffset": 88501756,
+      "Prologue16": "ffc301d1fe2300f9f65705a9f44f06a9"
+    },
+    "ManualExp": {
+      "Address": 67938032,
+      "Name": "DataUnit.UnitInfoData$$AddMartialExp",
+      "Signature": "void DataUnit_UnitInfoData__AddMartialExp (DataUnit_UnitInfoData_o* __this, System_String_o* id, int32_t exp, const MethodInfo* method);",
+      "TypeSignature": "viiii",
+      "FileOffset": 67921648,
+      "Prologue16": "fe67bca9f85f01a9f65702a9f44f03a9"
+    },
+    "Cooldown": {
+      "Address": 58051220,
+      "Name": "SkillDataAttack$$get_cdTime",
+      "Signature": "float SkillDataAttack__get_cdTime (SkillDataAttack_o* __this, const MethodInfo* method);",
+      "TypeSignature": "fii",
+      "FileOffset": 58034836,
+      "Prologue16": "e80f1efcfe0700f9f44f01a9f30300aa"
+    },
+    "Shot": {
+      "Address": 58069164,
+      "Name": "SkillDataBase$$get_shotCD",
+      "Signature": "DynInt_o* SkillDataBase__get_shotCD (SkillDataBase_o* __this, const MethodInfo* method);",
+      "TypeSignature": "iii",
+      "FileOffset": 58052780,
+      "Prologue16": "ff4301d1fe5703a9f44f04a908004139"
+    },
+    "SkillOwner": {
+      "Address": 58020620,
+      "Name": "SkillBase$$get_unit",
+      "Signature": "UnitCtrlBase_o* SkillBase__get_unit (SkillBase_o* __this, const MethodInfo* method);",
+      "TypeSignature": "iii",
+      "FileOffset": 58004236,
+      "Prologue16": "fe0f1ef8f44f01a9b4970290f30300aa"
+    },
+    "DataSkill": {
+      "Address": 58065568,
+      "Name": "SkillDataBase$$get_skill",
+      "Signature": "SkillBase_o* SkillDataBase__get_skill (SkillDataBase_o* __this, const MethodInfo* method);",
+      "TypeSignature": "iii",
+      "FileOffset": 58049184,
+      "Prologue16": "fe0f1ef8f44f01a9549702b0f30300aa"
+    },
+    "ItemConf": {
+      "Address": 40655808,
+      "Name": "ConfMgr$$get_itemProps",
+      "Signature": "ConfItemProps_o* ConfMgr__get_itemProps (ConfMgr_o* __this, const MethodInfo* method);",
+      "TypeSignature": "iii",
+      "FileOffset": 40639424,
+      "Prologue16": "fe4fbfa9080840f9880100b413fc40d3"
+    },
+    "ItemList": {
+      "Address": 54568028,
+      "Name": "ConfItemPropsBase$$get_allConfList",
+      "Signature": "System_Collections_Generic_IReadOnlyList_ConfItemPropsItem__o* ConfItemPropsBase__get_allConfList (ConfItemPropsBase_o* __this, const MethodInfo* method);",
+      "TypeSignature": "iii",
+      "FileOffset": 54551644,
+      "Prologue16": "002040f9c0035fd6fe5fbda9f65701a9"
+    },
+    "ItemGet": {
+      "Address": 54620448,
+      "Name": "ConfItemPropsBase$$GetItem",
+      "Signature": "ConfItemPropsItem_o* ConfItemPropsBase__GetItem (ConfItemPropsBase_o* __this, int32_t id, const MethodInfo* method);",
+      "TypeSignature": "iiii",
+      "FileOffset": 54604064,
+      "Prologue16": "fe0f1df8f65701a9f44f02a995b102d0"
+    },
+    "RewardItem": {
+      "Address": 90512032,
+      "Name": "WorldUnitData$$RewardPropItem",
+      "Signature": "void WorldUnitData__RewardPropItem (WorldUnitData_o* __this, int32_t id, int32_t count, bool showUI, const MethodInfo* method);",
+      "TypeSignature": "viiiii",
+      "FileOffset": 90495648,
+      "Prologue16": "fe0f1cf8f85f01a9f65702a9f44f03a9"
+    },
+    "GridCount": {
+      "Address": 67900844,
+      "Name": "DataUnit.UnitDataProps$$GetGridCurNum",
+      "Signature": "int32_t DataUnit_UnitDataProps__GetGridCurNum (DataUnit_UnitDataProps_o* __this, const MethodInfo* method);",
+      "TypeSignature": "iii",
+      "FileOffset": 67884460,
+      "Prologue16": "080040f9e1031f2a038959a960001fd6"
+    }
+  }
+}

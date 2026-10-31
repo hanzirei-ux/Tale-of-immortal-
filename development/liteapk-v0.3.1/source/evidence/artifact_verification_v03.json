@@ -1,0 +1,43 @@
+{
+  "status": "IMPLEMENTED — STATIC VERIFIED",
+  "device_tested": false,
+  "patched_dex": {
+    "size": 8696360,
+    "sha256": "f87577df61d4f9a18f942b2fa6f594c790a209ee61af8e13625041f84692c4ea",
+    "version": "037",
+    "class_count": 8569,
+    "method_reference_count": 59106
+  },
+  "helper_dex": {
+    "size": 50212,
+    "sha256": "58d83b11105cb758f2f7d9cfc1cf5a877e704824b1dab549d3b795c02e3d9c39",
+    "version": "035",
+    "class_count": 41,
+    "method_reference_count": 443
+  },
+  "dex_comparison": {
+    "original_sha256": "38d329e62ef2d0d37e07b41289f00733f1243e817f4418012903bbb2411b3c2c",
+    "added_methods": [
+      "Lcom/guigugame/guigubahuangoverseas/OverrideActivity;->onCreate(Landroid/os/Bundle;)V",
+      "Lcom/guigugame/guigubahuangoverseas/OverrideActivity;->onDestroy()V"
+    ],
+    "removed_methods": [],
+    "all_original_native_signatures_identical": true
+  },
+  "native": {
+    "sha256": "3f5b118cebad5a9517e837e830ef12fc9be5d7659c64bcfb29a9eee63b7ec842",
+    "size": 656352,
+    "abi": "arm64-v8a",
+    "needed": [
+      "libdl.so",
+      "liblog.so",
+      "libm.so",
+      "libc.so"
+    ],
+    "jni_methods_exported": 17,
+    "load_alignment": 16384,
+    "relro": true,
+    "executable_stack": false
+  },
+  "game_profile_sites_verified": 28
+}

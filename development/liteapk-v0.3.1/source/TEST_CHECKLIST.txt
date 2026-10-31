@@ -1,0 +1,49 @@
+TALE OF IMMORTAL v0.3.1 — CHECKLIST PONSEL
+Semua butir BELUM DEVICE VERIFIED. Gunakan backup save dan jumlah kecil.
+
+INSTALASI / UI
+[ ] Game dan save lama membuka, menu berjudul v0.3.1, tidak ada protocol mismatch.
+[ ] Teks terang terbaca; label/input tidak terpotong, tombol/row lebih ringkas.
+[ ] Area hasil dapat dibuka/ditutup dan tidak menutupi daftar item.
+[ ] Floating launcher dapat digeser/hide/show dan tidak masuk ke belakang layer.
+[ ] Touch menu tidak menggerakkan karakter di game.
+
+ITEM
+[ ] All Types, Pills, Equipment, Manuals, Materials dan Alchemy recipes memuat.
+[ ] Tidak ada KeyNotFoundException yang menghentikan katalog.
+[ ] Item dengan key item_name1041161 / item_name1041162 tetap bisa dibrowse
+    bila tersedia di konfigurasi; fallback key/ID boleh muncul jika terjemahan tidak ada.
+[ ] List dapat digulir; Next/Prev benar; mengetik sebagian nama/ID memberi saran.
+[ ] Tap item menunjukkan pilihan yang benar; pilih kategori lain lalu kembali tidak
+    diam-diam menukar pilihan. Add qty 1 + Confirm benar-benar menambah item itu.
+
+COMBAT / EXP
+[ ] God Mode ON melindungi pemain, OFF kembali normal; enemies tetap menerima damage.
+[ ] All Damage x2 mengubah damage pemain; serangan NPC tidak mendapat pengali.
+[ ] Defense x2 atau x16 diterima sebagai APPLIED; ukur efeknya dalam combat.
+[ ] Spiritual Damage x150 menampilkan OUT_OF_RANGE untuk ID 5, rentang 0.1..100.
+[ ] Setelah itu Spiritual x2 diterima bila capability ada; error lama hilang.
+[ ] Setelah error Spiritual, Apply Defense x16 menunjukkan hasil Defense ID 8,
+    bukan pesan lama milik Spiritual. Tidak ada callback checkbox berulang.
+[ ] EXP, cultivation spot EXP, HP/energy, cooldown dan modifier lain tetap bekerja.
+[ ] Pergantian scene/world dan membuka ulang menu tidak memutus controller pemain.
+[ ] Enemy/NPC friendly behavior dan stat tidak ikut berubah.
+
+DIAGNOSTIK
+[ ] Diagnostics menampilkan status 15 hook, capability mask dan 22 kontrol.
+[ ] Setiap kontrol memiliki requirement/status hook, bit, enabled/value dan last result.
+[ ] Jika ditolak, Copy report mencakup ID/key, requested value/range dan alasan spesifik.
+[ ] APPLIED dianggap penerimaan policy, bukan otomatis DEVICE VERIFIED.
+
+LAINNYA
+[ ] Capacity READ -> ADD 50: effective sesudah = sebelum +50. Item lama tetap ada.
+[ ] Capacity reduction di bawah occupied ditolak; ring/plugin bonus tetap normal.
+[ ] Spirit Stones READ -> ADD 100: saldo tepat +100; contribution/treasury tidak tertukar.
+[ ] City Token dan Immortal Store Token tetap terpisah.
+[ ] Save/load mempertahankan item, saldo, capacity dan edit permanen yang diuji.
+[ ] Load settings tidak mengulang edit permanen. Reset menonaktifkan runtime cheats.
+[ ] Tidak ada Force Close saat combat, pindah layar, save/load dan sesi 15–20 menit.
+
+LAPORKAN: device/Android, kontrol atau kategori, ID, nilai, before/after, kode hasil,
+status capability/hook, efek aktual dalam game, hasil save/load, dan Copy report.
+Jangan unggah save atau binary game pribadi ke GitHub publik.

@@ -1,0 +1,86 @@
+PASS sha256-empty
+PASS sha256-abc
+PASS sha256-million-a
+PASS bounded-probe-grammar
+PASS no-invented-item-layout
+PASS missing-backend-blocks
+PASS acknowledgments-required
+PASS invalid-session-rejected
+PASS startup-does-not-invoke
+PASS wrong-session-rejected
+PASS enqueue-does-not-invoke
+PASS dispatch-once-unverified
+PASS one-command-per-frame
+PASS expired-request-not-executed
+PASS disable-clears-queue
+PASS new-session-cancels-old
+PASS worker-thread-rejected
+PASS signature-mismatch-rejected
+PASS managed-exception-disarms
+PASS native-exception-contained
+PASS recursion-does-not-double-dispatch
+PASS disable-during-validation-cancels
+PASS bounded-queue
+PASS concurrent-producers
+PASS bounded-receipt-history
+PASS real-backend-rejects-missing-files
+RESULT: 26 host test cases, 94 assertions. NO GAME/ANDROID TESTS.
+Policy: 212 assertions passed; this is not gameplay/device verification
+catalog parsing, autocomplete ordering, sanitation: PASS
+test_extraction_does_not_overwrite (test_analysis_tools.InputTests.test_extraction_does_not_overwrite) ... ok
+test_missing_file_is_honest (test_analysis_tools.InputTests.test_missing_file_is_honest) ... ok
+test_private_data_excluded_from_selected_extraction (test_analysis_tools.InputTests.test_private_data_excluded_from_selected_extraction) ... ok
+test_private_path_filters (test_analysis_tools.InputTests.test_private_path_filters) ... ok
+test_sha_of_input (test_analysis_tools.InputTests.test_sha_of_input) ... ok
+test_zip_traversal_rejected (test_analysis_tools.InputTests.test_zip_traversal_rejected) ... ok
+test_bad_method_owner (test_analysis_tools.MetadataTests.test_bad_method_owner) ... ok
+test_cli_csv_and_baseline_gate (test_analysis_tools.MetadataTests.test_cli_csv_and_baseline_gate) ... ok
+test_misaligned_table (test_analysis_tools.MetadataTests.test_misaligned_table) ... ok
+test_out_of_range_table (test_analysis_tools.MetadataTests.test_out_of_range_table) ... ok
+test_parameter_range (test_analysis_tools.MetadataTests.test_parameter_range) ... ok
+test_string_range (test_analysis_tools.MetadataTests.test_string_range) ... ok
+test_truncation (test_analysis_tools.MetadataTests.test_truncation) ... ok
+test_v31_return_parameter_token_is_not_parameter_start (test_analysis_tools.MetadataTests.test_v31_return_parameter_token_is_not_parameter_start) ... ok
+test_wrong_version (test_analysis_tools.MetadataTests.test_wrong_version) ... ok
+test_binary_xml_string_pool_and_attributes (test_apk_patch.ApkPatchTests.test_binary_xml_string_pool_and_attributes) ... ok
+test_indirect_launcher_is_explicit (test_apk_patch.ApkPatchTests.test_indirect_launcher_is_explicit) ... ok
+test_malformed_binary_xml_refused (test_apk_patch.ApkPatchTests.test_malformed_binary_xml_refused) ... ok
+test_manifest_alias_resolves_target (test_apk_patch.ApkPatchTests.test_manifest_alias_resolves_target) ... ok
+test_missing_metadata_requires_exact_original (test_apk_patch.ApkPatchTests.test_missing_metadata_requires_exact_original) ... ok
+test_modified_patch_refused (test_apk_patch.ApkPatchTests.test_modified_patch_refused) ... ok
+test_no_overwrite_of_any_existing_file (test_apk_patch.ApkPatchTests.test_no_overwrite_of_any_existing_file) ... ok
+test_stream_patch_preserves_dependencies_assets_and_original (test_apk_patch.ApkPatchTests.test_stream_patch_preserves_dependencies_assets_and_original) ... ok
+test_wrong_baseline_refused_without_output (test_apk_patch.ApkPatchTests.test_wrong_baseline_refused_without_output) ... ok
+test_async_receipt_does_not_replace_newer_control (test_v031_regressions.HotfixSourceTests.test_async_receipt_does_not_replace_newer_control) ... ok
+test_compact_layout_does_not_reintroduce_dark_text (test_v031_regressions.HotfixSourceTests.test_compact_layout_does_not_reintroduce_dark_text) ... ok
+test_currency_and_capacity_not_duplicated (test_v031_regressions.HotfixSourceTests.test_currency_and_capacity_not_duplicated) ... ok
+test_java_native_ids_and_ranges (test_v031_regressions.HotfixSourceTests.test_java_native_ids_and_ranges) ... ok
+test_localization_recovers_only_exact_exception (test_v031_regressions.HotfixSourceTests.test_localization_recovers_only_exact_exception) ... ok
+test_only_load_replays_runtime_controls (test_v031_regressions.HotfixSourceTests.test_only_load_replays_runtime_controls) ... ok
+test_ui_uses_detailed_native_apply_and_guard (test_v031_regressions.HotfixSourceTests.test_ui_uses_detailed_native_apply_and_guard) ... ok
+test_bad_component_digest_does_not_create_apk (test_v03_components_patch.PatchV03Tests.test_bad_component_digest_does_not_create_apk) ... ok
+test_replace_actual_helper_slot_preserves_original_inputs (test_v03_components_patch.PatchV03Tests.test_replace_actual_helper_slot_preserves_original_inputs) ... ok
+test_unrecognized_old_native_does_not_create_apk (test_v03_components_patch.PatchV03Tests.test_unrecognized_old_native_does_not_create_apk) ... ok
+
+----------------------------------------------------------------------
+Ran 34 tests in 0.075s
+
+OK
+Updated classes3.dex and libtoimodmenu.so. UNSIGNED APK: /tmp/tmpqcfs_e4c/unsigned.apk
+test_bag (test_command_builder.BuilderTests.test_bag) ... ok
+test_exp (test_command_builder.BuilderTests.test_exp) ... ok
+test_hp (test_command_builder.BuilderTests.test_hp) ... ok
+test_item_parameter_semantics_opaque (test_command_builder.BuilderTests.test_item_parameter_semantics_opaque) ... ok
+test_no_fabricated_recipe (test_command_builder.BuilderTests.test_no_fabricated_recipe) ... ok
+test_no_injection (test_command_builder.BuilderTests.test_no_injection) ... ok
+test_no_negative_guess (test_command_builder.BuilderTests.test_no_negative_guess) ... ok
+test_npc (test_command_builder.BuilderTests.test_npc) ... ok
+test_realm (test_command_builder.BuilderTests.test_realm) ... ok
+test_requires_backup (test_command_builder.BuilderTests.test_requires_backup) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.000s
+
+OK
+PASS: 215 checks; host logic only, no Android/device test
+PASS v0.3.1: 32834 host checks; no device/gameplay verification
