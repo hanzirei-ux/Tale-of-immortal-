@@ -21,3 +21,5 @@ Progress completed:
 Coverage limit: this exports the current native **non-hidden ConfItemProps** catalog, which is incomplete. The ~11 Manual entries reported by the user are not the whole game's Manual system. Missing names/categories remain; unsupported translations, source keys, rarity, description and subtype are null. Separate configuration/template/Manual-instance collection is the next phase after a real phone JSONL.
 
 Private input APKs, IL2CPP/metadata, AssetBundles, extracted game data and saves are excluded. Source and the project's own compiled helper only are published.
+
+Publication verified: immutable GitHub ZIP downloaded again; SHA-256, ZIP CRC and internal checksums match. All 449 exported source/report entries match Git blobs; 802 pre-existing blob files and all 525 v0.3.1 rollback entries remain unchanged. Implementation commit: `df2ce4e3dcd494e1c32f1d72c460e0f743bb0c1c`.
