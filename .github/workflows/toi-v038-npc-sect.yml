@@ -1,0 +1,139 @@
+name: Tale of Immortal v0.3.8 NPC Sect Android build
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - build/toi-v038-npc-sect-20261107
+    paths:
+      - development/liteapk-v0.3.8/build_inputs/run.flag
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 50
+    env:
+      BUNDLE_SHA256: "8a84869f1687700009544ac412f3901c42be9d3792de1ad39284ae73ee0b4235"
+      PRIVATE_BUNDLE_URL: ${{ secrets.TOI_V038_SOURCE_BUNDLE_URL }}
+
+    steps:
+      - name: Checkout source repository
+        uses: actions/checkout@v4
+
+      - name: Prepare Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Install Android SDK command line environment
+        uses: android-actions/setup-android@v3
+
+      - name: Get and verify private v0.3.7 + v0.3.8 source bundle
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/toi-input"
+          BUNDLE="$RUNNER_TEMP/toi-input/source.zip"
+          if [[ -z "${PRIVATE_BUNDLE_URL:-}" ]]; then
+            echo "::error::Missing secret TOI_V038_SOURCE_BUNDLE_URL. Private source data is intentionally not committed to the public repo."
+            exit 2
+          fi
+          curl --fail --silent --show-error --location --retry 3 "$PRIVATE_BUNDLE_URL" -o "$BUNDLE"
+          printf '%s  %s\n' "$BUNDLE_SHA256" "$BUNDLE" | sha256sum --check --status
+          unzip -tq "$BUNDLE"
+          unzip -q "$BUNDLE" -d "$RUNNER_TEMP/toi-input/extracted"
+          echo "Input source ZIP verified; contents remain outside the public Git repository."
+
+      - name: Restore v0.3.7 Item Manager then apply v0.3.8 NPC/Sect
+        shell: bash
+        run: |
+          set -euo pipefail
+          ROOT="$GITHUB_WORKSPACE/development/liteapk-v0.3.6/source"
+          IN="$RUNNER_TEMP/toi-input/extracted"
+          test -f "$IN/source_changes/development/liteapk-v0.3.6/source/CMakeLists.txt"
+          test -f "$IN/source_changes/development/liteapk-v0.3.6/source/android/bridge/src/main/java/org/npc/toibridge/VerifiedCatalogData.java"
+          test -f "$IN/overlay/development/liteapk-v0.3.6/source/native/game_runtime.cpp"
+          cp -a "$IN/source_changes/development/liteapk-v0.3.6/source/." "$ROOT/"
+          python3 "$IN/apply_to_v037.py" --source "$ROOT"
+          python3 "$IN/apply_to_v037.py" --source "$ROOT" --apply
+          test -s "$ROOT/native/item_creation.cpp"
+          test -s "$ROOT/native/npc_sect_policy.hpp"
+          test -s "$ROOT/android/bridge/src/main/java/org/npc/toibridge/VerifiedCatalogData.java"
+          test -s "$ROOT/tools/build_v038.py"
+          echo "v0.3.7 features retained; v0.3.8 source applied."
+
+      - name: Run host NPC scope/input-policy test
+        shell: bash
+        run: |
+          set -euo pipefail
+          ROOT="$GITHUB_WORKSPACE/development/liteapk-v0.3.6/source"
+          IN="$RUNNER_TEMP/toi-input/extracted"
+          g++ -std=c++17 -Wall -Wextra -Werror -I "$ROOT/native" "$IN/tests/test_npc_sect_policy.cpp" -o "$RUNNER_TEMP/npc_sect_policy_test"
+          "$RUNNER_TEMP/npc_sect_policy_test"
+
+      - name: Install pinned SDK and NDK
+        shell: bash
+        run: |
+          set -euo pipefail
+          yes | sdkmanager --licenses >/dev/null || true
+          sdkmanager --install "platforms;android-35" "ndk;27.2.12479018"
+          echo "ANDROID_SDK_ROOT=${ANDROID_HOME}" >> "$GITHUB_ENV"
+
+      - name: Fetch and verify pinned Java build tools
+        shell: bash
+        run: |
+          set -euo pipefail
+          ROOT="$GITHUB_WORKSPACE/development/liteapk-v0.3.6/source"
+          python3 "$ROOT/tools/fetch_java_tools.py" "$RUNNER_TEMP/toi-java-tools"
+
+      - name: Compile matching ARM64 SO and classes2.dex
+        shell: bash
+        run: |
+          set -euo pipefail
+          ROOT="$GITHUB_WORKSPACE/development/liteapk-v0.3.6/source"
+          python3 "$ROOT/tools/build_v038.py" \
+            --ndk "$ANDROID_SDK_ROOT/ndk/27.2.12479018" \
+            --java-tools "$RUNNER_TEMP/toi-java-tools" \
+            --android-jar "$ANDROID_SDK_ROOT/platforms/android-35/android.jar" \
+            --jobs 4
+
+      - name: Validate and package rebuilt artifacts
+        shell: bash
+        run: |
+          set -euo pipefail
+          ROOT="$GITHUB_WORKSPACE/development/liteapk-v0.3.6/source"
+          OUT="$ROOT/out/v0.3.8"
+          test -s "$OUT/classes2.dex"
+          test -s "$OUT/lib/arm64-v8a/libtoimodmenu.so"
+          test -s "$OUT/build_manifest.json"
+          python3 - "$OUT" <<'PY'
+          import hashlib,json,sys
+          from pathlib import Path
+          root=Path(sys.argv[1])
+          dex=root/'classes2.dex'
+          so=root/'lib/arm64-v8a/libtoimodmenu.so'
+          assert dex.read_bytes().startswith(b'dex\n'), 'Invalid DEX magic'
+          assert so.read_bytes().startswith(b'\x7fELF'), 'Invalid ELF magic'
+          manifest=json.loads((root/'build_manifest.json').read_text())
+          assert manifest['version']=='0.3.8' and not manifest['device_tested']
+          for name,info in manifest['files'].items():
+              f=root/name
+              assert hashlib.sha256(f.read_bytes()).hexdigest()==info['sha256']
+          print('All output format and hash checks passed')
+          PY
+          (cd "$OUT" && zip -qr "$GITHUB_WORKSPACE/TOI_NPC_Sect_v0.3.8_Android_TEST_PATCH.zip" classes2.dex lib build_manifest.json)
+          sha256sum "$GITHUB_WORKSPACE/TOI_NPC_Sect_v0.3.8_Android_TEST_PATCH.zip" > "$GITHUB_WORKSPACE/TOI_NPC_Sect_v0.3.8_SHA256SUMS.txt"
+
+      - name: Upload test patch for download
+        uses: actions/upload-artifact@v4
+        with:
+          name: TOI_NPC_Sect_v038_ANDROID_TEST_PATCH
+          path: |
+            TOI_NPC_Sect_v0.3.8_Android_TEST_PATCH.zip
+            TOI_NPC_Sect_v0.3.8_SHA256SUMS.txt
+          if-no-files-found: error
+          retention-days: 7
