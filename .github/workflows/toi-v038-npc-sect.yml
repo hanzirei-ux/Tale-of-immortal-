@@ -50,8 +50,21 @@ jobs:
             echo "::error::Missing secret TOI_V038_SOURCE_BUNDLE_URL. Private source data is intentionally not committed to the public repo."
             exit 2
           fi
-          curl --fail --silent --show-error --location --retry 3 "$PRIVATE_BUNDLE_URL" -o "$BUNDLE"
-          printf '%s  %s\n' "$BUNDLE_SHA256" "$BUNDLE" | sha256sum --check --status
+          if ! curl --fail --silent --show-error --location --retry 3 --max-time 120 "$PRIVATE_BUNDLE_URL" -o "$BUNDLE"; then
+            echo "::error::Unable to download private bundle. Check link accessibility and direct-download permissions."
+            exit 3
+          fi
+          DOWNLOAD_BYTES="$(stat -c%s "$BUNDLE")"
+          ZIP_MAGIC="$(od -An -tx1 -N4 "$BUNDLE" | tr -d '[:space:]')"
+          if [[ "$ZIP_MAGIC" != "504b0304" ]]; then
+            echo "::error::Private bundle URL returned non-ZIP data (size $DOWNLOAD_BYTES bytes, content-type $(file -b --mime-type "$BUNDLE")). Check that secret holds a direct ZIP download, not a preview or login page."
+            exit 4
+          fi
+          ACTUAL_SHA256="$(sha256sum "$BUNDLE" | awk '{print $1}')"
+          if [[ "$ACTUAL_SHA256" != "$BUNDLE_SHA256" ]]; then
+            echo "::error::Private ZIP integrity mismatch (size $DOWNLOAD_BYTES bytes, expected size 188301 bytes). Re-upload the original ZIP unchanged."
+            exit 5
+          fi
           unzip -tq "$BUNDLE"
           unzip -q "$BUNDLE" -d "$RUNNER_TEMP/toi-input/extracted"
           echo "Input source ZIP verified; contents remain outside the public Git repository."
