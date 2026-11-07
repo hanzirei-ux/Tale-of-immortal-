@@ -50,8 +50,27 @@ jobs:
             echo "::error::Missing secret TOI_V038_SOURCE_BUNDLE_URL. Private source data is intentionally not committed to the public repo."
             exit 2
           fi
-          if ! curl --fail --silent --show-error --location --retry 3 --max-time 120 "$PRIVATE_BUNDLE_URL" -o "$BUNDLE"; then
-            echo "::error::Unable to download private bundle. Check link accessibility and direct-download permissions."
+          python3 -m pip install --disable-pip-version-check --quiet "gdown==5.2.1"
+          if ! python3 - "$BUNDLE" <<'PY'
+          import os
+          import sys
+          import gdown
+          try:
+              downloaded = gdown.download(
+                  url=os.environ["PRIVATE_BUNDLE_URL"],
+                  output=sys.argv[1],
+                  quiet=True,
+                  fuzzy=True,
+              )
+          except Exception as exc:
+              print(f"Google Drive download failed: {type(exc).__name__}", file=sys.stderr)
+              sys.exit(1)
+          if not downloaded:
+              print("Google Drive download unavailable; verify Anyone with the link / Viewer.", file=sys.stderr)
+              sys.exit(1)
+          PY
+          then
+            echo "::error::Unable to download ZIP from Google Drive. Set sharing to Anyone with the link / Viewer and check secret URL."
             exit 3
           fi
           DOWNLOAD_BYTES="$(stat -c%s "$BUNDLE")"
