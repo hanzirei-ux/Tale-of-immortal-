@@ -1,10 +1,10 @@
-name: Tale of Immortal v0.3.8 NPC Sect Android build
+name: Tale of Immortal v0.3.8.1 Item Nested Bindings Android test
 
 on:
   workflow_dispatch:
   push:
     branches:
-      - build/toi-v038-npc-sect-20261107
+      - build/toi-v0381-nested-bindings-20261107
     paths:
       - development/liteapk-v0.3.8/build_inputs/run.flag
 
@@ -106,6 +106,27 @@ jobs:
           test -s "$ROOT/tools/build_v038.py"
           echo "v0.3.7 features retained; v0.3.8 source applied."
 
+      - name: Apply guarded v0.3.8.1 nested IL2CPP bindings patch
+        shell: bash
+        run: |
+          set -euo pipefail
+          ROOT="$GITHUB_WORKSPACE/development/liteapk-v0.3.6/source"
+          python3 development/liteapk-v0.3.8/patches/apply_v0381_nested_bindings.py --source "$ROOT"
+          g++ -std=c++17 -Wall -Wextra -Werror -I "$ROOT/native" -fsyntax-only \
+            "$ROOT/native/managed_access.cpp" "$ROOT/native/item_creation.cpp"
+          echo "Guarded patch and source syntax checks passed."
+
+      - name: Test nested IL2CPP lookup, strict tokens and signature rejection
+        shell: bash
+        run: |
+          set -euo pipefail
+          ROOT="$GITHUB_WORKSPACE/development/liteapk-v0.3.6/source"
+          g++ -std=c++17 -Wall -Wextra -Werror -I "$ROOT/native" \
+            "$ROOT/native/managed_access.cpp" \
+            development/liteapk-v0.3.8/tests/test_nested_bindings.cpp \
+            -o "$RUNNER_TEMP/toi_nested_binding_test"
+          "$RUNNER_TEMP/toi_nested_binding_test"
+
       - name: Run host NPC scope/input-policy test
         shell: bash
         run: |
@@ -141,6 +162,21 @@ jobs:
             --android-jar "$ANDROID_SDK_ROOT/platforms/android-35/android.jar" \
             --jobs 4
 
+      - name: Label experimental v0.3.8.1 item-bindings output
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import json
+          p=Path("development/liteapk-v0.3.6/source/out/v0.3.8/build_manifest.json")
+          m=json.loads(p.read_text())
+          assert m["version"]=="0.3.8" and not m["device_tested"]
+          m["patch_revision"]="0.3.8.1-nested-il2cpp-item-bindings"
+          m["changes"]="Nested class and signature resolution; detailed item binding errors only"
+          m["runtime_item_add_verified"]=False
+          p.write_text(json.dumps(m,indent=2,ensure_ascii=False)+"\n")
+          PY
+
       - name: Validate and package rebuilt artifacts
         shell: bash
         run: |
@@ -165,15 +201,15 @@ jobs:
               assert hashlib.sha256(f.read_bytes()).hexdigest()==info['sha256']
           print('All output format and hash checks passed')
           PY
-          (cd "$OUT" && zip -qr "$GITHUB_WORKSPACE/TOI_NPC_Sect_v0.3.8_Android_TEST_PATCH.zip" classes2.dex lib build_manifest.json)
-          sha256sum "$GITHUB_WORKSPACE/TOI_NPC_Sect_v0.3.8_Android_TEST_PATCH.zip" > "$GITHUB_WORKSPACE/TOI_NPC_Sect_v0.3.8_SHA256SUMS.txt"
+          (cd "$OUT" && zip -qr "$GITHUB_WORKSPACE/TOI_ItemBindings_v0.3.8.1_ANDROID_TEST_PATCH.zip" classes2.dex lib build_manifest.json)
+          sha256sum "$GITHUB_WORKSPACE/TOI_ItemBindings_v0.3.8.1_ANDROID_TEST_PATCH.zip" > "$GITHUB_WORKSPACE/TOI_ItemBindings_v0.3.8.1_SHA256SUMS.txt"
 
       - name: Upload test patch for download
         uses: actions/upload-artifact@v4
         with:
-          name: TOI_NPC_Sect_v038_ANDROID_TEST_PATCH
+          name: TOI_ItemBindings_v0381_ANDROID_TEST_PATCH
           path: |
-            TOI_NPC_Sect_v0.3.8_Android_TEST_PATCH.zip
-            TOI_NPC_Sect_v0.3.8_SHA256SUMS.txt
+            TOI_ItemBindings_v0.3.8.1_ANDROID_TEST_PATCH.zip
+            TOI_ItemBindings_v0.3.8.1_SHA256SUMS.txt
           if-no-files-found: error
           retention-days: 7
