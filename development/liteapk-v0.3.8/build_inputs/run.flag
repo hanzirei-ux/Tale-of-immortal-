@@ -3,3 +3,5 @@ trigger_reason: user-requested build
 source_branch: build/toi-v038-npc-sect-20261107
 trigger_date: 2026-11-07
 notes: trigger only; do not touch game source or baseline on main
+trigger_account: hanzirei-ux
+trigger_request: retry workflow using alternate connected GitHub account
