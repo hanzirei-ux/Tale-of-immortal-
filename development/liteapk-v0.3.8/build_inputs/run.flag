@@ -5,3 +5,4 @@ trigger_date: 2026-11-07
 notes: trigger only; do not touch game source or baseline on main
 trigger_account: hanzirei-ux
 trigger_request: retry workflow using alternate connected GitHub account
+manual_trigger: test_from_hanzirei
