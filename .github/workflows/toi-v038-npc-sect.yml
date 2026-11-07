@@ -116,8 +116,8 @@ jobs:
           root=Path(sys.argv[1])
           dex=root/'classes2.dex'
           so=root/'lib/arm64-v8a/libtoimodmenu.so'
-          assert dex.read_bytes().startswith(b'dex\\n'), 'Invalid DEX magic'
-          assert so.read_bytes().startswith(b'\\x7fELF'), 'Invalid ELF magic'
+          assert dex.read_bytes().startswith(b'dex\n'), 'Invalid DEX magic'
+          assert so.read_bytes().startswith(b'\x7fELF'), 'Invalid ELF magic'
           manifest=json.loads((root/'build_manifest.json').read_text())
           assert manifest['version']=='0.3.8' and not manifest['device_tested']
           for name,info in manifest['files'].items():
