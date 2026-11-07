@@ -9,3 +9,4 @@ manual_trigger: test_from_hanzirei
 sdk_fix_verification: hanzirei_fork_20261107
 private_bundle_secret_test: user_confirmed_2026-11-07
 source_zip_diagnostic: check_magic_size_hash_20261107
+google_drive_gdown_test: 2026-11-07
