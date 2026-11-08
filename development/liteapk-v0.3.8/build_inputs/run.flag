@@ -11,3 +11,4 @@ private_bundle_secret_test: user_confirmed_2026-11-07
 source_zip_diagnostic: check_magic_size_hash_20261107
 google_drive_gdown_test: 2026-11-07
 v0381_test_trigger: nested_types_and_diagnostics_2026-11-07
+manual_mismatch_diagnostic_trigger: v0381_20261108
