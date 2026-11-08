@@ -82,6 +82,20 @@ def main(root):
     if(!make)return blocked(m,"Missing nested DataProps.PropsData.NewProps token 060085a4");
     if(!m.api->object_new)return blocked(m,"IL2CPP object allocation API unavailable");''',
         "artifact granular diagnostics")
+    item=one(item,
+        'if(m.failed||!payload||m.api->array_length(payload)<4||at<int>(payload,32)!=id||at<int>(payload,36)!=realm||at<int>(payload,40)!=quality)return blocked(m,"Native manual factory result differs from the requested base/Realm/quality; no inventory change attempted");',
+        '''if(m.failed||!payload||!m.api->array_length)return blocked(m,"Native manual factory returned no readable Int32[] values; no inventory change attempted");
+    auto n=m.api->array_length(payload);
+    if(n<4||n>128)return {"BLOCKED","Manual factory values[] length "+std::to_string(n)+" outside checked 4..128; nothing added",false};
+    int got0=at<int>(payload,32),got1=at<int>(payload,36),got2=at<int>(payload,40);
+    if(got0!=id||got1!=realm||got2!=quality){
+        std::ostringstream ss;
+        ss<<"Manual factory mismatch: requested base="<<id<<", realm="<<realm<<", quality="<<quality
+          <<"; returned values[0..2]="<<got0<<","<<got1<<","<<got2
+          <<" (length "<<n<<"). NOT ADDED. Check native payload field layout.";
+        return {"BLOCKED",ss.str(),false};
+    }''',
+        "manual bounded diagnostic")
     files["item_creation.cpp"]=item
     for name,new_data in files.items():
         (native/name).write_text(new_data)
