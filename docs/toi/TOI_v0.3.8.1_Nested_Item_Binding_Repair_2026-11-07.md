@@ -57,3 +57,15 @@ No direct Android runtime evidence yet that Manual, Demon or Artifact creation w
 
 STATUS: Host tests / Android build / package integrity VERIFIED; gameplay fix PENDING DEVICE TEST.
 Only this isolated build branch was modified. Stable main and original v0.3.8 branch remain unchanged.
+
+## Addendum: 8 November 2026 — bounded Manual diagnostics build
+New Android screenshots from v0.3.8-dev:
+- NPC READ shows `npc_info — REJECTED: Expected unitID field` and, in another screenshot, `Use exact NPC instance unitID (not name/portrait ID)`. The visible value 100 is the stat setting, not target unitID. These requests do not prove stat mutator is broken; UI still requires a selected instance ID.
+- Manual `Fierce Fire #M1:41113` reports `manual — BLOCKED: Native manual factory result differs from the requested base/Realm/quality; no inventory change attempted`. This proves the previously generic 'unavailable' is not the only failure mode; keep safety guard intact and inspect generated payload vs requested tuple.
+- **Changes for next controlled test:** patch script adds bounded read-only diagnostics showing returned `values[0..2]`, requested base/Realm/quality, and array length, only on mismatch. It never calls inventory reward for mismatched data. No NPC/Sect changes.
+
+GitHub Actions new run [#42432431505](https://github.com/hanzirei-ux/Tale-of-immortal-/actions/runs/42432431505) **SUCCESS**, commit `a94108089106e4ee1689defcdbb53a837ba9e0cb`. Verified source bundle, nested resolver strict host test, native ARM64 and DEX compilation, format/hash and artifact upload.
+
+Latest test artifact: [TOI_ItemBindings_v0381_ANDROID_TEST_PATCH (id 13597827136)](https://github.com/hanzirei-ux/Tale-of-immortal-/actions/runs/42432431505/artifacts/13597827136); expires 15 Nov 2026 (UTC). Inside it is `TOI_ItemBindings_v0.3.8.1_ANDROID_TEST_PATCH.zip` with `classes2.dex`, `lib/arm64-v8a/libtoimodmenu.so`, and `build_manifest.json`. DEX SHA-256 unchanged from v0.3.8: `f6b63b4da6554051d3065f43e18f7411686e0d768b8576f3c3b38e4bf737a927`; ARM64 SO new SHA-256: `0c09a09dfe560d471e1fb2b02ffafe7a178392e18e6fa97ec107f750877581e6` (836,208 bytes). Do **not** substitute the older 835,136-byte .so from the first nested binding run when testing the new mismatch diagnostic.
+
+**Device runtime remains unverified for v0.3.8.1.** Build success is not evidence that Manual/Demon/Artifact add succeeds; test with copy of save, preserve the original DEX/SO pairing and stop on any ambiguous result. Stable `main` and original v0.3.8 build branch unchanged.
